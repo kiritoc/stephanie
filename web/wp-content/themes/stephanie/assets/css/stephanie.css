@@ -1,0 +1,115 @@
+/*--------------------------------------------------------------
+# Paths
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@font-face {
+  font-family: lavanderia-font;
+  src: url("../../assets/fonts/Lavanderia Sturdy.otf"); }
+
+@font-face {
+  font-family: slabo-font;
+  src: url("../../assets/fonts/Slabo27px-Regular.ttf"); }
+
+/*--------------------------------------------------------------
+# Loader
+--------------------------------------------------------------*/
+#site-loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0; }
+
+#site-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 60999;
+  background: url("../../assets/images/spinner.svg") center no-repeat #454545; }
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+body {
+  text-align: center;
+  font-family: "slabo-font";
+  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+  color: #8964C2; }
+
+a, a:visited, a:link {
+  color: #8964C2;
+  text-decoration: none;
+  transition: .5s; }
+
+a:active, a:hover {
+  color: #E7536F; }
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#stephanie-header {
+  background: #E7536F; }
+  #stephanie-header .header-content {
+    width: 90%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    #stephanie-header .header-content .header-heart {
+      color: #E7536F;
+      display: block;
+      margin: 40px 0;
+      font-size: 48px; }
+    #stephanie-header .header-content .header-title {
+      font-family: "lavanderia-font", sans-serif;
+      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      font-size: 7em; }
+    #stephanie-header .header-content .header-text {
+      color: #454545;
+      font-family: "lavanderia-font", sans-serif;
+      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      font-size: 3em; }
+    #stephanie-header .header-content .header-divider-container svg {
+      fill: #454545;
+      width: 18em; }
+
+/*--------------------------------------------------------------
+# Wedding Countdown
+--------------------------------------------------------------*/
+.simply-section {
+  width: 96px;
+  margin: 0 20px;
+  position: relative;
+  display: inline-block;
+  color: #454545;
+  font-size: 24px; }
+
+.simply-amount {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  padding-top: 17px;
+  display: inline-block;
+  font-weight: 300; }
+
+.simply-word {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block; }
