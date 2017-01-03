@@ -19,7 +19,9 @@
 
 <body <?php body_class(); ?>>
 <!-- Loader -->
-<div id="site-loader"></div>
+<div id="site-loader">
+    <div id="heart"></div>
+</div>
 
 <?php if (stephanie_get_header_image() != false && is_front_page()): ?>
     <header id="stephanie-header" role="banner">
