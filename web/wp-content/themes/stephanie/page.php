@@ -14,33 +14,53 @@
 
 get_header(); ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div id="primary" class="content-area">
-                    <main id="main" class="site-main" role="main">
+    <div id="content">
+        <!-- Accueil -->
+        <?php
+        $image = get_field('description-image');
 
-                        <?php
-                        while (have_posts()) : the_post();
+        if (!empty($image)): ?>
+            <img class="description-image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+        <?php endif; ?>
 
-                            get_template_part('template-parts/content', 'page');
+        <?php if (get_field('description')): ?>
+            <div class="description"><?php the_field('description'); ?></div>
+        <?php endif; ?>
 
-                            // If comments are open or we have at least one comment, load up the comment template.
-                            if (comments_open() || get_comments_number()) :
-                                comments_template();
-                            endif;
+        <!-- Où et Quand ? -->
+        <?php if (get_field('timeline')): ?>
+            <section class="horizontal-timeline">
+                <div class="timeline">
+                    <div class="events">
+                        <ol>
+                            <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
+                            <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+                        </ol>
 
-                        endwhile;
-                        ?>
+                        <span class="filling-line" aria-hidden="true"></span>
+                    </div>
 
-                    </main>
+                    <ul class="timeline-navigation">
+                        <li><a href="#0" class="prev inactive">Prev</a></li>
+                        <li><a href="#0" class="next">Next</a></li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="col-lg-4">
-                <?php get_sidebar(); ?>
-            </div>
-        </div>
+                <div class="content">
+                    <ol>
+                        <?php if (get_field('town-hall-description')): ?>
+                            <li>
+                                <div class="town-hall-description"><?php the_field('town-hall-description'); ?></div>
+
+                                <?php if (get_field('town-hall-location')): ?>
+                                    <div class="own-hall-location"><?php the_field('town-hall-location'); ?></div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
+                    </ol>
+                </div>
+            </section>
+        <?php endif; ?>
     </div>
 
 <?php

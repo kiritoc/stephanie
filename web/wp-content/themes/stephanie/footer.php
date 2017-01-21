@@ -10,11 +10,12 @@
  */
 ?>
 
-<footer class="footer">
-	<div class="container">
-        <span>footer content</span>
-	</div>
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <span>footer content</span>
+        </div>
+    </footer>
+</div> <!-- #container end (start tag is in header.php) -->
 
 <?php wp_footer(); ?>
 

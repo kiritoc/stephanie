@@ -73,11 +73,9 @@ endif;
  * Enqueue scripts and styles.
  */
 function stephanie_scripts_styles() {
-    // Enqueue Bootstrap
-    wp_enqueue_style('bootstrap', STEPHANIE_CSS_PATH . 'bootstrap.min.css', array(), '3.3.7', '');
-
-    // Enqueue FontAwesome
-    //wp_enqueue_style('font-awesome', STEPHANIE_CSS_PATH . 'font-awesome.min.css', array(), '4.4.0', '');
+    // Enqueue Sakura animation
+    wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
+    wp_enqueue_style('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js');
 
     // Enqueue Stylesheets
     wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.css');
@@ -102,47 +100,91 @@ function stephanie_scripts_styles() {
  * Stephanie theme customizer
  */
 function stephanie_customizer($wp_customize) {
-    // Date Picker
-    class Stephanie_DateControl extends WP_Customize_Control {
+    // Input control
+    class Stephanie_InputControl extends WP_Customize_Control {
+        public $title = NULL;
+        public $fields = NULL;
+
         function render_content() {
-            ?>
-            <label>
-                <span><?php echo esc_html($this->label); ?></span>
-                <input type="date" <?php $this->link(); ?> value="<?php echo esc_attr($this->value()); ?>">
-            </label>
-            <?php
+            if (!is_array($this->label)) {
+                $this->label = array("default" => $this->label);
+            }
+
+            if ($this->title) {
+                ?>
+                <span class="customize-control-title"><?php echo $this->title; ?></span>
+                <?php
+            }
+
+            if (count($this->fields) == count($this->settings)) {
+                $fieldsType = array_values($this->fields);
+                $fieldsLabel = array_keys($this->fields);
+
+                foreach ($this->settings as $key => $setting) {
+                    ?>
+                    <label>
+                        <span><?php echo esc_html($fieldsLabel[$key]); ?></span>
+                        <input type="<?php echo $fieldsType[$key]; ?>" <?php $this->link($key); ?>
+                               value="<?php echo esc_attr($this->value($key)); ?>">
+                    </label>
+                    <?php
+                }
+            }
         }
     }
 
-    // Wedding date section
-    $wp_customize->add_section('wedding_date_section', array(
-        'title' => __('Date du mariage', 'stephanie'),
-        'description' => __('Date du mariage et compte à rebours', 'stephanie'),
+    // Wedding informations section
+    $wp_customize->add_section('wedding_informations_section', array(
+        'title' => __('Wedding informations', 'stephanie'),
         'priority' => 20
     ));
 
-    // Date picker
+    // Bride names
+    $wp_customize->add_setting('wedding_bride_firstname', array(
+        'sanitize_callback' => 'wp_kses_post',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_setting('wedding_bride_lastname', array(
+        'sanitize_callback' => 'wp_kses_post',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_control(new Stephanie_InputControl($wp_customize, 'wedding_bride_name_setting', array(
+        'section' => 'wedding_informations_section',
+        'title' => __('About the bride'),
+        'fields' => array(__('First name') => 'text', __('Last name') => 'text'),
+        'settings' => array('wedding_bride_firstname', 'wedding_bride_lastname')
+    )));
+
+    // Groom names
+    $wp_customize->add_setting('wedding_groom_firstname', array(
+        'sanitize_callback' => 'wp_kses_post',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_setting('wedding_groom_lastname', array(
+        'sanitize_callback' => 'wp_kses_post',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_control(new Stephanie_InputControl($wp_customize, 'wedding_groom_name_setting', array(
+        'section' => 'wedding_informations_section',
+        'title' => __('About the groom'),
+        'fields' => array(__('First name') => 'text', __('Last name') => 'text'),
+        'settings' => array('wedding_groom_firstname', 'wedding_groom_lastname')
+    )));
+
+    // Wedding day informations
     $wp_customize->add_setting('wedding_date', array(
         'sanitize_callback' => 'wp_kses_post',
         'capability' => 'edit_theme_options'
     ));
-    $wp_customize->add_control(new Stephanie_DateControl($wp_customize, 'wedding_date_setting', array(
-        'label' => __('Choix de la date', 'stephanie'),
-        'section' => 'wedding_date_section',
-        'settings' => 'wedding_date',
-        'type' => 'text'
-    )));
-
-    // Place
     $wp_customize->add_setting('wedding_place', array(
         'sanitize_callback' => 'wp_kses_post',
         'capability' => 'edit_theme_options'
     ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'wedding_place_setting', array(
-        'label' => __('Localisation', 'stephanie'),
-        'section' => 'wedding_date_section',
-        'settings' => 'wedding_place',
-        'type' => 'text'
+    $wp_customize->add_control(new Stephanie_InputControl($wp_customize, 'wedding_various_setting', array(
+        'section' => 'wedding_informations_section',
+        'title' => __('About the day'),
+        'fields' => array(__('Date') => 'date', __('Location') => 'text'),
+        'settings' => array('wedding_date', 'wedding_place')
     )));
 
     // Countdown
@@ -151,24 +193,12 @@ function stephanie_customizer($wp_customize) {
         'capability' => 'edit_theme_options'
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'wedding_countdown_is_activated_setting', array(
-        'label' => __('Afficher le compte à rebours', 'stephanie'),
-        'section' => 'wedding_date_section',
+        'label' => __('Show the wedding count down', 'stephanie'),
+        'section' => 'wedding_informations_section',
         'settings' => 'wedding_countdown_is_activated',
         'type' => 'checkbox'
     )));
 }
-
-if (!function_exists('stephanie_get_header_image')):
-    function stephanie_get_header_image() {
-        if (get_header_image() != ''):
-            return '<img class="img-responsive" src="' . get_header_image() . '" height="' . get_custom_header()->height . '" width="' . get_custom_header()->width . '" alt=""/>';
-        else:
-            return false;
-        endif;
-    }
-
-    ;
-endif;
 
 /*--------------------------------------------------------------
 # Init calls

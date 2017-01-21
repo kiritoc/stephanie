@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--------------------------------------------------------------
 # Paths
 --------------------------------------------------------------*/
@@ -8,8 +9,52 @@
 # Colors
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# Navbar variables
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Paths
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Navbar variables
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../assets/fonts/icomoon/icomoon.eot?t5vpi4");
+  src: url("../../assets/fonts/icomoon/icomoon.eot?t5vpi4#iefix") format("embedded-opentype"), url("../../assets/fonts/icomoon/icomoon.ttf?t5vpi4") format("truetype"), url("../../assets/fonts/icomoon/icomoon.woff?t5vpi4") format("woff"), url("../../assets/fonts/icomoon/icomoon.svg?t5vpi4#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-quotes-left:before {
+  content: ""; }
+
+.icon-quotes-right:before {
+  content: ""; }
+
+.icon-angle-double-down:before {
+  content: ""; }
+
 /*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
@@ -24,62 +69,113 @@
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+body, html {
+  height: 100%; }
+
 body {
+  margin: 0;
   text-align: center;
   font-family: "slabo-font";
   font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
   color: #8964C2; }
 
-a, a:visited, a:link {
-  color: #8964C2;
-  text-decoration: none;
-  transition: .5s; }
+#container {
+  position: relative;
+  min-height: 100%; }
 
-a:active, a:hover {
-  color: #E7536F; }
+#content {
+  margin: 2em 0; }
+
+.centered-column-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column; }
+
+.centered-row-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row; }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #stephanie-header {
-  background: #E7536F; }
-  #stephanie-header .header-content {
-    width: 90%;
-    text-align: center;
+  position: relative;
+  height: 100%;
+  cursor: default;
+  /* Create the parallax scrolling effect */
+  background: #8964C2 no-repeat fixed center;
+  background-size: cover; }
+  #stephanie-header .content {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); }
-    #stephanie-header .header-content .header-heart {
-      color: #E7536F;
-      display: block;
-      margin: 40px 0;
-      font-size: 48px; }
-    #stephanie-header .header-content .header-title {
+    height: 80%;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+    #stephanie-header .content .logo {
+      height: 60%;
       font-family: "lavanderia-font", sans-serif;
       font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
-      font-size: 7em; }
-    #stephanie-header .header-content .header-text {
-      color: #454545;
-      font-family: "lavanderia-font", sans-serif;
-      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
-      font-size: 3em; }
-    #stephanie-header .header-content .header-divider-container svg {
-      fill: #454545;
-      width: 18em; }
+      color: #FFFFFF;
+      justify-content: center; }
+      #stephanie-header .content .logo .title {
+        font-size: 6vmin; }
+      #stephanie-header .content .logo .subtitle {
+        font-size: 4vmin; }
+      #stephanie-header .content .logo .header-divider-container {
+        width: 30vmin;
+        margin: 1.5vmin;
+        box-sizing: border-box; }
+        #stephanie-header .content .logo .header-divider-container svg {
+          width: auto;
+          height: auto;
+          fill: #FFFFFF; }
+  #stephanie-header .index-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    #stephanie-header .index-button a {
+      display: inline-block;
+      font-style: italic;
+      animation: jumping 2s ease-in-out 0s infinite; }
+      #stephanie-header .index-button a, #stephanie-header .index-button a:visited, #stephanie-header .index-button a:link {
+        color: #FFFFFF;
+        text-decoration: none;
+        transition: 0.2s; }
+      #stephanie-header .index-button a:active, #stephanie-header .index-button a:hover {
+        color: #8964C2; }
+      #stephanie-header .index-button a .text {
+        display: block;
+        font-size: 1.75vmin;
+        letter-spacing: 0.25vmin; }
+      #stephanie-header .index-button a .icon {
+        font-size: 3vmin; }
+
+@keyframes jumping {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(0, -2vmin); } }
 
 /*--------------------------------------------------------------
 # Wedding Countdown
 --------------------------------------------------------------*/
-.simply-section {
+.wedding-countdown .simply-section {
   width: 96px;
   margin: 0 20px;
   position: relative;
   display: inline-block;
-  color: #454545;
+  color: #FFFFFF;
   font-size: 24px; }
 
-.simply-amount {
+.wedding-countdown .simply-amount {
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   width: 64px;
@@ -88,13 +184,75 @@ a:active, a:hover {
   display: inline-block;
   font-weight: 300; }
 
-.simply-word {
+.wedding-countdown .simply-word {
   font-size: 14px;
   font-weight: 300;
   margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 5px;
   display: block; }
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+nav#navbar {
+  width: 100%;
+  background: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+  box-shadow: 0 0 1px 0 #454545;
+  justify-content: center; }
+  nav#navbar .logo {
+    width: 3.5em;
+    height: 3.5em; }
+    nav#navbar .logo:after {
+      content: "";
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle; }
+    nav#navbar .logo img {
+      vertical-align: middle;
+      max-width: 3.5em;
+      max-height: 3.5em; }
+  nav#navbar .logo h1 a {
+    background-image: url("../../assets/images/logo.png"); }
+  nav#navbar ul {
+    text-align: center;
+    margin: 0; }
+    nav#navbar ul li {
+      position: relative;
+      display: inline-block;
+      margin: 0 3em;
+      line-height: 5em; }
+      nav#navbar ul li.highlited > a {
+        color: #8964C2; }
+      nav#navbar ul li a {
+        color: #454545;
+        text-decoration: none; }
+        nav#navbar ul li a:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          margin-bottom: -1px;
+          background-color: transparent;
+          transition: all .25s ease-in-out; }
+        nav#navbar ul li a:hover:after {
+          background-color: #8964C2; }
+      nav#navbar ul li.current_page_item a:after {
+        background-color: #8964C2; }
+
+/*--------------------------------------------------------------
+# Home page
+--------------------------------------------------------------*/
+#content {
+  color: #454545; }
+  #content .description-image {
+    width: 35vmin;
+    border-radius: 50%;
+    margin-bottom: 2em; }
 
 /*--------------------------------------------------------------
 # Loader

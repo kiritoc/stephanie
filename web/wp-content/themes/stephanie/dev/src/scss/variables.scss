@@ -8,13 +8,22 @@ $images-path: "#{$assets-path}/images" !default;
 /*--------------------------------------------------------------
 # Icons
 --------------------------------------------------------------*/
-$font-path: "../../assets/fonts" !default;
-$icon-leaf-top: "\e900";
-$icon-leaf-bottom: "\e901";
+$icomoon-font-path: "#{$font-path}/icomoon" !default;
+
+$icon-quotes-left: "\e900";
+$icon-quotes-right: "\e901";
+$icon-angle-double-down: "\f103";
 
 /*--------------------------------------------------------------
 # Colors
 --------------------------------------------------------------*/
 $primary-color: #8964C2;
 $secondary-color: #454545;
+$third-color: #FFFFFF;
 $heart-color: #E7536F;
+
+/*--------------------------------------------------------------
+# Navbar variables
+--------------------------------------------------------------*/
+$nav-background: $third-color;
+$nav-text-color: $secondary-color;

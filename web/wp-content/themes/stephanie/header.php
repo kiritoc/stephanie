@@ -23,59 +23,61 @@
     <div id="heart"></div>
 </div>
 
-<?php if (stephanie_get_header_image() != false && is_front_page()): ?>
-    <header id="stephanie-header" role="banner">
-        <?php echo stephanie_get_header_image(); ?>
-        <div class="header-content">
-            <!-- Title -->
-            <h1 class="header-title">
-                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-            </h1>
+<?php if (is_front_page()): ?>
+    <header id="stephanie-header" role="banner" style="background-image: url('<?php echo get_header_image() ?>')">
+        <div class="content centered-column-container">
+            <!-- Logo -->
+            <div class="logo centered-column-container">
+                <div class="header-divider-container centered-column-container">
+                    <?php get_template_part('assets/images/leaf_top.svg'); ?>
+                </div>
 
-            <!-- Subtitle -->
-            <h2 class="header-subtitle"><?php bloginfo('description'); ?></h2>
+                <div class="title">
+                    <span class="bride name"><?php echo esc_attr(get_theme_mod('wedding_bride_firstname')) ?></span>
+                    <span class="linking-word">&</span>
+                    <span class="groom name"><?php echo esc_attr(get_theme_mod('wedding_groom_firstname')) ?></span>
+                </div>
 
-            <!-- Date & Place -->
-            <div class="header-divider-container"><?php get_template_part('assets/images/leaf_top.svg'); ?></div>
-            <div class="header-text">
-                <div class="date"><?php
-                    echo strftime("%A %d %B %Y", strtotime(esc_attr(get_theme_mod('wedding_date')))); ?></div>
-                <div class="place"><?php echo esc_attr(get_theme_mod('wedding_place')); ?></div>
+                <div class="subtitle">
+                    <span class="date">
+                        <?php echo strftime("%d.%m.%Y", strtotime(esc_attr(get_theme_mod('wedding_day_date')))); ?>
+                    </span>
+                </div>
+
+                <div class="header-divider-container centered-column-container">
+                    <?php get_template_part('assets/images/leaf_bottom.svg'); ?>
+                </div>
             </div>
-            <div class="header-divider-container"><?php get_template_part('assets/images/leaf_bottom.svg'); ?></div>
 
+            <!-- Countdown -->
             <?php if (get_theme_mod('wedding_countdown_is_activated')): ?>
-                <!-- Countdown -->
-                <div class="header-wedding-countdown js-countdown_wedding_day"></div>
+                <div class="wedding-countdown centered-row-container js-countdown_wedding_day"></div>
             <?php endif; ?>
+        </div>
+
+        <!-- Scroll down button -->
+        <div class="index-button">
+            <a href="#navbar" class="js-scroll-to-href">
+                <span class="text">Entrer sur le site</span>
+                <i class="icon icon-angle-double-down"></i>
+            </a>
         </div>
     </header>
 <?php endif; ?>
 
-<nav class="dt-main-menu<?php //if ( is_front_page() ) : ?> dt-menu-fixed<?php if (!is_front_page()) : ?> dt-sticky<?php endif; ?>">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="dt-nav-logo">
-                    <?php
-                    if (function_exists('get_custom_logo') && has_custom_logo()) :
-                        the_custom_logo();
-                    else : ?>
-                        <h1><a href="<?php echo esc_url(home_url('/')); ?>"
-                               rel="home"><?php esc_attr(bloginfo('name')); ?></a></h1>
-                    <?php endif; ?>
-                </div><!-- .dt-nav-logo -->
-            </div><!-- .col-lg-3 -->
-
-            <div class="col-lg-9">
-                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+<div id="container"> <!-- #container end (end tag is in footer.php) -->
+    <div class="js-navbar-container">
+        <nav id="navbar" class="centered-row-container">
+            <div class="logo">
+                <a href="<?php echo site_url(); ?>">
+                    <img src="http://localhost:8080/wp-content/uploads/2016/12/cropped-logo-300x300.png">
+                </a>
             </div>
-        </div>
-    </div>
-</nav>
 
-<?php if (!is_front_page()) : ?>
-    <div class="container">
-        <span>header content</span>
+            <div class="main-menu">
+                <ul>
+                    <?php wp_nav_menu(); ?>
+                </ul>
+            </div>
+        </nav>
     </div>
-<?php endif; ?>
