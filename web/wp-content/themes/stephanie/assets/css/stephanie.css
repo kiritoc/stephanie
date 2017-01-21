@@ -101,6 +101,9 @@ body {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.sakura {
+  background: #8964C2; }
+
 #stephanie-header {
   position: relative;
   height: 100%;
@@ -134,7 +137,9 @@ body {
         #stephanie-header .content .logo .header-divider-container svg {
           width: auto;
           height: auto;
-          fill: #FFFFFF; }
+          fill: #FFFFFF;
+          /*stroke-width: 1em;
+          stroke: $primary-color;*/ }
   #stephanie-header .index-button {
     position: absolute;
     bottom: 0;

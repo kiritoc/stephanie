@@ -55,7 +55,10 @@
             });
         });
 
-        $('#stephanie-header').sakura();
+        $('#stephanie-header').sakura({
+            maxSize: 10, // Maximum petal size
+            minSize: 5 // Minimum petal size
+        });
     });
 })(jQuery);
 

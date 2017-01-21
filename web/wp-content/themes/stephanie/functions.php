@@ -75,13 +75,13 @@ endif;
 function stephanie_scripts_styles() {
     // Enqueue Sakura animation
     wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
-    wp_enqueue_style('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js');
-
-    // Enqueue Stylesheets
-    wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.css');
+    wp_enqueue_script('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js', array('jquery'), '', '');
 
     // Enqueue Countdown
     wp_enqueue_script('simplyCountdown', STEPHANIE_JS_PATH . 'simplyCountdown.min.js', array('jquery'), '', '');
+
+    // Enqueue Stylesheets
+    wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.css');
 
     // Enqueue javascript
     wp_enqueue_script('stephanie-scripts', STEPHANIE_JS_PATH . 'main.js', array('jquery'), '', true);
