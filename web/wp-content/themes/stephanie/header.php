@@ -24,7 +24,7 @@
 </div>
 
 <?php if (is_front_page()): ?>
-    <header id="stephanie-header" role="banner" style="background-image: url('<?php echo get_header_image() ?>')">
+    <header id="stephanie-header" class="js-sakura" role="banner" style="background-image: url('<?php echo get_header_image() ?>')">
         <div class="content centered-column-container">
             <!-- Logo -->
             <div class="logo centered-column-container">

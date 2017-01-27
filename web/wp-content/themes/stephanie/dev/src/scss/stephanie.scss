@@ -103,8 +103,6 @@ body {
           height: auto;
 
           fill: $third-color;
-          /*stroke-width: 1em;
-          stroke: $primary-color;*/
         }
       }
     }
@@ -157,33 +155,46 @@ body {
 # Wedding Countdown
 --------------------------------------------------------------*/
 .wedding-countdown {
+  height: 9vmin;
+
   .simply-section {
-    width: 96px;
-    margin: 0 20px;
-    position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+
+    width: 14vmin;
     color: $third-color;
-    font-size: 24px;
-  }
+    font-size: 2.5vmin;
 
-  .simply-amount {
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, .4);
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    padding-top: 17px;
-    display: inline-block;
-    font-weight: 300;
-  }
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
 
-  .simply-word {
-    font-size: 14px;
-    font-weight: 300;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    display: block;
+      .simply-amount {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        box-sizing: border-box;
+        background: rgba($secondary-color, .4);
+        border-radius: 50%;
+        border: 1px solid rgba($third-color, .4);
+        width: 7vmin;
+        height: 7vmin;
+      }
+
+      .simply-word {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        font-size: 1.5vmin;
+        margin-top: 0.75vmin;
+        text-transform: uppercase;
+        letter-spacing: 0.5vmin;
+        text-indent: 0.5vmin;
+      }
+    }
   }
 }
 
