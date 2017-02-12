@@ -67,17 +67,17 @@
 
 <div id="container"> <!-- #container end (end tag is in footer.php) -->
     <div class="js-navbar-container">
-        <nav id="navbar" class="centered-row-container">
+        <nav id="navbar">
             <div class="logo">
                 <a href="<?php echo site_url(); ?>">
-                    <img src="http://localhost:8080/wp-content/uploads/2016/12/cropped-logo-300x300.png">
+                    <?php get_template_part('assets/images/logo.svg'); ?>
                 </a>
             </div>
 
-            <div class="main-menu">
-                <ul>
-                    <?php wp_nav_menu(); ?>
-                </ul>
-            </div>
+            <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="label-toggle"></label>
+            </input>
+
+            <?php wp_nav_menu(); ?>
         </nav>
     </div>

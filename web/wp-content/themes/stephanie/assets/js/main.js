@@ -33,7 +33,7 @@
             yPos = $navbar.offset().top,
             height = $navbar.height();
 
-        $('.js-navbar-container').css({'height': height});
+        $('.js-navbar-container').css({'min-height': height});
 
         $(document).scroll(function () {
             var scrollTop = $(this).scrollTop();
@@ -41,7 +41,7 @@
             if (scrollTop > yPos) {
                 $navbar.css({"position": "fixed", "top": 0});
             } else if (scrollTop <= yPos) {
-                $navbar.css({"position": "initial", "top": -height});
+                $navbar.css({"position": "absolute", "top": 0});
             }
         });
 
@@ -51,9 +51,10 @@
                 var $target = $($.attr(this, 'href'));
                 if ($target.length == 1) {
                     event.preventDefault();
+                    console.log($target.offset().top);
 
                     $('html, body').animate({
-                        scrollTop: $($.attr(this, 'href')).offset().top
+                        scrollTop: $target.offset().top
                     }, 500);
                 }
             });
@@ -61,13 +62,11 @@
 
         // Sakura effect
         var $sakura = $('.js-sakura');
-        // Workaround - /!\ Sakura effects are displayed even if the div doesnt exist /!\
-        if ($sakura.length != 0) {
-            $sakura.sakura({
-                maxSize: 10, // Maximum petal size
-                minSize: 5 // Minimum petal size
-            });
-        }
+
+        $sakura.sakura('start', {
+            maxSize: 10, // Maximum petal size
+            minSize: 5 // Minimum petal size
+        });
     });
 })(jQuery);
 

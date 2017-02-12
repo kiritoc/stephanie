@@ -31,29 +31,91 @@ get_header(); ?>
         <?php if (get_field('timeline')): ?>
             <section class="horizontal-timeline">
                 <div class="timeline">
-                    <div class="events">
-                        <ol>
-                            <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
-                            <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
-                        </ol>
+                    <div class="events-wrapper">
+                        <div class="events">
+                            <ol>
+                                <li>
+                                    <a href="#0" data-date="<?php the_field('town-hall-date'); ?>" class="selected">
+                                        -
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0" data-date="<?php the_field('church-date'); ?>">
+                                        -
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0" data-date="<?php the_field('vin-honneur-date'); ?>">
+                                        -
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0" data-date="<?php the_field('dinner-date'); ?>">
+                                        -
+                                    </a>
+                                </li>
+                            </ol>
 
-                        <span class="filling-line" aria-hidden="true"></span>
+                            <span class="filling-line" aria-hidden="true"></span>
+                        </div>
                     </div>
 
-                    <ul class="timeline-navigation">
+                    <!--<ul class="timeline-navigation">
                         <li><a href="#0" class="prev inactive">Prev</a></li>
                         <li><a href="#0" class="next">Next</a></li>
-                    </ul>
+                    </ul>-->
                 </div>
 
-                <div class="content">
+                <div class="events-content">
                     <ol>
+                        <!-- Town hall informations -->
                         <?php if (get_field('town-hall-description')): ?>
-                            <li>
-                                <div class="town-hall-description"><?php the_field('town-hall-description'); ?></div>
+                            <li class="selected" data-date="<?php the_field('town-hall-date'); ?>">
+                                <div class="town-hall-description">
+                                    <?php the_field('town-hall-description'); ?>
+                                </div>
 
                                 <?php if (get_field('town-hall-location')): ?>
-                                    <div class="own-hall-location"><?php the_field('town-hall-location'); ?></div>
+                                    <div class="town-hall-location"><?php the_field('town-hall-location'); ?></div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
+
+                        <!-- Church informations -->
+                        <?php if (get_field('church-description')): ?>
+                            <li data-date="<?php the_field('church-date'); ?>">
+                                <div class="church-description">
+                                    <?php the_field('church-description'); ?>
+                                </div>
+
+                                <?php if (get_field('church-location')): ?>
+                                    <div class="church-location"><?php the_field('church-location'); ?></div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
+
+                        <!-- Vin d'honneur informations -->
+                        <?php if (get_field('vin-honneur-description')): ?>
+                            <li data-date="<?php the_field('vin-honneur-date'); ?>">
+                                <div class="vin-honneur-description">
+                                    <?php the_field('vin-honneur-description'); ?>
+                                </div>
+
+                                <?php if (get_field('vin-honneur-location')): ?>
+                                    <div class="vin-honneur-location"><?php the_field('vin-honneur-location'); ?></div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
+
+                        <!-- Dinner informations -->
+                        <?php if (get_field('dinner-description')): ?>
+                            <li data-date="<?php the_field('dinner-date'); ?>">
+                                <div class="dinner-description">
+                                    <?php the_field('dinner-description'); ?>
+                                </div>
+
+                                <?php if (get_field('dinner-location')): ?>
+                                    <div class="dinner-location"><?php the_field('dinner-location'); ?></div>
                                 <?php endif; ?>
                             </li>
                         <?php endif; ?>

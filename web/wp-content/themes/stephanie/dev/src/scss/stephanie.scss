@@ -19,6 +19,7 @@
 # Base
 --------------------------------------------------------------*/
 body, html {
+  position: relative;
   height: 100%;
 }
 
@@ -27,6 +28,7 @@ body {
   text-align: center;
   @include simple-font("slabo-font");
   color: $primary-color;
+  background-color: $background-color;
 }
 
 #container {
@@ -60,12 +62,13 @@ body {
 }
 
 #stephanie-header {
+  overflow: hidden;
   position: relative;
   height: 100%;
   cursor: default;
 
   /* Create the parallax scrolling effect */
-  background: $primary-color no-repeat fixed center;
+  background: $background-color no-repeat fixed center;
   background-size: cover;
 
   .content {
@@ -202,16 +205,18 @@ body {
 # Navbar
 --------------------------------------------------------------*/
 nav#navbar {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   background: $nav-background;
   font-weight: bold;
   letter-spacing: 0.025em;
   box-shadow: 0 0 1px 0 $secondary-color;
-  justify-content: center;
 
   .logo {
     width: 3.5em;
     height: 3.5em;
+    padding: 0.75em;
 
     &:after {
       content: "";
@@ -220,55 +225,108 @@ nav#navbar {
       vertical-align: middle;
     }
 
-    img {
-      vertical-align: middle;
-      max-width: 3.5em;
-      max-height: 3.5em;
+    svg {
+      fill: $secondary-color;
+
+      &:hover {
+        fill: $primary-color;
+      }
     }
   }
 
-  .logo h1 a {
-    background-image: url("#{$images-path}/logo.png");
-  }
+  .menu-menu-container {
+    width: 75%;
+    margin: 0 2vmin;
 
-  ul {
-    text-align: center;
-    margin: 0;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0;
+      margin: 0;
 
-    li {
-      position: relative;
-      display: inline-block;
-      margin: 0 3em;
-      line-height: 5em;
+      li {
+        position: relative;
+        display: inline-block;
+        //margin: 0 3em;
+        line-height: 5em;
 
-      &.highlited > a {
-        color: $primary-color;
-      }
-
-      a {
-        color: $nav-text-color;
-        text-decoration: none;
-
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          margin-bottom: -1px;
-          background-color: transparent;
-          transition: all .25s ease-in-out;
+        &.highlited > a {
+          color: $primary-color;
         }
 
-        &:hover:after {
+        a {
+          color: $nav-text-color;
+          text-decoration: none;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            margin-bottom: -1px;
+            background-color: transparent;
+            transition: all .25s ease-in-out;
+          }
+
+          &:hover:after {
+            background-color: $primary-color;
+          }
+        }
+
+        &.current_page_item a:after {
           background-color: $primary-color;
         }
       }
+    }
+  }
 
-      &.current_page_item a:after {
-        background-color: $primary-color;
+  #menu-toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .menu-menu-container {
+    order: 2;
+  }
+
+  .label-toggle {
+    order: 3;
+  }
+
+  @media screen and (max-width: 1024px) {
+    & {
+      position: absolute;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .menu-menu-container ul {
+      justify-content: space-between;
+      flex-direction: column;
+      transition: all 1s ease;
+      max-height: 0;
+
+      &:first-child {
+        padding-top: 5em;
       }
+    }
+
+    #menu-toggle:checked ~ .menu-menu-container ul {
+      max-height: 100vh;
+    }
+
+    .label-toggle {
+      background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 20%, transparent 20%, transparent 40%, $secondary-color 40%, $secondary-color 60%, transparent 60%, transparent 80%, $secondary-color 80%, $secondary-color 100%); //Gradient Hamburger
+      cursor: pointer;
+      height: 2em;
+      width: 2em;
+      margin: 1.5em;
     }
   }
 }
@@ -283,6 +341,195 @@ nav#navbar {
     width: 35vmin;
     border-radius: 50%;
     margin-bottom: 2em;
+  }
+}
+
+/*--------------------------------------------------------------
+# Timeline
+--------------------------------------------------------------*/
+.horizontal-timeline {
+  opacity: 0;
+  margin: 2em auto;
+  transition: opacity 0.2s;
+
+  &.loaded {
+    opacity: 1;
+  }
+
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  .timeline {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .events-wrapper {
+      position: relative;
+      height: 100%;
+      margin: 0 40px;
+      overflow: hidden;
+
+      &:after, &:before {
+        /* these are used to create a shadow effect at the sides of the timeline */
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        height: 100%;
+        width: 20px;
+      }
+
+      &:before {
+        left: 0;
+        background-image: linear-gradient(to right, $background-color, rgba($secondary-color, 0));
+      }
+
+      &:after {
+        right: 0;
+        background-image: linear-gradient(to left, $background-color, rgba($secondary-color, 0));
+      }
+
+      .events {
+        /* this is the grey line/timeline */
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 49px;
+        height: 2px;
+        /* width will be set using JavaScript */
+        background: #dfdfdf;
+        transition: transform 0.4s;
+
+        .filling-line {
+          /* this is used to create the green line filling the timeline */
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $primary-color;
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 0.3s;
+        }
+
+        a {
+          position: absolute;
+          bottom: 0;
+          z-index: 2;
+          text-align: center;
+          font-size: 1.3rem;
+          padding-bottom: 15px;
+          color: #383838;
+
+          &:after {
+            /* this is used to create the event spot */
+            content: '';
+            position: absolute;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            bottom: -5px;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            border: 2px solid #dfdfdf;
+            background-color: #f8f8f8;
+            transition: background-color 0.3s, border-color 0.3s;
+          }
+
+          &.selected {
+            pointer-events: none;
+          }
+
+          &.selected::after {
+            background-color: $primary-color;
+            border-color: $primary-color;
+          }
+
+          &.older-event::after {
+            border-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .events-content {
+    position: relative;
+    width: 100%;
+    margin: 2em 0;
+    overflow: hidden;
+    transition: height 0.4s;
+
+    li {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      left: 0;
+      top: 0;
+      transform: translateX(-100%);
+      padding: 0 5%;
+      opacity: 0;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in-out;
+
+      &.selected {
+        /* visible event content */
+        position: relative;
+        z-index: 2;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &.enter-right, &.leave-right {
+        animation-name: enter-right;
+      }
+
+      &.enter-left, &.leave-left {
+        animation-name: enter-left;
+      }
+
+      &.leave-right, &.leave-left {
+        animation-direction: reverse;
+      }
+    }
+  }
+}
+
+@keyframes enter-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes enter-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
