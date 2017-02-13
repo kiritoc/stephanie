@@ -40,7 +40,7 @@
 
                 <div class="subtitle">
                     <span class="date">
-                        <?php echo strftime("%d.%m.%Y", strtotime(esc_attr(get_theme_mod('wedding_day_date')))); ?>
+                        <?php echo strftime("%d.%m.%Y", strtotime(esc_attr(get_theme_mod('wedding_date')))); ?>
                     </span>
                 </div>
 
