@@ -29,7 +29,7 @@
             <!-- Logo -->
             <div class="logo centered-column-container">
                 <div class="header-divider-container centered-column-container">
-                    <?php get_template_part('assets/images/leaf_top.svg'); ?>
+                    <?php get_template_part('assets/images/inline', 'leaf_top.svg'); ?>
                 </div>
 
                 <div class="title">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="header-divider-container centered-column-container">
-                    <?php get_template_part('assets/images/leaf_bottom.svg'); ?>
+                    <?php get_template_part('assets/images/inline', 'leaf_bottom.svg'); ?>
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
             <nav id="navbar">
                 <div class="logo">
                     <a href="<?php echo site_url(); ?>">
-                        <?php get_template_part('assets/images/logo.svg'); ?>
+                        <?php get_template_part('assets/images/inline', 'logo.svg'); ?>
                     </a>
                 </div>
 
