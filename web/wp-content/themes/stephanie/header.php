@@ -56,28 +56,32 @@
         </div>
 
         <!-- Scroll down button -->
-        <div class="index-button">
-            <a href="#navbar" class="js-scroll-to-href">
-                <span class="text">Entrer sur le site</span>
-                <i class="icon icon-angle-double-down"></i>
-            </a>
-        </div>
+        <?php if (!get_theme_mod('show_only_main_header')): ?>
+            <div class="index-button">
+                <a href="#navbar" class="js-scroll-to-href">
+                    <span class="text">Entrer sur le site</span>
+                    <i class="icon icon-angle-double-down"></i>
+                </a>
+            </div>
+        <?php endif; ?>
     </header>
 <?php endif; ?>
 
-<div id="container"> <!-- #container end (end tag is in footer.php) -->
-    <div class="js-navbar-container">
-        <nav id="navbar">
-            <div class="logo">
-                <a href="<?php echo site_url(); ?>">
-                    <?php get_template_part('assets/images/logo.svg'); ?>
-                </a>
-            </div>
+<div id="container" class="<?php if (!get_theme_mod('show_only_main_header')) echo "include-content"; ?>"> <!-- #container end (end tag is in footer.php) -->
+    <?php if (!get_theme_mod('show_only_main_header')): ?>
+        <div class="js-navbar-container">
+            <nav id="navbar">
+                <div class="logo">
+                    <a href="<?php echo site_url(); ?>">
+                        <?php get_template_part('assets/images/logo.svg'); ?>
+                    </a>
+                </div>
 
-            <input type="checkbox" id="menu-toggle">
-                <label for="menu-toggle" class="label-toggle"></label>
-            </input>
+                <input type="checkbox" id="menu-toggle">
+                    <label for="menu-toggle" class="label-toggle"></label>
+                </input>
 
-            <?php wp_nav_menu(); ?>
-        </nav>
-    </div>
+                <?php wp_nav_menu(); ?>
+            </nav>
+        </div>
+    <?php endif; ?>

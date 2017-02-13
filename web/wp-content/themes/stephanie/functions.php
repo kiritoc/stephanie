@@ -201,6 +201,17 @@ function stephanie_customizer($wp_customize) {
         'settings' => 'wedding_countdown_is_activated',
         'type' => 'checkbox'
     )));
+    // Only first page
+    $wp_customize->add_setting('show_only_main_header', array(
+        'sanitize_callback' => 'wp_kses_post',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'show_only_main_header_setting', array(
+        'label' => __('Show only the main header', 'stephanie'),
+        'section' => 'wedding_informations_section',
+        'settings' => 'show_only_main_header',
+        'type' => 'checkbox'
+    )));
 }
 
 /*--------------------------------------------------------------

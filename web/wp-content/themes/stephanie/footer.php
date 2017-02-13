@@ -8,6 +8,7 @@
  *
  * @package Stephanie
  */
+if (!get_theme_mod('show_only_main_header')):
 ?>
 
     <footer class="footer">
@@ -17,7 +18,8 @@
     </footer>
 </div> <!-- #container end (start tag is in header.php) -->
 
-<?php wp_footer(); ?>
+<?php endif;
+wp_footer(); ?>
 
 </body>
 </html>

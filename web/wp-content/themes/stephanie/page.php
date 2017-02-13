@@ -12,7 +12,8 @@
  * @package Stephanie
  */
 
-get_header(); ?>
+get_header();
+if (!get_theme_mod('show_only_main_header')): ?>
 
     <div id="content">
         <!-- Accueil -->
@@ -126,4 +127,5 @@ get_header(); ?>
     </div>
 
 <?php
+endif;
 get_footer();
