@@ -4,3 +4,6 @@
 
 # Wordpress db infos
 user_password.md
+
+# Wordpress db uploads
+web/wp-content/uploads/*
