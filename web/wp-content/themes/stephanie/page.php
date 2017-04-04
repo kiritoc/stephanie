@@ -28,6 +28,19 @@ if (!get_theme_mod('show_only_main_header')): ?>
             <div class="description"><?php the_field('description'); ?></div>
         <?php endif; ?>
 
+        <!-- Confirmer ma présence -->
+        <?php if (get_field('show-content')):
+            // TO SHOW THE PAGE CONTENTS
+            while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+                <div class="entry-content-page">
+                    <?php the_content(); ?> <!-- Page Content -->
+                </div><!-- .entry-content-page -->
+
+                <?php
+            endwhile; //resetting the page loop
+            wp_reset_query(); //resetting the page query
+        endif; ?>
+
         <!-- Où et Quand ? -->
         <?php if (get_field('timeline')): ?>
             <section class="horizontal-timeline">
@@ -126,6 +139,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
         <?php endif; ?>
     </div>
 
-<?php
+    <?php
 endif;
 get_footer();

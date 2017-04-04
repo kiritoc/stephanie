@@ -32,7 +32,7 @@
         var $navbar = $("#navbar");
 
         // Only if navbar exists
-        if ($navbar.length == 1) {
+        if ($navbar.length === 1) {
             var yPos = $navbar.offset().top,
                 height = $navbar.height();
 
@@ -52,7 +52,7 @@
             $('a.js-scroll-to-href').each(function () {
                 $(this).click(function (event) {
                     var $target = $($.attr(this, 'href'));
-                    if ($target.length == 1) {
+                    if ($target.length === 1) {
                         event.preventDefault();
                         console.log($target.offset().top);
 
