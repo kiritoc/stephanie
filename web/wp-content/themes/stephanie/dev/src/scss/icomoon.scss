@@ -26,6 +26,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-remove {
+  &:before {
+    content: $icon-remove;
+  }
+}
+
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
+}
+
 .icon-quotes-left {
   &:before {
     content: $icon-quotes-left;

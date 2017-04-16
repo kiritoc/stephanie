@@ -65,7 +65,6 @@ if (!function_exists('stephanie_setup')):
         add_image_size('wedding-boxed-12', 1170, 550, true); // Single post type image (boxed 3/4 layout)
         add_image_size('wedding-fullwidth', 1920, 700, true); // Single post type image (fulwidth)
         add_image_size('wedding-blog-section-image', 380, 380, true);
-
     }
 endif;
 

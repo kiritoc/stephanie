@@ -52,11 +52,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-close:before {
+  content: ""; }
+
+.icon-remove:before {
+  content: ""; }
+
+.icon-check:before {
+  content: ""; }
+
 .icon-quotes-left:before {
-  content: ""; }
+  content: ""; }
 
 .icon-quotes-right:before {
-  content: ""; }
+  content: ""; }
 
 .icon-angle-double-down:before {
   content: ""; }
@@ -252,6 +261,7 @@ nav#navbar {
         nav#navbar .menu-menu-container ul li.highlited > a {
           color: #8964C2; }
         nav#navbar .menu-menu-container ul li a {
+          padding: 2.5em 0;
           color: #454545;
           text-decoration: none; }
           nav#navbar .menu-menu-container ul li a:after {
@@ -306,6 +316,121 @@ nav#navbar {
     width: 35vmin;
     border-radius: 50%;
     margin-bottom: 2em; }
+
+/*--------------------------------------------------------------
+# RSVP
+--------------------------------------------------------------*/
+.entry-content-page {
+  width: 50%;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 1px 0 #454545;
+  padding: 2vmin; }
+  .entry-content-page .rsvp-content {
+    font-family: "slabo-font";
+    font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+    .entry-content-page .rsvp-content #rsvpArea + #rsvpPlugin > .rsvpParagraph {
+      font-size: 2vmin;
+      color: #8964C2; }
+    .entry-content-page .rsvp-content #rsvpPlugin form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .entry-content-page .rsvp-content #rsvpPlugin form#rsvp, .entry-content-page .rsvp-content #rsvpPlugin form[name="rsvpForm"] {
+        flex-direction: column; }
+      .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph {
+        width: 100%; }
+        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label {
+          display: block;
+          text-align: left;
+          font-weight: bold;
+          margin-bottom: 1vmin; }
+          .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label.error {
+            font-weight: normal;
+            color: #E80000; }
+        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"] {
+          background: #f7f7f7;
+          border: 1px solid #c4c4c4;
+          border-radius: 0;
+          box-shadow: none;
+          color: #787878;
+          height: 5vmin;
+          width: 100%;
+          display: block; }
+          .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"].error {
+            border-color: #E80000; }
+    .entry-content-page .rsvp-content .rsvpParagraph {
+      display: inline-block; }
+      .entry-content-page .rsvp-content .rsvpParagraph input[type="submit"] {
+        margin-top: inherit;
+        display: block; }
+      .entry-content-page .rsvp-content .rsvpParagraph strong {
+        white-space: pre-line; }
+    .entry-content-page .rsvp-content .rsvpFormField, .entry-content-page .rsvp-content .rsvpFormField textarea {
+      max-width: 100%; }
+    .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions + .rsvpParagraph {
+      margin-top: 7vmin; }
+    .entry-content-page .rsvp-content form#rsvpForm .rsvpFormField.rsvpCheckboxCustomQ {
+      margin: 0 4vmin;
+      text-align: center; }
+    .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendeeQuestions {
+      text-align: center; }
+    .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] {
+      cursor: pointer; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label {
+        display: table-caption;
+        text-align: center;
+        cursor: pointer;
+        height: 8vmin; }
+        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label:before {
+          content: "";
+          background: black;
+          display: inline-block;
+          width: 100%;
+          height: 75%;
+          -webkit-mask-position: center bottom;
+          -webkit-mask-repeat: no-repeat, no-repeat; }
+        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
+          -webkit-mask-image: url("../images/town-hall.svg");
+          -webkit-mask-size: 4vmin; }
+        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
+          -webkit-mask-image: url("../images/church.svg");
+          -webkit-mask-size: 5vmin; }
+        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
+          -webkit-mask-image: url("../images/reception.svg");
+          -webkit-mask-size: 4vmin; }
+        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
+          -webkit-mask-image: url("../images/diner.svg");
+          -webkit-mask-size: 4vmin; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox]:checked + label:before {
+        background-color: #8964C2; }
+
+input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
+  padding: 1vmin 2vmin;
+  font-size: 100%;
+  cursor: pointer; }
+  input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid #8964C2;
+    color: #8964C2;
+    letter-spacing: 1px;
+    background: transparent;
+    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0); }
+    input[type="submit"]:hover, input[type="button"].ninja-forms-field.nf-element:hover {
+      color: #FFFFFF;
+      background: #8964C2; }
+    input[type="submit"]:active, input[type="button"].ninja-forms-field.nf-element:active {
+      border: 2px solid #8964C2;
+      background: #8964C2;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none; }
 
 /*--------------------------------------------------------------
 # Timeline
