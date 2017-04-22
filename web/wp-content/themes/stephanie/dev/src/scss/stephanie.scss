@@ -46,6 +46,10 @@ body {
   }
 }
 
+textarea {
+  max-width: 100%;
+}
+
 .centered-column-container {
   display: flex;
   align-items: center;
@@ -58,6 +62,21 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
+}
+
+.entry-content-page {
+  width: 75%;
+  margin: 0 auto;
+  background: $third-color;
+  box-shadow: 0 0 1px 0 #454545;
+  padding: 2vmin;
+  //min-height: 40vmin;
+}
+
+@media screen and (min-width: 1024px) {
+  .entry-content-page {
+    width: 940px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -211,7 +230,7 @@ body {
 # Navbar
 --------------------------------------------------------------*/
 nav#navbar {
-  z-index: 100;
+  z-index: 100 !important;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -356,13 +375,6 @@ nav#navbar {
 # RSVP
 --------------------------------------------------------------*/
 .entry-content-page {
-  width: 75%;
-  margin: 0 auto;
-  background: $third-color;
-  box-shadow: 0 0 1px 0 #454545;
-  padding: 2vmin;
-  //min-height: 40vmin;
-
   .rsvp-content {
     @include simple-font("slabo-font");
 
@@ -537,42 +549,118 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Timeline
 --------------------------------------------------------------*/
-.timeline-express::before {
-  //margin-left: 2em !important;
-  left: 2.5vmin !important;
-}
+.entry-content-page {
+  .cd-container.timeline-express {
+    & {
+      margin-top: 1em !important;
+    }
 
-.cd-timeline-img {
-  left: -0.5vw !important;
-
-  span::before {
-    position: absolute;
-    left: 0;
-    top: 5%;
-
-    content: "";
-    background: white;
-    display: inline-block;
-    width: 100%;
-    height: 90%;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat, no-repeat;
+    &::before {
+      left: 2.5vmin !important;
+    }
   }
 
-  span[title="Mairie"]::before {
-    -webkit-mask-image: url("../images/town-hall.svg");
-    -webkit-mask-size: 50%;
+  .cd-timeline-content {
+    position: relative;
+    top: 0;
+
+    &::before {
+      top: 2.5vmin;
+    }
+
+    .cd-timeline-item-title {
+      font-size: 2em;
+      @include simple-font("lavanderia-font", sans-serif);
+    }
+
+    .the-excerpt {
+      position: initial;
+
+      .time {
+        position: absolute;
+        margin: 2vw 0;
+        font-size: 1.6em;
+        font-weight: bold;
+        top: 0;
+        color: $primary-color;
+      }
+
+      .description {
+        margin-bottom: 1vmin;
+
+        .text {
+          width: 70%;
+          padding: 0.5em;
+
+          .location {
+            margin: 1vmin;
+
+            a {
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .warning {
+            font-style: italic;
+            font-size: 0.9em;
+            color: $fourth-color;
+
+            .icon-warning {
+              font-size: 1.25em;
+              display: block;
+              margin-bottom: 0.25em;
+              color: $heart-color;
+            }
+          }
+        }
+
+        .img-location {
+          width: 30%;
+          img {
+            max-width: 100%;
+
+            box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, .08), 0 3px 0 4px rgba(0, 0, 0, .05);
+          }
+        }
+      }
+    }
   }
 
-  span[title="Église"]::before {
-    -webkit-mask-image: url("../images/church.svg");
-    -webkit-mask-size: 55%;
-  }
+  .cd-timeline-img {
+    left: -0.5vw !important;
 
-  span[title="Mas des thyms"]::before {
-    top: -10%;
-    -webkit-mask-image: url("../images/reception.svg");
-    -webkit-mask-size: 60%;
+    span::before {
+      position: absolute;
+      left: 0;
+      top: 5%;
+
+      content: "";
+      background: white;
+      display: inline-block;
+      width: 100%;
+      height: 90%;
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat, no-repeat;
+    }
+
+    span[title="Mairie"]::before {
+      -webkit-mask-image: url("../images/town-hall.svg");
+      -webkit-mask-size: 50%;
+    }
+
+    span[title="Eglise"]::before {
+      -webkit-mask-image: url("../images/church.svg");
+      -webkit-mask-size: 55%;
+    }
+
+    span[title="Réception"]::before {
+      top: -10%;
+      -webkit-mask-image: url("../images/reception.svg");
+      -webkit-mask-size: 60%;
+    }
   }
 }
 

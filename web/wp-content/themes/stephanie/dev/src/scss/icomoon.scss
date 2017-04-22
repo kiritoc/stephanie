@@ -26,36 +26,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-close {
+.icon-warning {
   &:before {
-    content: $icon-close;
+    content: $icon-warning;
   }
 }
-
-.icon-remove {
-  &:before {
-    content: $icon-remove;
-  }
-}
-
-.icon-check {
-  &:before {
-    content: $icon-check;
-  }
-}
-
 .icon-quotes-left {
   &:before {
     content: $icon-quotes-left;
   }
 }
-
 .icon-quotes-right {
   &:before {
     content: $icon-quotes-right;
   }
 }
-
 .icon-angle-double-down {
   &:before {
     content: $icon-angle-double-down;

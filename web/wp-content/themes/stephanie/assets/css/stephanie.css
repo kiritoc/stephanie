@@ -55,14 +55,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-close:before {
-  content: ""; }
-
-.icon-remove:before {
-  content: ""; }
-
-.icon-check:before {
-  content: ""; }
+.icon-warning:before {
+  content: ""; }
 
 .icon-quotes-left:before {
   content: ""; }
@@ -109,6 +103,9 @@ body {
   #content .highlited {
     color: #8964C2; }
 
+textarea {
+  max-width: 100%; }
+
 .centered-column-container {
   display: flex;
   align-items: center;
@@ -120,6 +117,17 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: row; }
+
+.entry-content-page {
+  width: 75%;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 1px 0 #454545;
+  padding: 2vmin; }
+
+@media screen and (min-width: 1024px) {
+  .entry-content-page {
+    width: 940px; } }
 
 /*--------------------------------------------------------------
 # Header
@@ -229,7 +237,7 @@ body {
 # Navbar
 --------------------------------------------------------------*/
 nav#navbar {
-  z-index: 100;
+  z-index: 100 !important;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -325,91 +333,85 @@ nav#navbar {
 /*--------------------------------------------------------------
 # RSVP
 --------------------------------------------------------------*/
-.entry-content-page {
-  width: 75%;
-  margin: 0 auto;
-  background: #FFFFFF;
-  box-shadow: 0 0 1px 0 #454545;
-  padding: 2vmin; }
-  .entry-content-page .rsvp-content {
-    font-family: "slabo-font";
-    font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
-    .entry-content-page .rsvp-content #rsvpArea + #rsvpPlugin > .rsvpParagraph {
-      font-size: 2vmin;
-      color: #8964C2; }
-    .entry-content-page .rsvp-content #rsvpPlugin form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center; }
-      .entry-content-page .rsvp-content #rsvpPlugin form#rsvp, .entry-content-page .rsvp-content #rsvpPlugin form[name="rsvpForm"] {
-        flex-direction: column; }
-      .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph {
-        width: 100%; }
-        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label {
-          display: block;
-          text-align: left;
-          font-weight: bold;
-          margin-bottom: 1vmin; }
-          .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label.error {
-            font-weight: normal;
-            color: #E80000; }
-        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"] {
-          background: #f7f7f7;
-          border: 1px solid #c4c4c4;
-          border-radius: 0;
-          box-shadow: none;
-          color: #787878;
-          height: 5vmin;
-          width: 100%;
-          display: block; }
-          .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"].error {
-            border-color: #E80000; }
-    .entry-content-page .rsvp-content .rsvpParagraph {
-      display: inline-block; }
-      .entry-content-page .rsvp-content .rsvpParagraph input[type="submit"] {
-        margin-top: inherit;
+.entry-content-page .rsvp-content {
+  font-family: "slabo-font";
+  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+  .entry-content-page .rsvp-content #rsvpArea + #rsvpPlugin > .rsvpParagraph {
+    font-size: 2vmin;
+    color: #8964C2; }
+  .entry-content-page .rsvp-content #rsvpPlugin form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .entry-content-page .rsvp-content #rsvpPlugin form#rsvp, .entry-content-page .rsvp-content #rsvpPlugin form[name="rsvpForm"] {
+      flex-direction: column; }
+    .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph {
+      width: 100%; }
+      .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 1vmin; }
+        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label.error {
+          font-weight: normal;
+          color: #E80000; }
+      .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"] {
+        background: #f7f7f7;
+        border: 1px solid #c4c4c4;
+        border-radius: 0;
+        box-shadow: none;
+        color: #787878;
+        height: 5vmin;
+        width: 100%;
         display: block; }
-      .entry-content-page .rsvp-content .rsvpParagraph strong {
-        white-space: pre-line; }
-    .entry-content-page .rsvp-content .rsvpFormField, .entry-content-page .rsvp-content .rsvpFormField textarea {
-      max-width: 100%; }
-    .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions + .rsvpParagraph {
-      margin-top: 7vmin; }
-    .entry-content-page .rsvp-content form#rsvpForm .rsvpFormField.rsvpCheckboxCustomQ {
-      margin: 0 4vmin;
-      text-align: center; }
-    .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendeeQuestions {
-      text-align: center; }
-    .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] {
-      cursor: pointer; }
-      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label {
-        display: table-caption;
-        text-align: center;
-        cursor: pointer;
-        height: 8vmin; }
-        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label:before {
-          content: "";
-          background: black;
-          display: inline-block;
-          width: 100%;
-          height: 75%;
-          -webkit-mask-position: center bottom;
-          -webkit-mask-repeat: no-repeat, no-repeat; }
-        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
-          -webkit-mask-image: url("../images/town-hall.svg");
-          -webkit-mask-size: 4vmin; }
-        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
-          -webkit-mask-image: url("../images/church.svg");
-          -webkit-mask-size: 5vmin; }
-        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
-          -webkit-mask-image: url("../images/reception.svg");
-          -webkit-mask-size: 4vmin; }
-        .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
-          -webkit-mask-image: url("../images/diner.svg");
-          -webkit-mask-size: 4vmin; }
-      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox]:checked + label:before {
-        background-color: #8964C2; }
+        .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"].error {
+          border-color: #E80000; }
+  .entry-content-page .rsvp-content .rsvpParagraph {
+    display: inline-block; }
+    .entry-content-page .rsvp-content .rsvpParagraph input[type="submit"] {
+      margin-top: inherit;
+      display: block; }
+    .entry-content-page .rsvp-content .rsvpParagraph strong {
+      white-space: pre-line; }
+  .entry-content-page .rsvp-content .rsvpFormField, .entry-content-page .rsvp-content .rsvpFormField textarea {
+    max-width: 100%; }
+  .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions + .rsvpParagraph {
+    margin-top: 7vmin; }
+  .entry-content-page .rsvp-content form#rsvpForm .rsvpFormField.rsvpCheckboxCustomQ {
+    margin: 0 4vmin;
+    text-align: center; }
+  .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendeeQuestions {
+    text-align: center; }
+  .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] {
+    cursor: pointer; }
+    .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label {
+      display: table-caption;
+      text-align: center;
+      cursor: pointer;
+      height: 8vmin; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label:before {
+        content: "";
+        background: black;
+        display: inline-block;
+        width: 100%;
+        height: 75%;
+        -webkit-mask-position: center bottom;
+        -webkit-mask-repeat: no-repeat, no-repeat; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
+        -webkit-mask-image: url("../images/town-hall.svg");
+        -webkit-mask-size: 4vmin; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
+        -webkit-mask-image: url("../images/church.svg");
+        -webkit-mask-size: 5vmin; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
+        -webkit-mask-image: url("../images/reception.svg");
+        -webkit-mask-size: 4vmin; }
+      .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
+        -webkit-mask-image: url("../images/diner.svg");
+        -webkit-mask-size: 4vmin; }
+    .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox]:checked + label:before {
+      background-color: #8964C2; }
 
 input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   padding: 1vmin 2vmin;
@@ -440,12 +442,59 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Timeline
 --------------------------------------------------------------*/
-.timeline-express::before {
+.entry-content-page .cd-container.timeline-express {
+  margin-top: 1em !important; }
+
+.entry-content-page .cd-container.timeline-express::before {
   left: 2.5vmin !important; }
 
-.cd-timeline-img {
+.entry-content-page .cd-timeline-content {
+  position: relative;
+  top: 0; }
+  .entry-content-page .cd-timeline-content::before {
+    top: 2.5vmin; }
+  .entry-content-page .cd-timeline-content .cd-timeline-item-title {
+    font-size: 2em;
+    font-family: "lavanderia-font", sans-serif;
+    font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+  .entry-content-page .cd-timeline-content .the-excerpt {
+    position: initial; }
+    .entry-content-page .cd-timeline-content .the-excerpt .time {
+      position: absolute;
+      margin: 2vw 0;
+      font-size: 1.6em;
+      font-weight: bold;
+      top: 0;
+      color: #8964C2; }
+    .entry-content-page .cd-timeline-content .the-excerpt .description {
+      margin-bottom: 1vmin; }
+      .entry-content-page .cd-timeline-content .the-excerpt .description .text {
+        width: 70%;
+        padding: 0.5em; }
+        .entry-content-page .cd-timeline-content .the-excerpt .description .text .location {
+          margin: 1vmin; }
+          .entry-content-page .cd-timeline-content .the-excerpt .description .text .location a {
+            text-decoration: none; }
+            .entry-content-page .cd-timeline-content .the-excerpt .description .text .location a:hover {
+              text-decoration: underline; }
+        .entry-content-page .cd-timeline-content .the-excerpt .description .text .warning {
+          font-style: italic;
+          font-size: 0.9em;
+          color: #707070; }
+          .entry-content-page .cd-timeline-content .the-excerpt .description .text .warning .icon-warning {
+            font-size: 1.25em;
+            display: block;
+            margin-bottom: 0.25em;
+            color: #E7536F; }
+      .entry-content-page .cd-timeline-content .the-excerpt .description .img-location {
+        width: 30%; }
+        .entry-content-page .cd-timeline-content .the-excerpt .description .img-location img {
+          max-width: 100%;
+          box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05); }
+
+.entry-content-page .cd-timeline-img {
   left: -0.5vw !important; }
-  .cd-timeline-img span::before {
+  .entry-content-page .cd-timeline-img span::before {
     position: absolute;
     left: 0;
     top: 5%;
@@ -456,13 +505,13 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
     height: 90%;
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat, no-repeat; }
-  .cd-timeline-img span[title="Mairie"]::before {
+  .entry-content-page .cd-timeline-img span[title="Mairie"]::before {
     -webkit-mask-image: url("../images/town-hall.svg");
     -webkit-mask-size: 50%; }
-  .cd-timeline-img span[title="Église"]::before {
+  .entry-content-page .cd-timeline-img span[title="Eglise"]::before {
     -webkit-mask-image: url("../images/church.svg");
     -webkit-mask-size: 55%; }
-  .cd-timeline-img span[title="Mas des thyms"]::before {
+  .entry-content-page .cd-timeline-img span[title="Réception"]::before {
     top: -10%;
     -webkit-mask-image: url("../images/reception.svg");
     -webkit-mask-size: 60%; }
