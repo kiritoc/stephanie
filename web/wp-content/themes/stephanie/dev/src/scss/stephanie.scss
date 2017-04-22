@@ -550,13 +550,18 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 # Timeline
 --------------------------------------------------------------*/
 .entry-content-page {
-  .cd-container.timeline-express {
+  // Single column issue fix
+  .cd-container.timeline-express.single-column {
     & {
       margin-top: 1em !important;
     }
 
     &::before {
       left: 2.5vmin !important;
+    }
+
+    .cd-timeline-img {
+      left: -0.5vw !important;
     }
   }
 
@@ -630,8 +635,6 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   }
 
   .cd-timeline-img {
-    left: -0.5vw !important;
-
     span::before {
       position: absolute;
       left: 0;
