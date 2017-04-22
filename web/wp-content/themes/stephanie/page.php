@@ -16,19 +16,7 @@ get_header();
 if (!get_theme_mod('show_only_main_header')): ?>
 
     <div id="content">
-        <!-- Accueil -->
-        <?php
-        $image = get_field('description-image');
-
-        if (!empty($image)): ?>
-            <img class="description-image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
-        <?php endif; ?>
-
-        <?php if (get_field('description')): ?>
-            <div class="description"><?php the_field('description'); ?></div>
-        <?php endif; ?>
-
-        <!-- Confirmer ma présence / Où et Quand ? / Contact -->
+        <!-- Accueil / Confirmer ma présence / Où et Quand ? / Contact -->
         <?php if (get_field('show-content')):
             // TO SHOW THE PAGE CONTENTS
             while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
