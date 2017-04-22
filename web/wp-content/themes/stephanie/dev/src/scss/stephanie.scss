@@ -40,6 +40,10 @@ body {
 
 #content {
   margin: 2em 0;
+
+  .highlited {
+    color: $primary-color;
+  }
 }
 
 .centered-column-container {
@@ -207,7 +211,7 @@ body {
 # Navbar
 --------------------------------------------------------------*/
 nav#navbar {
-  z-index: 1;
+  z-index: 100;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -352,7 +356,7 @@ nav#navbar {
 # RSVP
 --------------------------------------------------------------*/
 .entry-content-page {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   background: $third-color;
   box-shadow: 0 0 1px 0 #454545;
@@ -533,189 +537,42 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Timeline
 --------------------------------------------------------------*/
-.horizontal-timeline {
-  opacity: 0;
-  margin: 2em auto;
-  transition: opacity 0.2s;
+.timeline-express::before {
+  //margin-left: 2em !important;
+  left: 2.5vmin !important;
+}
 
-  &.loaded {
-    opacity: 1;
-  }
+.cd-timeline-img {
+  left: -0.5vw !important;
 
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
+  span::before {
+    position: absolute;
+    left: 0;
+    top: 5%;
 
-  a {
-    color: $primary-color;
-    text-decoration: none;
-  }
-
-  ol, ul {
-    list-style: none;
-  }
-
-  .timeline {
-    position: relative;
-    height: 100px;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-
-    .events-wrapper {
-      position: relative;
-      height: 100%;
-      margin: 0 40px;
-      overflow: hidden;
-
-      &:after, &:before {
-        /* these are used to create a shadow effect at the sides of the timeline */
-        content: '';
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        height: 100%;
-        width: 20px;
-      }
-
-      &:before {
-        left: 0;
-        background-image: linear-gradient(to right, $background-color, rgba($secondary-color, 0));
-      }
-
-      &:after {
-        right: 0;
-        background-image: linear-gradient(to left, $background-color, rgba($secondary-color, 0));
-      }
-
-      .events {
-        /* this is the grey line/timeline */
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 49px;
-        height: 2px;
-        /* width will be set using JavaScript */
-        background: #dfdfdf;
-        transition: transform 0.4s;
-
-        .filling-line {
-          /* this is used to create the green line filling the timeline */
-          position: absolute;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          background-color: $primary-color;
-          transform: scaleX(0);
-          transform-origin: left center;
-          transition: transform 0.3s;
-        }
-
-        a {
-          position: absolute;
-          bottom: 0;
-          z-index: 2;
-          text-align: center;
-          font-size: 1.3rem;
-          padding-bottom: 15px;
-          color: #383838;
-
-          &:after {
-            /* this is used to create the event spot */
-            content: '';
-            position: absolute;
-            left: 50%;
-            right: auto;
-            transform: translateX(-50%);
-            bottom: -5px;
-            height: 12px;
-            width: 12px;
-            border-radius: 50%;
-            border: 2px solid #dfdfdf;
-            background-color: #f8f8f8;
-            transition: background-color 0.3s, border-color 0.3s;
-          }
-
-          &.selected {
-            pointer-events: none;
-          }
-
-          &.selected::after {
-            background-color: $primary-color;
-            border-color: $primary-color;
-          }
-
-          &.older-event::after {
-            border-color: $primary-color;
-          }
-        }
-      }
-    }
-  }
-
-  .events-content {
-    position: relative;
+    content: "";
+    background: white;
+    display: inline-block;
     width: 100%;
-    margin: 2em 0;
-    overflow: hidden;
-    transition: height 0.4s;
-
-    li {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      left: 0;
-      top: 0;
-      transform: translateX(-100%);
-      padding: 0 5%;
-      opacity: 0;
-      animation-duration: 0.4s;
-      animation-timing-function: ease-in-out;
-
-      &.selected {
-        /* visible event content */
-        position: relative;
-        z-index: 2;
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      &.enter-right, &.leave-right {
-        animation-name: enter-right;
-      }
-
-      &.enter-left, &.leave-left {
-        animation-name: enter-left;
-      }
-
-      &.leave-right, &.leave-left {
-        animation-direction: reverse;
-      }
-    }
+    height: 90%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat, no-repeat;
   }
-}
 
-@keyframes enter-right {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
+  span[title="Mairie"]::before {
+    -webkit-mask-image: url("../images/town-hall.svg");
+    -webkit-mask-size: 50%;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
 
-@keyframes enter-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
+  span[title="Église"]::before {
+    -webkit-mask-image: url("../images/church.svg");
+    -webkit-mask-size: 55%;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
+
+  span[title="Mas des thyms"]::before {
+    top: -10%;
+    -webkit-mask-image: url("../images/reception.svg");
+    -webkit-mask-size: 60%;
   }
 }
 

@@ -42,101 +42,17 @@ if (!get_theme_mod('show_only_main_header')): ?>
         endif; ?>
 
         <!-- Où et Quand ? -->
-        <?php if (get_field('timeline')): ?>
-            <section class="horizontal-timeline">
-                <div class="timeline">
-                    <div class="events-wrapper">
-                        <div class="events">
-                            <ol>
-                                <li>
-                                    <a href="#0" data-date="<?php the_field('town-hall-date'); ?>" class="selected">
-                                        -
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0" data-date="<?php the_field('church-date'); ?>">
-                                        -
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0" data-date="<?php the_field('vin-honneur-date'); ?>">
-                                        -
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0" data-date="<?php the_field('dinner-date'); ?>">
-                                        -
-                                    </a>
-                                </li>
-                            </ol>
+        <?php if (get_field('timeline')):
+            // TO SHOW THE PAGE CONTENTS
+            while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+                <div class="entry-content-page">
+                    <?php the_content(); ?> <!-- Page Content -->
+                </div><!-- .entry-content-page -->
 
-                            <span class="filling-line" aria-hidden="true"></span>
-                        </div>
-                    </div>
-
-                    <!--<ul class="timeline-navigation">
-                        <li><a href="#0" class="prev inactive">Prev</a></li>
-                        <li><a href="#0" class="next">Next</a></li>
-                    </ul>-->
-                </div>
-
-                <div class="events-content">
-                    <ol>
-                        <!-- Town hall informations -->
-                        <?php if (get_field('town-hall-description')): ?>
-                            <li class="selected" data-date="<?php the_field('town-hall-date'); ?>">
-                                <div class="town-hall-description">
-                                    <?php the_field('town-hall-description'); ?>
-                                </div>
-
-                                <?php if (get_field('town-hall-location')): ?>
-                                    <div class="town-hall-location"><?php the_field('town-hall-location'); ?></div>
-                                <?php endif; ?>
-                            </li>
-                        <?php endif; ?>
-
-                        <!-- Church informations -->
-                        <?php if (get_field('church-description')): ?>
-                            <li data-date="<?php the_field('church-date'); ?>">
-                                <div class="church-description">
-                                    <?php the_field('church-description'); ?>
-                                </div>
-
-                                <?php if (get_field('church-location')): ?>
-                                    <div class="church-location"><?php the_field('church-location'); ?></div>
-                                <?php endif; ?>
-                            </li>
-                        <?php endif; ?>
-
-                        <!-- Vin d'honneur informations -->
-                        <?php if (get_field('vin-honneur-description')): ?>
-                            <li data-date="<?php the_field('vin-honneur-date'); ?>">
-                                <div class="vin-honneur-description">
-                                    <?php the_field('vin-honneur-description'); ?>
-                                </div>
-
-                                <?php if (get_field('vin-honneur-location')): ?>
-                                    <div class="vin-honneur-location"><?php the_field('vin-honneur-location'); ?></div>
-                                <?php endif; ?>
-                            </li>
-                        <?php endif; ?>
-
-                        <!-- Dinner informations -->
-                        <?php if (get_field('dinner-description')): ?>
-                            <li data-date="<?php the_field('dinner-date'); ?>">
-                                <div class="dinner-description">
-                                    <?php the_field('dinner-description'); ?>
-                                </div>
-
-                                <?php if (get_field('dinner-location')): ?>
-                                    <div class="dinner-location"><?php the_field('dinner-location'); ?></div>
-                                <?php endif; ?>
-                            </li>
-                        <?php endif; ?>
-                    </ol>
-                </div>
-            </section>
-        <?php endif; ?>
+                <?php
+            endwhile; //resetting the page loop
+            wp_reset_query(); //resetting the page query
+        endif; ?>
     </div>
 
     <?php

@@ -18,6 +18,9 @@
 # Fonts
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Paths
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -103,6 +106,8 @@ body {
 
 #content {
   margin: 2em 0; }
+  #content .highlited {
+    color: #8964C2; }
 
 .centered-column-container {
   display: flex;
@@ -224,7 +229,7 @@ body {
 # Navbar
 --------------------------------------------------------------*/
 nav#navbar {
-  z-index: 1;
+  z-index: 100;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -321,7 +326,7 @@ nav#navbar {
 # RSVP
 --------------------------------------------------------------*/
 .entry-content-page {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   background: #FFFFFF;
   box-shadow: 0 0 1px 0 #454545;
@@ -435,140 +440,32 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Timeline
 --------------------------------------------------------------*/
-.horizontal-timeline {
-  opacity: 0;
-  margin: 2em auto;
-  transition: opacity 0.2s; }
-  .horizontal-timeline.loaded {
-    opacity: 1; }
-  .horizontal-timeline *, .horizontal-timeline *::after, .horizontal-timeline *::before {
-    box-sizing: border-box; }
-  .horizontal-timeline a {
-    color: #8964C2;
-    text-decoration: none; }
-  .horizontal-timeline ol, .horizontal-timeline ul {
-    list-style: none; }
-  .horizontal-timeline .timeline {
-    position: relative;
-    height: 100px;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto; }
-    .horizontal-timeline .timeline .events-wrapper {
-      position: relative;
-      height: 100%;
-      margin: 0 40px;
-      overflow: hidden; }
-      .horizontal-timeline .timeline .events-wrapper:after, .horizontal-timeline .timeline .events-wrapper:before {
-        /* these are used to create a shadow effect at the sides of the timeline */
-        content: '';
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        height: 100%;
-        width: 20px; }
-      .horizontal-timeline .timeline .events-wrapper:before {
-        left: 0;
-        background-image: linear-gradient(to right, #F8F8F8, rgba(69, 69, 69, 0)); }
-      .horizontal-timeline .timeline .events-wrapper:after {
-        right: 0;
-        background-image: linear-gradient(to left, #F8F8F8, rgba(69, 69, 69, 0)); }
-      .horizontal-timeline .timeline .events-wrapper .events {
-        /* this is the grey line/timeline */
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 49px;
-        height: 2px;
-        /* width will be set using JavaScript */
-        background: #dfdfdf;
-        transition: transform 0.4s; }
-        .horizontal-timeline .timeline .events-wrapper .events .filling-line {
-          /* this is used to create the green line filling the timeline */
-          position: absolute;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          background-color: #8964C2;
-          transform: scaleX(0);
-          transform-origin: left center;
-          transition: transform 0.3s; }
-        .horizontal-timeline .timeline .events-wrapper .events a {
-          position: absolute;
-          bottom: 0;
-          z-index: 2;
-          text-align: center;
-          font-size: 1.3rem;
-          padding-bottom: 15px;
-          color: #383838; }
-          .horizontal-timeline .timeline .events-wrapper .events a:after {
-            /* this is used to create the event spot */
-            content: '';
-            position: absolute;
-            left: 50%;
-            right: auto;
-            transform: translateX(-50%);
-            bottom: -5px;
-            height: 12px;
-            width: 12px;
-            border-radius: 50%;
-            border: 2px solid #dfdfdf;
-            background-color: #f8f8f8;
-            transition: background-color 0.3s, border-color 0.3s; }
-          .horizontal-timeline .timeline .events-wrapper .events a.selected {
-            pointer-events: none; }
-          .horizontal-timeline .timeline .events-wrapper .events a.selected::after {
-            background-color: #8964C2;
-            border-color: #8964C2; }
-          .horizontal-timeline .timeline .events-wrapper .events a.older-event::after {
-            border-color: #8964C2; }
-  .horizontal-timeline .events-content {
-    position: relative;
+.timeline-express::before {
+  left: 2.5vmin !important; }
+
+.cd-timeline-img {
+  left: -0.5vw !important; }
+  .cd-timeline-img span::before {
+    position: absolute;
+    left: 0;
+    top: 5%;
+    content: "";
+    background: white;
+    display: inline-block;
     width: 100%;
-    margin: 2em 0;
-    overflow: hidden;
-    transition: height 0.4s; }
-    .horizontal-timeline .events-content li {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      left: 0;
-      top: 0;
-      transform: translateX(-100%);
-      padding: 0 5%;
-      opacity: 0;
-      animation-duration: 0.4s;
-      animation-timing-function: ease-in-out; }
-      .horizontal-timeline .events-content li.selected {
-        /* visible event content */
-        position: relative;
-        z-index: 2;
-        opacity: 1;
-        transform: translateX(0); }
-      .horizontal-timeline .events-content li.enter-right, .horizontal-timeline .events-content li.leave-right {
-        animation-name: enter-right; }
-      .horizontal-timeline .events-content li.enter-left, .horizontal-timeline .events-content li.leave-left {
-        animation-name: enter-left; }
-      .horizontal-timeline .events-content li.leave-right, .horizontal-timeline .events-content li.leave-left {
-        animation-direction: reverse; }
-
-@keyframes enter-right {
-  0% {
-    opacity: 0;
-    transform: translateX(100%); }
-  100% {
-    opacity: 1;
-    transform: translateX(0%); } }
-
-@keyframes enter-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%); }
-  100% {
-    opacity: 1;
-    transform: translateX(0%); } }
+    height: 90%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat, no-repeat; }
+  .cd-timeline-img span[title="Mairie"]::before {
+    -webkit-mask-image: url("../images/town-hall.svg");
+    -webkit-mask-size: 50%; }
+  .cd-timeline-img span[title="Église"]::before {
+    -webkit-mask-image: url("../images/church.svg");
+    -webkit-mask-size: 55%; }
+  .cd-timeline-img span[title="Mas des thyms"]::before {
+    top: -10%;
+    -webkit-mask-image: url("../images/reception.svg");
+    -webkit-mask-size: 60%; }
 
 /*--------------------------------------------------------------
 # Loader

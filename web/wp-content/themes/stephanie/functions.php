@@ -79,9 +79,6 @@ function stephanie_scripts_styles() {
     // Enqueue Countdown
     wp_enqueue_script('simplyCountdown', STEPHANIE_JS_PATH . 'simplyCountdown.min.js', array('jquery'), '', '');
 
-    // Enqueue Horizontal Timeline
-    wp_enqueue_script('horizontal-timeline', STEPHANIE_JS_PATH . 'horizontal-timeline.js', array('jquery'), '', '');
-
     // Enqueue custom stylesheets
     wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.css');
 
