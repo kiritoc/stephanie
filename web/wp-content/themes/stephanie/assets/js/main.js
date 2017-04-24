@@ -9,25 +9,6 @@
         setTimeout(function () {
             $('.js-countdown_wedding_day').fadeTo("slow", 1);
         }, 1000);
-    });
-
-    $(document).ready(function () {
-        // Wedding countdown
-        var $weddingCountdown = $('.js-countdown_wedding_day');
-        $weddingCountdown.fadeTo(0, 0);
-        $weddingCountdown.simplyCountdown({
-            year: countdown_date.year || 2017,
-            month: countdown_date.month || 9,
-            day: countdown_date.day || 16,
-            hours: countdown_date.hours || 16,
-            words: { //words displayed into the countdown
-                days: 'jour',
-                hours: 'heure',
-                minutes: 'minute',
-                seconds: 'seconde',
-                pluralLetter: 's'
-            }
-        });
 
         // Keep navbar to the top
         var $navbar = $("#navbar");
@@ -64,6 +45,25 @@
                 });
             });
         }
+    });
+
+    $(document).ready(function () {
+        // Wedding countdown
+        var $weddingCountdown = $('.js-countdown_wedding_day');
+        $weddingCountdown.fadeTo(0, 0);
+        $weddingCountdown.simplyCountdown({
+            year: countdown_date.year || 2017,
+            month: countdown_date.month || 9,
+            day: countdown_date.day || 16,
+            hours: countdown_date.hours || 16,
+            words: { //words displayed into the countdown
+                days: 'jour',
+                hours: 'heure',
+                minutes: 'minute',
+                seconds: 'seconde',
+                pluralLetter: 's'
+            }
+        });
 
         // Sakura effect
         var $sakura = $('.js-sakura');
@@ -104,7 +104,6 @@
                 return value.replace('!', ' !');
             });
         });*/
-
 
         // Wedding list
         $('.buy-button').each(function() {

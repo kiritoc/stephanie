@@ -72,8 +72,8 @@ textarea {
   padding: 2vmin;
   //min-height: 40vmin;
 
-
 }
+
 .title-parts {
   font-size: 12vmin;
   @include simple-font("slabo-font");
@@ -95,6 +95,7 @@ textarea {
     margin-right: auto;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .entry-content-page {
     width: 940px;
@@ -575,6 +576,25 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Wedding list
 --------------------------------------------------------------*/
+.wedding-list {
+  .text {
+    padding: 1em;
+    line-height: 1.6em;
+  }
+
+  .icon-gift {
+    width: 12vmin;
+    height: 12vmin;
+    margin: auto;
+    -webkit-mask-image: url("../images/gift.svg");
+    -webkit-mask-size: 12vmin;
+    background-color: $primary-color;
+    -webkit-mask-position: center bottom;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    padding: 2em;
+  }
+}
+
 .wishlist {
   margin: auto;
 
@@ -643,6 +663,10 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 
     .the-excerpt {
       position: initial;
+
+      .wpgmp_map_container {
+        margin-top: 1.5em;
+      }
 
       .time {
         position: absolute;

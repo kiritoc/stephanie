@@ -469,6 +469,21 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 /*--------------------------------------------------------------
 # Wedding list
 --------------------------------------------------------------*/
+.wedding-list .text {
+  padding: 1em;
+  line-height: 1.6em; }
+
+.wedding-list .icon-gift {
+  width: 12vmin;
+  height: 12vmin;
+  margin: auto;
+  -webkit-mask-image: url("../images/gift.svg");
+  -webkit-mask-size: 12vmin;
+  background-color: #8964C2;
+  -webkit-mask-position: center bottom;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  padding: 2em; }
+
 .wishlist {
   margin: auto; }
   .wishlist li {
@@ -512,6 +527,8 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
     font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
   .entry-content-page .cd-timeline-content .the-excerpt {
     position: initial; }
+    .entry-content-page .cd-timeline-content .the-excerpt .wpgmp_map_container {
+      margin-top: 1.5em; }
     .entry-content-page .cd-timeline-content .the-excerpt .time {
       position: absolute;
       margin: 2vw 0;
