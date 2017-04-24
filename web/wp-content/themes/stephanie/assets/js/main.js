@@ -104,6 +104,16 @@
                 return value.replace('!', ' !');
             });
         });*/
+
+
+        // Wedding list
+        $('.buy-button').each(function() {
+            if ($(this).hasClass('unavailable')) {
+                $(this).text("Déjà acheté");
+            } else {
+                $(this).text("Acheter");
+            }
+        });
     });
 })(jQuery);
 

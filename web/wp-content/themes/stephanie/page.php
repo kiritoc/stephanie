@@ -17,7 +17,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
     <div id="content">
         <!-- Accueil / Confirmer ma présence / Où et Quand ? / Contact -->
-        <?php if (get_field('show-content')):
+        <?php //if (get_field('show-content')):
             // TO SHOW THE PAGE CONTENTS
             while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
                 <div class="entry-content-page">
@@ -27,7 +27,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                 <?php
             endwhile; //resetting the page loop
             wp_reset_query(); //resetting the page query
-        endif; ?>
+        /*endif;*/ ?>
     </div>
 
     <?php

@@ -71,8 +71,30 @@ textarea {
   box-shadow: 0 0 1px 0 #454545;
   padding: 2vmin;
   //min-height: 40vmin;
-}
 
+
+}
+.title-parts {
+  font-size: 12vmin;
+  @include simple-font("slabo-font");
+  color: $secondary-color;
+  position: relative;
+  padding-bottom: 4.5vmin;
+  margin-bottom: 5.5vmin;
+  margin-top: 3.5vmin;
+
+  .part-2 {
+    font-size: 0.5em;
+    @include simple-font("lavanderia-font", sans-serif);
+    color: $primary-color;
+    position: absolute;
+    bottom: 0;
+    left: 15vmin;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media screen and (min-width: 1024px) {
   .entry-content-page {
     width: 940px;
@@ -389,7 +411,7 @@ nav#navbar {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
 
         &#rsvp, &[name="rsvpForm"] {
           flex-direction: column;
@@ -513,6 +535,10 @@ nav#navbar {
   }
 }
 
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+.wishlist .content-wrapper .buy-button, .wishlist .content-wrapper .buy-button:hover, .wishlist .overlay button, .wishlist .overlay button:hover,
 input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   padding: 1vmin 2vmin;
   font-size: 100%;
@@ -520,7 +546,7 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
 
   & {
     cursor: pointer;
-    margin: 0 auto;
+    //margin: 0 auto;
     border: 2px solid $primary-color;
     color: $primary-color;
     letter-spacing: 1px;
@@ -542,6 +568,43 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
       -moz-transition: none;
       -o-transition: none;
       transition: none;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Wedding list
+--------------------------------------------------------------*/
+.wishlist {
+  margin: auto;
+
+  li {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  .content-wrapper {
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .buy-button {
+      &.unavailable {
+        opacity: 0.5;
+        background: transparent;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    .price {
+      margin: 0.2em 0;
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #8964C2;
     }
   }
 }
