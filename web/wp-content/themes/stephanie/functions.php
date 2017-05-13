@@ -76,6 +76,16 @@ function stephanie_scripts_styles() {
     wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
     wp_enqueue_script('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js', array('jquery'), '', '');
 
+    // Enqueue imagesloaded
+    wp_enqueue_script('imagesloaded', STEPHANIE_JS_PATH . 'imagesloaded.pkgd.js', array('jquery'), '', '');
+
+    // Enqueue isotope
+    wp_enqueue_script('isotope', STEPHANIE_JS_PATH . 'isotope.pkgd.min.js', array('jquery'), '', '');
+
+    // Enqueue Direction-Aware Hover Effect
+    wp_enqueue_script('hoverdir', STEPHANIE_JS_PATH . 'jquery.hoverdir.js', array('jquery'), '', '');
+    wp_enqueue_script('modernizr', STEPHANIE_JS_PATH . 'modernizr.custom.97074.js', array('jquery'), '', '');
+
     // Enqueue Countdown
     wp_enqueue_script('simplyCountdown', STEPHANIE_JS_PATH . 'simplyCountdown.min.js', array('jquery'), '', '');
 

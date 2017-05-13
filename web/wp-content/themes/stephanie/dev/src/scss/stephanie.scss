@@ -41,8 +41,16 @@ body {
 #content {
   margin: 2em 0;
 
-  .highlited {
+  .highlighted {
     color: $primary-color;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -72,6 +80,11 @@ textarea {
   padding: 2vmin;
   //min-height: 40vmin;
 
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 .title-parts {
@@ -99,6 +112,112 @@ textarea {
 @media screen and (min-width: 1024px) {
   .entry-content-page {
     width: 940px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+.grid {
+  width: 96%;
+  margin: auto;
+
+  .gutter-sizer {
+    width: 4%;
+  }
+
+  .grid-item {
+    width: 48%;
+    min-height: 560px;
+    margin-bottom: 4%;
+
+    padding: 1.5em;
+    box-sizing: border-box;
+    background: #f8f8f8;
+    box-shadow: 0 3px 0 #dedede;
+
+    .image {
+      margin-bottom: 1em;
+
+      img {
+        width: auto;
+        height: 300px;
+        display: block;
+      }
+    }
+
+    .title {
+      @include simple-font("lavanderia-font", sans-serif);
+      color: $secondary-color;
+      font-size: 1.5em;
+
+      &:hover {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+
+    .text .info {
+      list-style-type: none;
+      text-align: left;
+
+      .icon {
+        font-size: 1.25em;
+        color: $primary-color;
+        margin-right: 0.8em;
+        width: 25px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+
+  .image a,
+  .image a img {
+    display: block;
+    position: relative;
+  }
+  .image a {
+    overflow: hidden;
+  }
+  .image a p {
+    display: none;
+  }
+  .image a div {
+    position: absolute;
+    background: rgba(0, 0, 0, .55);
+    width: 100%;
+    height: 100%;
+    color: $third-color;
+    cursor: pointer;
+    word-wrap: break-word;
+  }
+  .image a div span {
+    color: #fff;
+    display: block;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    line-height: 120%;
+    opacity: .9;
+    padding: 0 5%;
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid .grid-item {
+    width: 98%;
+    margin-bottom: 2%;
+  }
+  .grid .gutter-sizer {
+    width: 0%;
   }
 }
 
@@ -300,7 +419,7 @@ nav#navbar {
         //margin: 0 3em;
         line-height: 5em;
 
-        &.highlited > a {
+        &.highlighted > a {
           color: $primary-color;
         }
 
@@ -473,8 +592,21 @@ nav#navbar {
     }
 
     form#rsvpForm {
-      .rsvpCustomQuestions + .rsvpParagraph {
-        margin-top: 7vmin;
+      .rsvpCustomQuestions {
+        & > .rsvpFormField {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: row;
+
+          & > .rsvpParagraph, & > .rsvpClear {
+            display: none;
+          }
+        }
+
+        & + .rsvpParagraph {
+          margin-top: 7vmin;
+        }
       }
 
       .rsvpFormField.rsvpCheckboxCustomQ {
@@ -603,14 +735,6 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   }
 
   .content-wrapper {
-    a {
-      text-decoration: none;
-      color: $primary-color;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     .buy-button {
       &.unavailable {
         opacity: 0.5;

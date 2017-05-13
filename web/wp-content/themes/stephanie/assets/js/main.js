@@ -99,19 +99,59 @@
         });
 
         /* // BUG AVEC LE BOUTON "Valider ma réponse !" (peut être d'autres)
-        $('#rsvpPlugin p.rsvpParagraph').each(function () {
-            $(this).text(function (index, value) {
-                return value.replace('!', ' !');
-            });
-        });*/
+         $('#rsvpPlugin p.rsvpParagraph').each(function () {
+         $(this).text(function (index, value) {
+         return value.replace('!', ' !');
+         });
+         });*/
 
         // Wedding list
-        $('.buy-button').each(function() {
+        $('.buy-button').each(function () {
             if ($(this).hasClass('unavailable')) {
                 $(this).text("Déjà acheté");
             } else {
                 $(this).text("Acheter");
             }
+        });
+
+        // Hébergements
+        var $grid = $('.grid').isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows',
+            percentPosition: true,
+            fitRows: {
+                gutter: '.gutter-sizer'
+            },
+            getSortData: {
+                price: '[data-price] parseInt',
+                distance: '[data-distance] parseInt',
+                rank: '[data-rank] parseInt'
+            },
+            sortBy: 'distance'
+        });
+
+        // bind sort button click
+        $('.sort-by-button-group').on('click', 'button', function () {
+            var sortValue = $(this).attr('data-sort-value');
+            var sortAscending = true;//$(this).attr('data-sort-ascending');
+            $grid.isotope({sortBy: sortValue, sortAscending: sortAscending});
+        });
+
+        // change is-checked class on buttons
+        $('.button-group').each(function (i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'button', function () {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $(this).addClass('is-checked');
+            });
+        });
+
+        $grid.imagesLoaded().progress(function () {
+            $grid.isotope('layout');
+        });
+
+        $('.grid-item > .image').each(function () {
+            $(this).hoverdir();
         });
     });
 })(jQuery);

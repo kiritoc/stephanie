@@ -31,6 +31,11 @@
     content: $icon-warning;
   }
 }
+.icon-car {
+  &:before {
+    content: $icon-car;
+  }
+}
 .icon-quotes-left {
   &:before {
     content: $icon-quotes-left;
@@ -44,5 +49,20 @@
 .icon-angle-double-down {
   &:before {
     content: $icon-angle-double-down;
+  }
+}
+.icon-euro {
+  &:before {
+    content: $icon-euro;
+  }
+}
+.icon-map-marker {
+  &:before {
+    content: $icon-map-marker;
+  }
+}
+.icon-star {
+  &:before {
+    content: $icon-star;
   }
 }
