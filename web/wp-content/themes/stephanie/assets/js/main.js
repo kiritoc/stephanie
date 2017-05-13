@@ -126,14 +126,13 @@
                 price: '[data-price] parseInt',
                 distance: '[data-distance] parseInt',
                 rank: '[data-rank] parseInt'
-            },
-            sortBy: 'distance'
+            }
         });
 
         // bind sort button click
         $('.sort-by-button-group').on('click', 'button', function () {
             var sortValue = $(this).attr('data-sort-value');
-            var sortAscending = true;//$(this).attr('data-sort-ascending');
+            var sortAscending = $(this).attr('data-sort-ascending') === 'true';
             $grid.isotope({sortBy: sortValue, sortAscending: sortAscending});
         });
 
@@ -145,6 +144,9 @@
                 $(this).addClass('is-checked');
             });
         });
+
+        // Default sort
+        $('.sort-by-button-group').find('[data-sort-value="distance"]').click();
 
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');

@@ -116,6 +116,37 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+# Lodging
+--------------------------------------------------------------*/
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 4vmin;
+
+  .sort-title {
+    padding-bottom: 30px;
+    margin-right: 10px;
+  }
+
+  .button-group, .category {
+    display: inline-block;
+    margin: 0 5px;
+
+    .button {
+      width: 100px;
+    }
+
+    .subtitle {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
 .grid {
@@ -143,6 +174,7 @@ textarea {
         width: auto;
         height: 300px;
         display: block;
+        margin: auto;
       }
     }
 
@@ -671,8 +703,7 @@ nav#navbar {
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
-.wishlist .content-wrapper .buy-button, .wishlist .content-wrapper .buy-button:hover, .wishlist .overlay button, .wishlist .overlay button:hover,
-input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
+.button, input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   padding: 1vmin 2vmin;
   font-size: 100%;
   cursor: pointer;
@@ -689,7 +720,7 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
     -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
 
-    &:hover {
+    &:hover, &.is-checked {
       color: $third-color;
       background: $primary-color;
     }

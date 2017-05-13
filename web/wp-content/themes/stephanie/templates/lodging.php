@@ -40,10 +40,28 @@ if (!get_theme_mod('show_only_main_header')): ?>
             <div class="entry-content-page">
                 <?php the_content(); ?>
 
-                <div class="button-group sort-by-button-group">
-                    <button class="button is-checked" data-sort-value="price"><span class="icon icon-euro"></span></button>
-                    <button class="button" data-sort-value="distance"><span class="icon icon-car"></span></button>
-                    <button class="button" data-sort-value="rank"><span class="icon icon-star"></span></button>
+                <div class="sort">
+                    <span class="sort-title">Trier par</span>
+                    <div class="button-group sort-by-button-group">
+                        <div class="category">
+                            <button class="button" data-sort-value="price" data-sort-ascending="true">
+                                <span class="icon icon-euro"></span>
+                            </button>
+                            <span class="subtitle">Prix</span>
+                        </div>
+                        <div class="category">
+                            <button class="button" data-sort-value="distance" data-sort-ascending="true">
+                                <span class="icon icon-car"></span>
+                            </button>
+                            <span class="subtitle">Distance</span>
+                        </div>
+                        <div class="category">
+                            <button class="button" data-sort-value="rank" data-sort-ascending="false">
+                                <span class="icon icon-star"></span>
+                            </button>
+                            <span class="subtitle">Classification</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid">
@@ -67,7 +85,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         "14",
                         "65€",
                         "https://www.google.fr/maps/dir/Mas+des+Thyms,+Chemin+de+Montredon,+Arles/Hotel+ibis+Arles,+Centre+Commercial+Fourchon,+Rue+G%C3%A9rard+Gadiot,+13200+Arles/@43.6514348,4.590095,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x12b6774a604b02f9:0x5834e77f6e4e90c4!2m2!1d4.5819099!2d43.6251539!1m5!1m1!1s0x12b6766543210209:0xf0d9d4f8684cec98!2m2!1d4.6333869!2d43.6661311",
-                        "Rue Gerard Gadiot, centre commercial Fourchon, 13200 Arles"
+                        "Rue Gerard Gadiot, Centre commercial Fourchon, 13200 Arles"
                     );
 
                     echo addGridItem("http://www.accorhotels.com/fr/hotel-5036-ibis-budget-arles-sud-fourchon/index.shtml",

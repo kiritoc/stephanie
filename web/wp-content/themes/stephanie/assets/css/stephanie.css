@@ -173,6 +173,28 @@ textarea {
     width: 940px; } }
 
 /*--------------------------------------------------------------
+# Lodging
+--------------------------------------------------------------*/
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 4vmin; }
+  .sort .sort-title {
+    padding-bottom: 30px;
+    margin-right: 10px; }
+  .sort .button-group, .sort .category {
+    display: inline-block;
+    margin: 0 5px; }
+    .sort .button-group .button, .sort .category .button {
+      width: 100px; }
+    .sort .button-group .subtitle, .sort .category .subtitle {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em; }
+
+/*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
 .grid {
@@ -193,7 +215,8 @@ textarea {
       .grid .grid-item .image img {
         width: auto;
         height: 300px;
-        display: block; }
+        display: block;
+        margin: auto; }
     .grid .grid-item .title {
       font-family: "lavanderia-font", sans-serif;
       font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
@@ -546,13 +569,11 @@ nav#navbar {
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
-.wishlist .content-wrapper .buy-button, .wishlist .content-wrapper .buy-button:hover, .wishlist .overlay button, .wishlist .overlay button:hover,
-input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
+.button, input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
   padding: 1vmin 2vmin;
   font-size: 100%;
   cursor: pointer; }
-  .wishlist .content-wrapper .buy-button, .wishlist .content-wrapper .buy-button:hover, .wishlist .overlay button, .wishlist .overlay button:hover,
-  input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
+  .button, input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
     cursor: pointer;
     border: 2px solid #8964C2;
     color: #8964C2;
@@ -562,12 +583,10 @@ input[type="submit"], input[type="button"].ninja-forms-field.nf-element {
     -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0); }
-    .wishlist .content-wrapper .buy-button:hover, .wishlist .content-wrapper .buy-button:hover:hover, .wishlist .overlay button:hover, .wishlist .overlay button:hover:hover,
-    input[type="submit"]:hover, input[type="button"].ninja-forms-field.nf-element:hover {
+    .button:hover, .button.is-checked, input[type="submit"]:hover, input[type="submit"].is-checked, input[type="button"].ninja-forms-field.nf-element:hover, input[type="button"].ninja-forms-field.nf-element.is-checked {
       color: #FFFFFF;
       background: #8964C2; }
-    .wishlist .content-wrapper .buy-button:active, .wishlist .content-wrapper .buy-button:hover:active, .wishlist .overlay button:active, .wishlist .overlay button:hover:active,
-    input[type="submit"]:active, input[type="button"].ninja-forms-field.nf-element:active {
+    .button:active, input[type="submit"]:active, input[type="button"].ninja-forms-field.nf-element:active {
       border: 2px solid #8964C2;
       background: #8964C2;
       -webkit-transition: none;
