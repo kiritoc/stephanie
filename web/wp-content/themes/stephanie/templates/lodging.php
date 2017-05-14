@@ -231,6 +231,28 @@ if (!get_theme_mod('show_only_main_header')): ?>
                     ));
 
                     echo addGridItem(array(
+                        "url" => "https://www.aubergedesplaines.com/",
+                        "cover" => "https://static.wixstatic.com/media/de0cfd_7b446a8efbff43359f0752afb07270fc.jpg/v1/fill/w_1110,h_738,al_c,q_85,usm_0.66_1.00_0.01/de0cfd_7b446a8efbff43359f0752afb07270fc.jpg",
+                        "name" => "Auberge des Plaines",
+                        "stars" => 0,
+                        "car_distance_minutes" => "7",
+                        "night_price" => "32€",
+                        "map_itinerary" => "https://www.google.fr/maps/dir/Mas+des+Thyms,+Chemin+de+Montredon,+Arles/45+Avenue+Sadi+Carnot,+13200+Arles/@43.6588867,4.5851148,14z/data=!4m13!4m12!1m5!1m1!1s0x12b6774a604b02f9:0x5834e77f6e4e90c4!2m2!1d4.5819099!2d43.6251539!1m5!1m1!1s0x12b676426e0b6d2d:0xabddd0dba6368842!2m2!1d4.6236996!2d43.6718576",
+                        "address" => "Auberge des Plaines, 11 chemin du Mas d'Agon, 13200 Arles"
+                    ));
+
+                    echo addGridItem(array(
+                        "url" => "http://www.mas-des-rizieres.com/",
+                        "cover" => "http://www.mas-des-rizieres.com/photos/Chambre1-01.jpg",
+                        "name" => "Mas des Rizières",
+                        "stars" => 0,
+                        "car_distance_minutes" => "12",
+                        "night_price" => "90€",
+                        "map_itinerary" => "https://www.google.fr/maps/dir/Mas+des+Thyms,+Chemin+de+Montredon,+Arles/Mas+des+Rizi%C3%A8res,+Parc+Naturel+R%C3%A9gional+de+Camargue,+Chemin+de+Romieu,+13200+Arles/@43.6237164,4.5897605,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x12b6774a604b02f9:0x5834e77f6e4e90c4!2m2!1d4.5819099!2d43.6251539!1m5!1m1!1s0x12b6715b47580efd:0xe862c340ca2173e0!2m2!1d4.635629!2d43.607307",
+                        "address" => "Mas des Rizières, Chemin de Romieu, 13200 Arles"
+                    ));
+
+                    echo addGridItem(array(
                         "url" => "http://www.arlestourisme.com/fr/hotels-a-arles.html",
                         "cover" => "http://www.arlestourisme.com/assets/components/phpthumbof/cache/acceuil12.2cf8d9651517e68f92de41b487f898791.jpg",
                         "name" => "Hôtels listés par l'office de tourisme d'Arles",
