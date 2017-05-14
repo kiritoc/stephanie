@@ -233,7 +233,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                     echo addGridItem(array(
                         "url" => "http://www.arlestourisme.com/fr/hotels-a-arles.html",
                         "cover" => "http://www.arlestourisme.com/assets/components/phpthumbof/cache/acceuil12.2cf8d9651517e68f92de41b487f898791.jpg",
-                        "name" => "Hôtels de l'office de tourisme d'Arles",
+                        "name" => "Hôtels listés par l'office de tourisme d'Arles",
                         "more" => true
                     ));
 
