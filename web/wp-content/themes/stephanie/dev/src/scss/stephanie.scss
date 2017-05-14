@@ -162,6 +162,34 @@ textarea {
     min-height: 560px;
     margin-bottom: 4%;
 
+    &.large {
+      width: 100%;
+    }
+
+    &.more {
+      padding-top: 5em;
+      min-height: 0;
+      .image {
+        margin-top: 1.5em;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .more-title {
+      @include simple-font("lavanderia-font", sans-serif);
+      background: $third-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 1em;
+      padding-bottom: 0.85em;
+      font-size: 1.5em;
+    }
+
     padding: 1.5em;
     box-sizing: border-box;
     background: #f8f8f8;

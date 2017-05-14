@@ -210,6 +210,27 @@ textarea {
     box-sizing: border-box;
     background: #f8f8f8;
     box-shadow: 0 3px 0 #dedede; }
+    .grid .grid-item.large {
+      width: 100%; }
+    .grid .grid-item.more {
+      padding-top: 5em;
+      min-height: 0; }
+      .grid .grid-item.more .image {
+        margin-top: 1.5em; }
+        .grid .grid-item.more .image img {
+          width: 100%;
+          height: auto; }
+    .grid .grid-item .more-title {
+      font-family: "lavanderia-font", sans-serif;
+      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      background: #FFFFFF;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 1em;
+      padding-bottom: 0.85em;
+      font-size: 1.5em; }
     .grid .grid-item .image {
       margin-bottom: 1em; }
       .grid .grid-item .image img {
