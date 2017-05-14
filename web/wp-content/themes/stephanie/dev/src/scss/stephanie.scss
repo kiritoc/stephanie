@@ -229,6 +229,16 @@ textarea {
         display: inline-block;
         text-align: center;
       }
+
+      .no-paragraph {
+        position: relative;
+
+        a {
+          position: absolute;
+          top: 0;
+          margin-top: 0.25em;
+        }
+      }
     }
   }
 

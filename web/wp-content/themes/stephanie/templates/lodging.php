@@ -47,10 +47,10 @@ function addGridItem($params) {
                 </a>
                 <div class=\"text\">
                     <ul class=\"info\">
-                        <li><span class=\"icon icon-car\"></span>A $car_distance_minutes minutes du Mas des Thyms
+                        <li><span class=\"icon icon-car\"></span>A <span class=\"highlighted\">$car_distance_minutes minutes</span> du Mas des Thyms
                         </li>
-                        <li><span class=\"icon icon-euro\"></span>A partir de $night_price la nuit (pour 2 adultes)</li>
-                        <li><span class=\"icon icon-map-marker\"></span><a
+                        <li><span class=\"icon icon-euro\"></span>A partir de <span class=\"highlighted\">$night_price</span> la nuit (pour 2 adultes)</li>
+                        <li class=\"no-paragraph\"><span class=\"icon icon-map-marker\"></span><a
                                     href=\"$map_itinerary\"
                                     target=\"_blank\">$address</a></li>
                     </ul>

@@ -256,6 +256,12 @@ textarea {
         width: 25px;
         display: inline-block;
         text-align: center; }
+      .grid .grid-item .text .info .no-paragraph {
+        position: relative; }
+        .grid .grid-item .text .info .no-paragraph a {
+          position: absolute;
+          top: 0;
+          margin-top: 0.25em; }
   .grid .image a,
   .grid .image a img {
     display: block;
