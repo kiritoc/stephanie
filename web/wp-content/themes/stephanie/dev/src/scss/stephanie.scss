@@ -85,6 +85,10 @@ textarea {
     display: block;
     clear: both;
   }
+
+  &.other-section {
+    margin: 2em auto;
+  }
 }
 
 .title-parts {
@@ -164,17 +168,29 @@ textarea {
 
     &.large {
       width: 100%;
+
+      .image img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &.title {
+      min-height: 0;
+      height: auto;
+      margin-bottom: 2.15em;
     }
 
     &.more {
       padding-top: 5em;
       min-height: 0;
+
+      &.no-title {
+        padding-top: 0;
+      }
+
       .image {
         margin-top: 1.5em;
-        img {
-          width: 100%;
-          height: auto;
-        }
       }
     }
 
@@ -203,6 +219,9 @@ textarea {
         height: 300px;
         display: block;
         margin: auto;
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
       }
     }
 

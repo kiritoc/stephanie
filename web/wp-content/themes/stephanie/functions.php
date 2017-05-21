@@ -20,6 +20,94 @@ setlocale(LC_ALL, get_locale());
 /*--------------------------------------------------------------
 # Methods
 --------------------------------------------------------------*/
+function addGridItem($params) {
+    $url = $params['url'];
+    $cover = $params['cover'];
+    $name = $params['name'];
+
+    if ($params['about']) {
+        $about = $params['about'];
+        $result = "<div class=\"grid-item large\">
+                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
+                                src=\"$cover\"/>
+                        <div><span>Plus d'informations</span></div>
+                    </a></div>
+                <a class=\"title\" href=\"$url\" target=\"_blank\">
+                    <span>$name</span>
+                </a>
+                <div class=\"about\"><p>$about</p></div>
+            </div>";
+    } else if ($params["more"]) {
+        $more = $params["more"];
+        $car_distance_minutes = 100000;
+        $night_price = 100000;
+        $stars = -2;
+
+        if ($url == null) {
+            $result = "<div class=\"grid-item large title\" data-price='($night_price - 1)' data-distance='($car_distance_minutes - 1)' data-rank='($stars + 1)'>
+                <div class=\"more-title\">$more</div>
+            </div>";
+        } else if ($more == "true") {
+            $result = "<div class=\"grid-item more no-title\" data-price='$night_price' data-distance='$car_distance_minutes' data-rank='$stars'>
+                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
+                                src=\"$cover\"/>
+                        <div><span>Voir</span></div>
+                    </a></div>
+                <a class=\"title\" href=\"$url\" target=\"_blank\">
+                    <span>$name</span>
+                </a>
+            </div>";
+        } else {
+            $result = "<div class=\"grid-item large more\" data-price='$night_price' data-distance='$car_distance_minutes' data-rank='$stars'>
+                <div class=\"more-title\">$more</div>
+                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
+                                src=\"$cover\"/>
+                        <div><span>Voir</span></div>
+                    </a></div>
+                <a class=\"title\" href=\"$url\" target=\"_blank\">
+                    <span>$name</span>
+                </a>
+            </div>";
+        }
+    } else {
+        $car_distance_minutes = $params['car_distance_minutes'];
+        $night_price = $params['night_price'];
+        $map_itinerary = $params['map_itinerary'];
+        $address = $params['address'];
+        $rank = $params['stars'];
+
+        $stars = "";
+        for ($i = 0; $i < $params['stars']; $i++) {
+            $stars .= "<span class=\"icon icon-star\"></span>";
+        }
+
+        $result = "<div class=\"grid-item\" data-price='$night_price' data-distance='$car_distance_minutes' data-rank='$rank'>
+                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
+                                src=\"$cover\"/>
+                        <div><span>Réserver</span></div>
+                    </a></div>
+                <a class=\"title\" href=\"$url\" target=\"_blank\">
+                    <span>$name</span>
+                    <br/>
+                    <span class=\"rank\">$stars</span>
+                </a>
+                <div class=\"text\">
+                    <ul class=\"info\">
+                        <li><span class=\"icon icon-car\"></span>A <span class=\"highlighted\">$car_distance_minutes minutes</span> du Mas des Thyms
+                        </li>
+                        <li><span class=\"icon icon-euro\"></span>A partir de <span class=\"highlighted\">$night_price</span> la nuit (pour 2 adultes)</li>
+                        <li class=\"no-paragraph\"><span class=\"icon icon-map-marker\"></span><a
+                                    href=\"$map_itinerary\"
+                                    target=\"_blank\">$address</a></li>
+                    </ul>
+                </div>
+            </div>";
+    }
+
+    return $result;
+}
+
+
 if (!function_exists('stephanie_setup')):
     function stephanie_setup() {
         add_theme_support('automatic-feed-links');

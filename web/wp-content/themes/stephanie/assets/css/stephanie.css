@@ -146,6 +146,8 @@ textarea {
     content: '';
     display: block;
     clear: both; }
+  .entry-content-page.other-section {
+    margin: 2em auto; }
 
 .title-parts {
   font-size: 12vmin;
@@ -212,14 +214,20 @@ textarea {
     box-shadow: 0 3px 0 #dedede; }
     .grid .grid-item.large {
       width: 100%; }
+      .grid .grid-item.large .image img {
+        width: 100%;
+        height: auto; }
+    .grid .grid-item.title {
+      min-height: 0;
+      height: auto;
+      margin-bottom: 2.15em; }
     .grid .grid-item.more {
       padding-top: 5em;
       min-height: 0; }
+      .grid .grid-item.more.no-title {
+        padding-top: 0; }
       .grid .grid-item.more .image {
         margin-top: 1.5em; }
-        .grid .grid-item.more .image img {
-          width: 100%;
-          height: auto; }
     .grid .grid-item .more-title {
       font-family: "lavanderia-font", sans-serif;
       font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
@@ -237,7 +245,10 @@ textarea {
         width: auto;
         height: 300px;
         display: block;
-        margin: auto; }
+        margin: auto;
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%; }
     .grid .grid-item .title {
       font-family: "lavanderia-font", sans-serif;
       font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;

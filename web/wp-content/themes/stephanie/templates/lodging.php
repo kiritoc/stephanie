@@ -3,64 +3,6 @@
  * Template Name: Hébergements
  */
 
-function addGridItem($params) {
-    $url = $params['url'];
-    $cover = $params['cover'];
-    $name = $params['name'];
-
-    if ($params["more"]) {
-        $car_distance_minutes = 100000;
-        $night_price = 100000;
-        $stars = -1;
-
-        $result = "<div class=\"grid-item large more\" data-price='$night_price' data-distance='$car_distance_minutes' data-rank='$stars'>
-                <div class=\"more-title\">Pour plus d'hébergements</div>
-                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
-                                src=\"$cover\"/>
-                        <div><span>Voir</span></div>
-                    </a></div>
-                <a class=\"title\" href=\"$url\" target=\"_blank\">
-                    <span>$name</span>
-                </a>
-            </div>";
-    } else {
-        $car_distance_minutes = $params['car_distance_minutes'];
-        $night_price = $params['night_price'];
-        $map_itinerary = $params['map_itinerary'];
-        $address = $params['address'];
-        $rank = $params['stars'];
-
-        $stars = "";
-        for ($i = 0; $i < $params['stars']; $i++) {
-            $stars .= "<span class=\"icon icon-star\"></span>";
-        }
-
-        $result = "<div class=\"grid-item\" data-price='$night_price' data-distance='$car_distance_minutes' data-rank='$rank'>
-                <div class=\"image\"><a href=\"$url\" target=\"_blank\"><img
-                                src=\"$cover\"/>
-                        <div><span>Réserver</span></div>
-                    </a></div>
-                <a class=\"title\" href=\"$url\" target=\"_blank\">
-                    <span>$name</span>
-                    <br/>
-                    <span class=\"rank\">$stars</span>
-                </a>
-                <div class=\"text\">
-                    <ul class=\"info\">
-                        <li><span class=\"icon icon-car\"></span>A <span class=\"highlighted\">$car_distance_minutes minutes</span> du Mas des Thyms
-                        </li>
-                        <li><span class=\"icon icon-euro\"></span>A partir de <span class=\"highlighted\">$night_price</span> la nuit (pour 2 adultes)</li>
-                        <li class=\"no-paragraph\"><span class=\"icon icon-map-marker\"></span><a
-                                    href=\"$map_itinerary\"
-                                    target=\"_blank\">$address</a></li>
-                    </ul>
-                </div>
-            </div>";
-    }
-
-    return $result;
-}
-
 get_header();
 if (!get_theme_mod('show_only_main_header')): ?>
 
@@ -256,7 +198,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         "url" => "http://www.arlestourisme.com/fr/hotels-a-arles.html",
                         "cover" => "http://www.arlestourisme.com/assets/components/phpthumbof/cache/acceuil12.2cf8d9651517e68f92de41b487f898791.jpg",
                         "name" => "Hôtels listés par l'office de tourisme d'Arles",
-                        "more" => true
+                        "more" => "Pour plus d'hébergements"
                     ));
 
                     ?>

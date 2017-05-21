@@ -18,16 +18,24 @@ if (!get_theme_mod('show_only_main_header')): ?>
     <div id="content">
         <!-- Accueil / Confirmer ma présence / Où et Quand ? / Contact -->
         <?php //if (get_field('show-content')):
-            // TO SHOW THE PAGE CONTENTS
-            while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-                <div class="entry-content-page">
-                    <?php the_content(); ?> <!-- Page Content -->
-                </div><!-- .entry-content-page -->
-
-                <?php
-            endwhile; //resetting the page loop
-            wp_reset_query(); //resetting the page query
+        // TO SHOW THE PAGE CONTENTS
+        while (have_posts()) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+            <div class="entry-content-page">
+                <?php the_content(); ?> <!-- Page Content -->
+            </div><!-- .entry-content-page -->
+            <?php
+        endwhile; //resetting the page loop
+        wp_reset_query(); //resetting the page query
         /*endif;*/ ?>
+
+
+        <?php if (is_front_page()): ?>
+            <div class="entry-content-page other-section">
+                <span>Mais avant quoi que ce soit, assurez-vous d'avoir
+                    <a href="./confirmer-ma-presence/" class="highlighted">confirmé votre présence</a> !
+                </span>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php
