@@ -66,3 +66,9 @@
     content: $icon-star;
   }
 }
+
+.icon-happy-face {
+  &:before {
+    content: $icon-happy-face;
+  }
+}

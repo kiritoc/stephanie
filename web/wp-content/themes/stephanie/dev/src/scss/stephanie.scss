@@ -492,7 +492,7 @@ nav#navbar {
   }
 
   .menu-menu-container {
-    width: 75%;
+    width: 80%;
     margin: 0 2vmin;
 
     ul {
@@ -505,7 +505,6 @@ nav#navbar {
       li {
         position: relative;
         display: inline-block;
-        //margin: 0 3em;
         line-height: 5em;
 
         &.highlighted > a {
@@ -842,7 +841,251 @@ nav#navbar {
 }
 
 /*--------------------------------------------------------------
-# Timeline
+# Our story - Timeline
+--------------------------------------------------------------*/
+.our-timeline-story {
+  position: relative;
+
+  .line, .year {
+    background-color: $primary-color;
+  }
+
+  .line {
+    position: absolute;
+    width: 4px;
+    left: 50%;
+    margin: 0 -2px;
+    top: 0;
+    bottom: 75px;
+  }
+
+  .timeline-content {
+    .year {
+      display: block;
+      width: 70px;
+      height: 28px;
+      -moz-border-radius: 11px;
+      -webkit-border-radius: 11px;
+      border-radius: 11px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 28px;
+      color: #fff;
+      margin: 0 auto 3em;
+      position: relative;
+      border: 6px solid $third-color;
+    }
+
+    .post {
+      padding: 0 0 3em 0;
+      margin: 0;
+
+      &.odd {
+        .post-content {
+          float: left;
+          padding: 0 35px 0 0;
+
+          .box:before {
+            left: auto;
+            right: -6px;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-top: 0;
+            border-left: none;
+          }
+        }
+
+        .data {
+          float: right;
+          padding: 12px 0 0 35px;
+        }
+      }
+
+      &.even {
+        .post-content {
+          float: right;
+          padding: 0 0 0 35px;
+        }
+
+        .data {
+          float: left;
+          text-align: right;
+          padding: 12px 35px 0 0;
+
+          .date {
+            float: right;
+
+            &:before {
+              left: auto;
+              right: -3px;
+            }
+
+            &:after {
+              left: auto;
+              right: -45px;
+            }
+          }
+        }
+      }
+
+      .post-content {
+        width: 50%;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        .box {
+          border: 1px solid rgba(0, 0, 0, .15);
+          -moz-border-radius: 6px;
+          -webkit-border-radius: 6px;
+          border-radius: 6px;
+          -moz-background-clip: padding;
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          background-color: #fff;
+          -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .08);
+          -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08);
+          box-shadow: 0 0 4px rgba(0, 0, 0, .08);
+          padding: 20px 20px 1px;
+          margin: 0 0 1.52em;
+          position: relative;
+
+          &:before {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid rgba(0, 0, 0, .15);
+            content: '';
+            border-right: 0;
+            border-bottom: 0;
+            display: block;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            background-color: #fff;
+            left: -6px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+
+          h2 {
+            @include simple-font("lavanderia-font", sans-serif);
+
+            .subtitle {
+              display: block;
+              font-weight: normal;
+              font-size: .9em;
+            }
+          }
+        }
+      }
+
+      .data {
+        width: 50%;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        .date {
+          float: left;
+          height: 28px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          background-color: #c7c5c3;
+          text-align: center;
+          font-weight: bold;
+          line-height: 28px;
+          color: #fff;
+          padding: 0 10px;
+          position: relative;
+          margin: 0 0 1.52em 0;
+
+          &.empty {
+            padding: 0;
+
+            &:before {
+              content: none;
+            }
+          }
+
+          &:before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            position: absolute;
+            display: block;
+            left: -3px;
+            top: 10px;
+            background-color: #c7c5c3;
+          }
+
+          &:after {
+            width: 12px;
+            height: 12px;
+            border: 4px solid $primary-color;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            background-color: $third-color;
+            -moz-box-shadow: 0 0 0 5px $third-color;
+            -webkit-box-shadow: 0 0 0 5px $third-color;
+            box-shadow: 0 0 0 5px $third-color;
+            content: '';
+            left: -45px;
+            top: 4px;
+            display: block;
+            position: absolute;
+          }
+        }
+
+        .wrapper {
+          position: relative;
+          padding-bottom: 56.25%;
+          height: 200px;
+          overflow: hidden;
+          max-width: 100%;
+          iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .elastislide-wrapper {
+          position: relative;
+          padding: 10px 30px;
+          margin: 0 0 2em 0;
+        }
+      }
+    }
+  }
+
+  .clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Location - Timeline
 --------------------------------------------------------------*/
 .entry-content-page {
   // Single column issue fix
