@@ -72,7 +72,7 @@
         <div class="js-navbar-container">
             <nav id="navbar">
                 <div class="logo">
-                    <a href="<?php echo site_url(); ?>">
+                    <a href="<?php echo bloginfo('url'); ?>">
                         <?php get_template_part('assets/images/inline', 'logo.svg'); ?>
                     </a>
                 </div>
