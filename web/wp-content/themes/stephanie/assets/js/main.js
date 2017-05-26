@@ -155,6 +155,21 @@
         $('.grid-item > .image').each(function () {
             $(this).hoverdir();
         });
+
+        // Our story
+        $('.album').slick({
+            //dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            centerMode: false,
+            adaptiveHeight: true,
+            variableWidth: true
+        });
+
+        $("[data-fancybox]").fancybox({
+            // Options will go here
+        });
     });
 })(jQuery);
 

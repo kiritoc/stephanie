@@ -164,6 +164,15 @@ function stephanie_scripts_styles() {
     wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
     wp_enqueue_script('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js', array('jquery'), '', '');
 
+    // Enqueue fancybox
+    wp_enqueue_style('fancybox-style', STEPHANIE_CSS_PATH . 'jquery.fancybox.min.css');
+    wp_enqueue_script('fancybox-scripts', STEPHANIE_JS_PATH . 'jquery.fancybox.min.js', array('jquery'), '', '');
+
+    // Enqueue slick
+    wp_enqueue_style('slick-style', STEPHANIE_CSS_PATH . 'slick.css');
+    wp_enqueue_style('slick-theme-style', STEPHANIE_CSS_PATH . 'slick-theme.css');
+    wp_enqueue_script('slick-scripts', STEPHANIE_JS_PATH . 'slick.min.js', array('jquery'), '', '');
+
     // Enqueue imagesloaded
     wp_enqueue_script('imagesloaded', STEPHANIE_JS_PATH . 'imagesloaded.pkgd.js', array('jquery'), '', '');
 

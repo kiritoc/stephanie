@@ -31,6 +31,40 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>Septembre</span></div>
                                 <div class="clear"></div>
+                                <div class="gallery">
+                                    <div class="album">
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=1" data-fancybox="group" data-caption="Caption #1">
+                                                <img src="http://placehold.it/350x300?text=1" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=2" data-fancybox="group" data-caption="Caption #2">
+                                                <img src="http://placehold.it/350x300?text=2" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=3" data-fancybox="group" data-caption="Caption #3">
+                                                <img src="http://placehold.it/350x300?text=3" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=4" data-fancybox="group" data-caption="Caption #4">
+                                                <img src="http://placehold.it/350x300?text=4" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=5" data-fancybox="group" data-caption="Caption #5">
+                                                <img src="http://placehold.it/350x300?text=5" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=6" data-fancybox="group" data-caption="Caption #6">
+                                                <img src="http://placehold.it/350x300?text=6" alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -49,6 +83,20 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>Entre le 13 et le 14 décembre</span></div>
                                 <div class="clear"></div>
+                                <div class="gallery">
+                                    <div class="album">
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=1" data-fancybox="group" data-caption="Caption #1">
+                                                <img src="http://placehold.it/350x300?text=1" alt="" />
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="http://placehold.it/350x300?text=2" data-fancybox="group" data-caption="Caption #2">
+                                                <img src="http://placehold.it/350x300?text=2" alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -64,7 +112,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date empty"></div>
                                 <div class="clear"></div>
-                                <div class="wrapper">
+                                <div class="spotify-wrapper">
                                     <iframe src='https://embed.spotify.com/?uri=spotify:album:6ASu7ufzcJkzZ9lLfiTyMN'
                                             frameborder='0' allowtransparency='true'></iframe>
                                 </div>

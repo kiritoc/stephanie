@@ -705,7 +705,6 @@ nav#navbar {
       .our-timeline-story .timeline-content .post.odd .post-content .box:before {
         left: auto;
         right: -6px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
         border-top: 0;
         border-left: none; }
     .our-timeline-story .timeline-content .post.odd .data {
@@ -733,25 +732,16 @@ nav#navbar {
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
       .our-timeline-story .timeline-content .post .post-content .box {
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        background-color: #fff;
-        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
-        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
-        padding: 20px 20px 1px;
-        margin: 0 0 1.52em;
-        position: relative; }
+        position: relative;
+        background: #f8f8f8;
+        -webkit-box-shadow: 0 3px 0 #dedede;
+        -moz-box-shadow: 0 3px 0 #dedede;
+        box-shadow: 0 3px 0 #dedede;
+        padding: 20px 20px 1px; }
         .our-timeline-story .timeline-content .post .post-content .box:before {
           position: absolute;
           width: 10px;
           height: 10px;
-          border: 1px solid rgba(0, 0, 0, 0.15);
           content: '';
           border-right: 0;
           border-bottom: 0;
@@ -759,7 +749,7 @@ nav#navbar {
           -moz-background-clip: padding;
           -webkit-background-clip: padding-box;
           background-clip: padding-box;
-          background-color: #fff;
+          background-color: #f8f8f8;
           left: -6px;
           -webkit-transform: rotate(-45deg);
           -moz-transform: rotate(-45deg);
@@ -830,22 +820,32 @@ nav#navbar {
           top: 4px;
           display: block;
           position: absolute; }
-      .our-timeline-story .timeline-content .post .data .wrapper {
+      .our-timeline-story .timeline-content .post .data .spotify-wrapper {
         position: relative;
         padding-bottom: 56.25%;
-        height: 200px;
+        height: 60px;
         overflow: hidden;
         max-width: 100%; }
-        .our-timeline-story .timeline-content .post .data .wrapper iframe, .our-timeline-story .timeline-content .post .data .wrapper object, .our-timeline-story .timeline-content .post .data .wrapper embed {
+        .our-timeline-story .timeline-content .post .data .spotify-wrapper iframe, .our-timeline-story .timeline-content .post .data .spotify-wrapper object, .our-timeline-story .timeline-content .post .data .spotify-wrapper embed {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%; }
-      .our-timeline-story .timeline-content .post .data .elastislide-wrapper {
-        position: relative;
-        padding: 10px 30px;
-        margin: 0 0 2em 0; }
+      .our-timeline-story .timeline-content .post .data .gallery {
+        padding: 10px 37px;
+        background: #f8f8f8;
+        -webkit-box-shadow: 0 3px 0 #dedede;
+        -moz-box-shadow: 0 3px 0 #dedede;
+        box-shadow: 0 3px 0 #dedede; }
+        .our-timeline-story .timeline-content .post .data .gallery .album {
+          height: 60px; }
+          .our-timeline-story .timeline-content .post .data .gallery .album .slick-prev:before, .our-timeline-story .timeline-content .post .data .gallery .album .slick-next:before {
+            color: #8964C2; }
+          .our-timeline-story .timeline-content .post .data .gallery .album .slick-list, .our-timeline-story .timeline-content .post .data .gallery .album .slick-track, .our-timeline-story .timeline-content .post .data .gallery .album img {
+            height: 100%; }
+          .our-timeline-story .timeline-content .post .data .gallery .album .slick-slide {
+            margin: 0 5px; }
   .our-timeline-story .clear {
     clear: both;
     display: block;
