@@ -1,6 +1,9 @@
 (function ($) {
     "use strict";
 
+    // Init viewport-units-buggyfill
+    window.viewportUnitsBuggyfill.init();
+
     $(window).load(function () {
         // Hide the loader
         jQuery('#site-loader').fadeOut();

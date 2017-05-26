@@ -160,6 +160,10 @@ endif;
  * Enqueue scripts and styles.
  */
 function stephanie_scripts_styles() {
+    // Enqueue viewport-units-buggyfill
+    wp_enqueue_script('viewport-units-buggyfill.hacks-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.hacks.js', array('jquery'), '', '');
+    wp_enqueue_script('viewport-units-buggyfill-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.js', array('jquery'), '', '');
+
     // Enqueue Sakura animation
     wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
     wp_enqueue_script('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js', array('jquery'), '', '');
