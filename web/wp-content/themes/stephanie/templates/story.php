@@ -72,7 +72,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                             "caption" => "Le passage aux courses"
                                         ),
                                         array(
-                                            "image" => "story/premiere-rencontre/iut.JPG",
+                                            "image" => "story/premiere-rencontre/iut.jpg",
                                             "caption" => "L'IUT d'Arles"
                                         )
                                     ));
@@ -105,7 +105,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                             "caption" => "Images rescapées de la soirée"
                                         ),
                                         array(
-                                            "image" => "story/premier-bisou/voiture-retour.JPG",
+                                            "image" => "story/premier-bisou/voiture-retour.jpg",
                                             "caption" => "Retour en voiture, direction Arles"
                                         ),
                                         array(
@@ -221,19 +221,19 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                     <?php
                                     echo addAlbum("premiere-separation", array(
                                         array(
-                                            "image" => "story/premiere-separation/stef-emmenage.JPG",
+                                            "image" => "story/premiere-separation/stef-emmenage.jpg",
                                             "caption" => "Stéphanie emménage"
                                         ),
                                         array(
-                                            "image" => "story/premiere-separation/paris-2012.JPG",
+                                            "image" => "story/premiere-separation/paris-2012.jpg",
                                             "caption" => "à Paris"
                                         ),
                                         array(
-                                            "image" => "story/premiere-separation/guillaume-emmenage.JPG",
+                                            "image" => "story/premiere-separation/guillaume-emmenage.jpg",
                                             "caption" => "Guillaume emménage"
                                         ),
                                         array(
-                                            "image" => "story/premiere-separation/calanques-luminy.JPG",
+                                            "image" => "story/premiere-separation/calanques-luminy.jpg",
                                             "caption" => "à Marseille"
                                         )
                                     ));
@@ -343,7 +343,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                             "caption" => "Restaurant de la fameuse soirée"
                                         ),
                                         array(
-                                            "image" => "story/premiere-demande-mariage/restaurant-suite.JPG",
+                                            "image" => "story/premiere-demande-mariage/restaurant-suite.jpg",
                                             "caption" => "Allez, on vous montre le dessert !"
                                         ),
                                         array(
@@ -355,7 +355,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                             "caption" => "Finalement la demande aura lieu dans notre appartement"
                                         ),
                                         array(
-                                            "image" => "story/premiere-demande-mariage/camargue.JPG",
+                                            "image" => "story/premiere-demande-mariage/camargue.jpg",
                                             "caption" => "Et le mariage dans le Parc Naturel Régional de Camargue"
                                         )
                                     ));
