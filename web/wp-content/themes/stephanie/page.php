@@ -30,7 +30,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
 
         <?php if (is_front_page()): ?>
-            <div class="entry-content-page other-section">
+            <div class="entry-content-page other-section animate" data-animate="fadeIn" data-delay="0.35s">
                 <span>Mais avant quoi que ce soit, assurez-vous d'avoir
                     <a href="./confirmer-ma-presence/" class="highlighted">confirmé votre présence</a> !
                 </span>
