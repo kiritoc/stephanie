@@ -5,6 +5,8 @@
     window.viewportUnitsBuggyfill.init();
 
     $(window).load(function () {
+        window.viewportUnitsBuggyfill.refresh();
+
         // Hide the loader
         jQuery('#site-loader').fadeOut();
 
@@ -51,6 +53,8 @@
     });
 
     $(document).ready(function () {
+        window.viewportUnitsBuggyfill.refresh();
+
         $('.animate').scrolla({
             mobile: false,
             once: true
