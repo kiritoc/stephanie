@@ -1,3 +1,4 @@
+@import 'flex';
 @import 'variables';
 @import 'mixins';
 @import 'icomoon';
@@ -59,17 +60,17 @@ textarea {
 }
 
 .centered-column-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-around);
+  @include flex-direction(column);
 }
 
 .centered-row-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-around);
+  @include flex-direction(row);
 }
 
 .entry-content-page {
@@ -78,7 +79,6 @@ textarea {
   background: $third-color;
   box-shadow: 0 0 1px 0 #454545;
   padding: 2vmin;
-  //min-height: 40vmin;
 
   &::after {
     content: '';
@@ -123,9 +123,10 @@ textarea {
 # Lodging
 --------------------------------------------------------------*/
 .sort {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(flex-end);
+
   margin: 4vmin;
 
   .sort-title {
@@ -417,22 +418,22 @@ textarea {
   height: 9vmin;
 
   .simply-section {
-    display: flex;
-    justify-content: space-around;
+    @include flexbox;
+    @include justify-content(space-around);
 
     width: 14vmin;
     color: $third-color;
     font-size: 2.5vmin;
 
     div {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+      @include flexbox;
+      @include align-items(center);
+      @include flex-direction(column);
 
       .simply-amount {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-around);
 
         box-sizing: border-box;
         background: rgba($secondary-color, .4);
@@ -443,9 +444,9 @@ textarea {
       }
 
       .simply-word {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+        @include flexbox;
+        @include align-items(center);
+        @include flex-direction(column);
 
         font-size: 1.5vmin;
         margin-top: 0.75vmin;
@@ -462,8 +463,8 @@ textarea {
 --------------------------------------------------------------*/
 nav#navbar {
   z-index: 100 !important;
-  display: flex;
-  justify-content: space-around;
+  @include flexbox;
+  @include justify-content(space-around);
   width: 100%;
   background: $nav-background;
   font-weight: bold;
@@ -496,8 +497,8 @@ nav#navbar {
     margin: 0 2vmin;
 
     ul {
-      display: flex;
-      justify-content: space-around;
+      @include flexbox;
+      @include justify-content(space-around);
       width: 100%;
       padding: 0;
       margin: 0;
@@ -564,8 +565,8 @@ nav#navbar {
     }
 
     .menu-menu-container ul {
-      justify-content: space-between;
-      flex-direction: column;
+      @include justify-content(space-between);
+      @include flex-direction(column);
       transition: all 1s ease;
       max-height: 0;
 
@@ -616,19 +617,17 @@ nav#navbar {
     #rsvpPlugin {
 
       form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(space-around);
 
         &#rsvp, &[name="rsvpForm"] {
-          flex-direction: column;
+          @include flex-direction(column);
         }
 
         .rsvpParagraph {
           width: 100%;
-          //min-height: 200%;
-          //height: 4.25vmin;
 
           label {
             display: block;
@@ -682,10 +681,10 @@ nav#navbar {
     form#rsvpForm {
       .rsvpCustomQuestions {
         & > .rsvpFormField {
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-          flex-direction: row;
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(space-around);
+          @include flex-direction(row);
 
           & > .rsvpParagraph, & > .rsvpClear {
             display: none;
