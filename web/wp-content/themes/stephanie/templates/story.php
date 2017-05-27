@@ -12,8 +12,8 @@ function addAlbum($group, $images) {
         if ($value['miniature']) {
             $miniature = STEPHANIE_IMAGES_PATH . $value['miniature'];
         } else {
-            $miniatureValues = explode('.', $image);
-            $miniature = $miniatureValues['0'] . '-min.' . $miniatureValues['1'];
+            $lastPos = strrpos($image, '.');
+            $miniature = substr($image, 0, $lastPos) . '-min.' . substr($image, $lastPos + 1);
         }
         $caption = $value['caption'];
 
