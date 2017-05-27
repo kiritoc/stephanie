@@ -832,10 +832,26 @@ nav#navbar {
   height: 12vmin;
   margin: auto;
   -webkit-mask-image: url("../images/gift.svg");
+  -moz-mask-image: url("../images/gift.svg");
+  -ms-mask-image: url("../images/gift.svg");
+  -o-mask-image: url("../images/gift.svg");
+  mask-image: url("../images/gift.svg");
   -webkit-mask-size: 12vmin;
-  background-color: #8964C2;
+  -moz-mask-size: 12vmin;
+  -ms-mask-size: 12vmin;
+  -o-mask-size: 12vmin;
+  mask-size: 12vmin;
   -webkit-mask-position: center bottom;
-  -webkit-mask-repeat: no-repeat, no-repeat;
+  -moz-mask-position: center bottom;
+  -ms-mask-position: center bottom;
+  -o-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-repeat: no-repeat no-repeat;
+  -moz-mask-repeat: no-repeat no-repeat;
+  -ms-mask-repeat: no-repeat no-repeat;
+  -o-mask-repeat: no-repeat no-repeat;
+  mask-repeat: no-repeat no-repeat;
+  background-color: #8964C2;
   padding: 2em; }
 
 .wishlist {
@@ -871,8 +887,11 @@ nav#navbar {
     display: block;
     width: 70px;
     height: 28px;
-    -moz-border-radius: 11px;
     -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    -ms-border-radius: 11px;
+    -o-border-radius: 11px;
+    border-radius: 11px;
     border-radius: 11px;
     text-align: center;
     font-weight: bold;
@@ -917,12 +936,16 @@ nav#navbar {
       position: relative;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
       box-sizing: border-box; }
       .our-timeline-story .timeline-content .post .post-content .box {
         position: relative;
         background: #f8f8f8;
         -webkit-box-shadow: 0 3px 0 #dedede;
         -moz-box-shadow: 0 3px 0 #dedede;
+        -ms-box-shadow: 0 3px 0 #dedede;
+        -o-box-shadow: 0 3px 0 #dedede;
         box-shadow: 0 3px 0 #dedede;
         padding: 20px 20px 1px; }
         .our-timeline-story .timeline-content .post .post-content .box:before {
@@ -933,8 +956,11 @@ nav#navbar {
           border-right: 0;
           border-bottom: 0;
           display: block;
-          -moz-background-clip: padding;
           -webkit-background-clip: padding-box;
+          -moz-background-clip: padding-box;
+          -ms-background-clip: padding-box;
+          -o-background-clip: padding-box;
+          background-clip: padding-box;
           background-clip: padding-box;
           background-color: #f8f8f8;
           left: -6px;
@@ -960,12 +986,16 @@ nav#navbar {
       position: relative;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
       box-sizing: border-box; }
       .our-timeline-story .timeline-content .post .data .date {
         float: left;
         height: 28px;
-        -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
         border-radius: 5px;
         background-color: #c7c5c3;
         text-align: center;
@@ -997,15 +1027,21 @@ nav#navbar {
           width: 12px;
           height: 12px;
           border: 4px solid #8964C2;
-          -moz-border-radius: 10px;
           -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
           border-radius: 10px;
+          -webkit-background-clip: padding;
           -moz-background-clip: padding;
-          -webkit-background-clip: padding-box;
-          background-clip: padding-box;
+          -ms-background-clip: padding;
+          -o-background-clip: padding;
+          background-clip: padding;
           background-color: #FFFFFF;
-          -moz-box-shadow: 0 0 0 5px #FFFFFF;
           -webkit-box-shadow: 0 0 0 5px #FFFFFF;
+          -moz-box-shadow: 0 0 0 5px #FFFFFF;
+          -ms-box-shadow: 0 0 0 5px #FFFFFF;
+          -o-box-shadow: 0 0 0 5px #FFFFFF;
           box-shadow: 0 0 0 5px #FFFFFF;
           content: '';
           left: -45px;
@@ -1030,6 +1066,8 @@ nav#navbar {
         background: #f8f8f8;
         -webkit-box-shadow: 0 3px 0 #dedede;
         -moz-box-shadow: 0 3px 0 #dedede;
+        -ms-box-shadow: 0 3px 0 #dedede;
+        -o-box-shadow: 0 3px 0 #dedede;
         box-shadow: 0 3px 0 #dedede; }
         .our-timeline-story .timeline-content .post .data .gallery .album {
           height: 60px; }
@@ -1119,20 +1157,52 @@ nav#navbar {
   width: 100%;
   height: 90%;
   -webkit-mask-position: center;
-  -webkit-mask-repeat: no-repeat, no-repeat; }
+  -moz-mask-position: center;
+  -ms-mask-position: center;
+  -o-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat no-repeat;
+  -moz-mask-repeat: no-repeat no-repeat;
+  -ms-mask-repeat: no-repeat no-repeat;
+  -o-mask-repeat: no-repeat no-repeat;
+  mask-repeat: no-repeat no-repeat; }
 
 .entry-content-page .cd-timeline-img span[title="Mairie"]::before {
   -webkit-mask-image: url("../images/town-hall.svg");
-  -webkit-mask-size: 50%; }
+  -moz-mask-image: url("../images/town-hall.svg");
+  -ms-mask-image: url("../images/town-hall.svg");
+  -o-mask-image: url("../images/town-hall.svg");
+  mask-image: url("../images/town-hall.svg");
+  -webkit-mask-size: 50%;
+  -moz-mask-size: 50%;
+  -ms-mask-size: 50%;
+  -o-mask-size: 50%;
+  mask-size: 50%; }
 
 .entry-content-page .cd-timeline-img span[title="Eglise"]::before {
   -webkit-mask-image: url("../images/church.svg");
-  -webkit-mask-size: 55%; }
+  -moz-mask-image: url("../images/church.svg");
+  -ms-mask-image: url("../images/church.svg");
+  -o-mask-image: url("../images/church.svg");
+  mask-image: url("../images/church.svg");
+  -webkit-mask-size: 55%;
+  -moz-mask-size: 55%;
+  -ms-mask-size: 55%;
+  -o-mask-size: 55%;
+  mask-size: 55%; }
 
 .entry-content-page .cd-timeline-img span[title="Réception"]::before {
   top: -10%;
   -webkit-mask-image: url("../images/reception.svg");
-  -webkit-mask-size: 60%; }
+  -moz-mask-image: url("../images/reception.svg");
+  -ms-mask-image: url("../images/reception.svg");
+  -o-mask-image: url("../images/reception.svg");
+  mask-image: url("../images/reception.svg");
+  -webkit-mask-size: 60%;
+  -moz-mask-size: 60%;
+  -ms-mask-size: 60%;
+  -o-mask-size: 60%;
+  mask-size: 60%; }
 
 /*--------------------------------------------------------------
 # Loader
