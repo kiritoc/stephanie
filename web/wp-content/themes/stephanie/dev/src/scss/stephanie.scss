@@ -714,39 +714,37 @@ nav#navbar {
           height: 8vmin;
 
           &:before {
-            content: "";
-            background: black;
+            @include simple-font("icomoon");
+            color: $secondary-color;
+            font-size: 3.25em;
             display: inline-block;
             width: 100%;
             height: 75%;
-            -webkit-mask-position: center bottom;
-            -webkit-mask-repeat: no-repeat, no-repeat;
+            margin: 5px 0;
           }
 
           &[for$="question11"]:before {
-            -webkit-mask-image: url("../images/town-hall.svg");
-            -webkit-mask-size: 4vmin;
+            content: $icon-town-hall;
           }
 
           &[for$="question12"]:before, &[for$="question25"]:before {
-            -webkit-mask-image: url("../images/church.svg");
-            -webkit-mask-size: 5vmin;
+            content: $icon-church;
           }
 
           &[for$="question13"]:before, &[for$="question26"]:before {
-            -webkit-mask-image: url("../images/reception.svg");
-            -webkit-mask-size: 4vmin;
+            content: $icon-reception;
           }
 
           &[for$="question14"]:before, &[for$="question27"]:before {
-            -webkit-mask-image: url("../images/diner.svg");
-            -webkit-mask-size: 4vmin;
+            font-size: 1.25em;
+            line-height: 2.5;
+            content: $icon-diner;
           }
         }
 
         &:checked + label {
           &:before {
-            background-color: $primary-color;
+            color: $primary-color;
           }
         }
       }
@@ -800,15 +798,8 @@ nav#navbar {
   }
 
   .icon-gift {
-    width: 12vmin;
-    height: 12vmin;
-    margin: auto;
-    @include vendor-prefix('mask-image', url("../images/gift.svg"));
-    @include vendor-prefix('mask-size', 12vmin);
-    @include vendor-prefix('mask-position', center bottom);
-    @include vendor-prefix('mask-repeat', no-repeat no-repeat);
-    background-color: $primary-color;
-    padding: 2em;
+    font-size: 12vmin;
+    color: $primary-color;
   }
 }
 
@@ -1162,33 +1153,25 @@ nav#navbar {
 
   .cd-timeline-img {
     span::before {
-      position: absolute;
-      left: 0;
-      top: 5%;
-
-      content: "";
-      background: white;
-      display: inline-block;
-      width: 100%;
-      height: 90%;
-      @include vendor-prefix('mask-position', center);
-      @include vendor-prefix('mask-repeat', no-repeat no-repeat);
+      @include simple-font("icomoon");
+      color: $third-color;
+      line-height: 1.5;
     }
 
     span[title="Mairie"]::before {
-      @include vendor-prefix('mask-image', url("../images/town-hall.svg"));
-      @include vendor-prefix('mask-size', 50%);
+      font-size: 40px;
+      content: $icon-town-hall;
     }
 
     span[title="Eglise"]::before {
-      @include vendor-prefix('mask-image', url("../images/church.svg"));
-      @include vendor-prefix('mask-size', 55%);
+      font-size: 35px;
+      content: $icon-church;
     }
 
     span[title="Réception"]::before {
-      top: -10%;
-      @include vendor-prefix('mask-image', url("../images/reception.svg"));
-      @include vendor-prefix('mask-size', 60%);
+      font-size: 55px;
+      line-height: 0.75;
+      content: $icon-reception;
     }
   }
 }

@@ -36,16 +36,6 @@
     content: $icon-car;
   }
 }
-.icon-quotes-left {
-  &:before {
-    content: $icon-quotes-left;
-  }
-}
-.icon-quotes-right {
-  &:before {
-    content: $icon-quotes-right;
-  }
-}
 .icon-angle-double-down {
   &:before {
     content: $icon-angle-double-down;
@@ -66,9 +56,33 @@
     content: $icon-star;
   }
 }
-
 .icon-happy-face {
   &:before {
     content: $icon-happy-face;
+  }
+}
+.icon-church {
+  &:before {
+    content: $icon-church;
+  }
+}
+.icon-diner {
+  &:before {
+    content: $icon-diner;
+  }
+}
+.icon-reception {
+  &:before {
+    content: $icon-reception;
+  }
+}
+.icon-town-hall {
+  &:before {
+    content: $icon-town-hall;
+  }
+}
+.icon-gift {
+  &:before {
+    content: $icon-gift;
   }
 }

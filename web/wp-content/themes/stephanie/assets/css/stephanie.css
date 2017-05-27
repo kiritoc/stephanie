@@ -64,12 +64,6 @@
 .icon-car:before {
   content: ""; }
 
-.icon-quotes-left:before {
-  content: ""; }
-
-.icon-quotes-right:before {
-  content: ""; }
-
 .icon-angle-double-down:before {
   content: ""; }
 
@@ -84,6 +78,21 @@
 
 .icon-happy-face:before {
   content: ""; }
+
+.icon-church:before {
+  content: ""; }
+
+.icon-diner:before {
+  content: ""; }
+
+.icon-reception:before {
+  content: ""; }
+
+.icon-town-hall:before {
+  content: ""; }
+
+.icon-gift:before {
+  content: ""; }
 
 /*--------------------------------------------------------------
 # Fonts
@@ -770,27 +779,31 @@ nav#navbar {
       cursor: pointer;
       height: 8vmin; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label:before {
-        content: "";
-        background: black;
+        font-family: "icomoon";
+        -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+        -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+        -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+        -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+        -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+        font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+        color: #454545;
+        font-size: 3.25em;
         display: inline-block;
         width: 100%;
         height: 75%;
-        -webkit-mask-position: center bottom;
-        -webkit-mask-repeat: no-repeat, no-repeat; }
+        margin: 5px 0; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
-        -webkit-mask-image: url("../images/town-hall.svg");
-        -webkit-mask-size: 4vmin; }
+        content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
-        -webkit-mask-image: url("../images/church.svg");
-        -webkit-mask-size: 5vmin; }
+        content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
-        -webkit-mask-image: url("../images/reception.svg");
-        -webkit-mask-size: 4vmin; }
+        content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
-        -webkit-mask-image: url("../images/diner.svg");
-        -webkit-mask-size: 4vmin; }
+        font-size: 1.25em;
+        line-height: 2.5;
+        content: ""; }
     .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox]:checked + label:before {
-      background-color: #8964C2; }
+      color: #8964C2; }
 
 /*--------------------------------------------------------------
 # Buttons
@@ -828,31 +841,8 @@ nav#navbar {
   line-height: 1.6em; }
 
 .wedding-list .icon-gift {
-  width: 12vmin;
-  height: 12vmin;
-  margin: auto;
-  -webkit-mask-image: url("../images/gift.svg");
-  -moz-mask-image: url("../images/gift.svg");
-  -ms-mask-image: url("../images/gift.svg");
-  -o-mask-image: url("../images/gift.svg");
-  mask-image: url("../images/gift.svg");
-  -webkit-mask-size: 12vmin;
-  -moz-mask-size: 12vmin;
-  -ms-mask-size: 12vmin;
-  -o-mask-size: 12vmin;
-  mask-size: 12vmin;
-  -webkit-mask-position: center bottom;
-  -moz-mask-position: center bottom;
-  -ms-mask-position: center bottom;
-  -o-mask-position: center bottom;
-  mask-position: center bottom;
-  -webkit-mask-repeat: no-repeat no-repeat;
-  -moz-mask-repeat: no-repeat no-repeat;
-  -ms-mask-repeat: no-repeat no-repeat;
-  -o-mask-repeat: no-repeat no-repeat;
-  mask-repeat: no-repeat no-repeat;
-  background-color: #8964C2;
-  padding: 2em; }
+  font-size: 12vmin;
+  color: #8964C2; }
 
 .wishlist {
   margin: auto; }
@@ -1148,61 +1138,28 @@ nav#navbar {
           box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05); }
 
 .entry-content-page .cd-timeline-img span::before {
-  position: absolute;
-  left: 0;
-  top: 5%;
-  content: "";
-  background: white;
-  display: inline-block;
-  width: 100%;
-  height: 90%;
-  -webkit-mask-position: center;
-  -moz-mask-position: center;
-  -ms-mask-position: center;
-  -o-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat no-repeat;
-  -moz-mask-repeat: no-repeat no-repeat;
-  -ms-mask-repeat: no-repeat no-repeat;
-  -o-mask-repeat: no-repeat no-repeat;
-  mask-repeat: no-repeat no-repeat; }
+  font-family: "icomoon";
+  -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+  -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  color: #FFFFFF;
+  line-height: 1.5; }
 
 .entry-content-page .cd-timeline-img span[title="Mairie"]::before {
-  -webkit-mask-image: url("../images/town-hall.svg");
-  -moz-mask-image: url("../images/town-hall.svg");
-  -ms-mask-image: url("../images/town-hall.svg");
-  -o-mask-image: url("../images/town-hall.svg");
-  mask-image: url("../images/town-hall.svg");
-  -webkit-mask-size: 50%;
-  -moz-mask-size: 50%;
-  -ms-mask-size: 50%;
-  -o-mask-size: 50%;
-  mask-size: 50%; }
+  font-size: 40px;
+  content: ""; }
 
 .entry-content-page .cd-timeline-img span[title="Eglise"]::before {
-  -webkit-mask-image: url("../images/church.svg");
-  -moz-mask-image: url("../images/church.svg");
-  -ms-mask-image: url("../images/church.svg");
-  -o-mask-image: url("../images/church.svg");
-  mask-image: url("../images/church.svg");
-  -webkit-mask-size: 55%;
-  -moz-mask-size: 55%;
-  -ms-mask-size: 55%;
-  -o-mask-size: 55%;
-  mask-size: 55%; }
+  font-size: 35px;
+  content: ""; }
 
 .entry-content-page .cd-timeline-img span[title="Réception"]::before {
-  top: -10%;
-  -webkit-mask-image: url("../images/reception.svg");
-  -moz-mask-image: url("../images/reception.svg");
-  -ms-mask-image: url("../images/reception.svg");
-  -o-mask-image: url("../images/reception.svg");
-  mask-image: url("../images/reception.svg");
-  -webkit-mask-size: 60%;
-  -moz-mask-size: 60%;
-  -ms-mask-size: 60%;
-  -o-mask-size: 60%;
-  mask-size: 60%; }
+  font-size: 55px;
+  line-height: 0.75;
+  content: ""; }
 
 /*--------------------------------------------------------------
 # Loader
