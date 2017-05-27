@@ -80,7 +80,7 @@
   content: ""; }
 
 .icon-church:before {
-  content: ""; }
+  content: ""; }
 
 .icon-diner:before {
   content: ""; }
@@ -92,7 +92,7 @@
   content: ""; }
 
 .icon-gift:before {
-  content: ""; }
+  content: ""; }
 
 /*--------------------------------------------------------------
 # Fonts
@@ -767,7 +767,7 @@ nav#navbar {
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
         content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
-        content: ""; }
+        content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
         content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
@@ -1123,7 +1123,7 @@ nav#navbar {
 
 .entry-content-page .cd-timeline-img span[title="Eglise"]::before {
   font-size: 35px;
-  content: ""; }
+  content: ""; }
 
 .entry-content-page .cd-timeline-img span[title="Réception"]::before {
   font-size: 55px;
