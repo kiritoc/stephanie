@@ -354,13 +354,12 @@ textarea {
       }
 
       .header-divider-container {
-        width: 30vmin;
         margin: 1.5vmin;
         box-sizing: border-box;
 
         svg {
-          width: auto;
-          height: auto;
+          width: 30vmin;
+          height: 9.385vmin;
 
           fill: $third-color;
         }

@@ -427,12 +427,11 @@ textarea {
       #stephanie-header .content .logo .subtitle {
         font-size: 4vmin; }
       #stephanie-header .content .logo .header-divider-container {
-        width: 30vmin;
         margin: 1.5vmin;
         box-sizing: border-box; }
         #stephanie-header .content .logo .header-divider-container svg {
-          width: auto;
-          height: auto;
+          width: 30vmin;
+          height: 9.385vmin;
           fill: #FFFFFF; }
   #stephanie-header .index-button {
     position: absolute;
