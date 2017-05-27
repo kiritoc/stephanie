@@ -160,6 +160,12 @@ endif;
  * Enqueue scripts and styles.
  */
 function stephanie_scripts_styles() {
+    // Animate
+    wp_enqueue_style('animate-style', STEPHANIE_CSS_PATH . 'animate.min.css');
+
+    // Scrolla
+    wp_enqueue_script('scrolla-scripts', STEPHANIE_JS_PATH . 'scrolla.jquery.min.js', array('jquery'), '', '');
+
     // Enqueue viewport-units-buggyfill
     wp_enqueue_script('viewport-units-buggyfill.hacks-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.hacks.js', array('jquery'), '', '');
     wp_enqueue_script('viewport-units-buggyfill-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.js', array('jquery'), '', '');

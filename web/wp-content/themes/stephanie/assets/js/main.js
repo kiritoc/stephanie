@@ -51,6 +51,11 @@
     });
 
     $(document).ready(function () {
+        $('.animate').scrolla({
+            mobile: false,
+            once: true
+        });
+
         // Wedding countdown
         var $weddingCountdown = $('.js-countdown_wedding_day');
         $weddingCountdown.fadeTo(0, 0);
@@ -164,7 +169,7 @@
             //dots: true,
             infinite: false,
             speed: 300,
-            slidesToShow: 4,
+            slidesToShow: 2,
             centerMode: false,
             adaptiveHeight: true,
             variableWidth: true

@@ -921,6 +921,9 @@ nav#navbar {
             &:after {
               left: auto;
               right: -45px;
+
+              visibility: visible;
+              animation: cd-reveal-image .6s;
             }
           }
         }
@@ -1041,7 +1044,7 @@ nav#navbar {
           }
         }
 
-        .spotify-wrapper {
+        .iframe-wrapper {
           position: relative;
           padding-bottom: 56.25%;
           height: 60px;
@@ -1057,6 +1060,7 @@ nav#navbar {
         }
 
         .gallery {
+          max-width: 230px;
           padding: 10px 37px;
           background: #f8f8f8;
           -webkit-box-shadow: 0 3px 0 #dedede;

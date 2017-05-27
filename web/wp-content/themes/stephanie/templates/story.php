@@ -3,6 +3,27 @@
  * Template Name: Notre histoire
  */
 
+function addAlbum($group, $images) {
+    $result = '<div class="album">';
+
+    foreach ($images as $value) {
+        $image = STEPHANIE_IMAGES_PATH . $value['image'];
+
+        if ($value['miniature']) {
+            $miniature = STEPHANIE_IMAGES_PATH . $value['miniature'];
+        } else {
+            $miniatureValues = explode('.', $image);
+            $miniature = $miniatureValues['0'] . '-min.' . $miniatureValues['1'];
+        }
+        $caption = $value['caption'];
+
+        $result .= "<div><a href=\"$image\" data-fancybox=\"$group\" data-caption=\"$caption\"><img src=\"$miniature\" alt=\"$caption\"/></a></div>";
+    }
+
+    $result .= '</div>';
+
+    return $result;
+}
 
 get_header();
 if (!get_theme_mod('show_only_main_header')): ?>
@@ -18,7 +39,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2008</span>
 
                         <div class="odd post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première rencontre</h2>
                                     <p>C’est la rentrée pour les premières années en DUT Informatique à l’IUT d’Arles.
@@ -31,46 +52,38 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>Septembre</span></div>
                                 <div class="clear"></div>
-                                <div class="gallery">
-                                    <div class="album">
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=1" data-fancybox="group" data-caption="Caption #1">
-                                                <img src="http://placehold.it/350x300?text=1" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=2" data-fancybox="group" data-caption="Caption #2">
-                                                <img src="http://placehold.it/350x300?text=2" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=3" data-fancybox="group" data-caption="Caption #3">
-                                                <img src="http://placehold.it/350x300?text=3" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=4" data-fancybox="group" data-caption="Caption #4">
-                                                <img src="http://placehold.it/350x300?text=4" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=5" data-fancybox="group" data-caption="Caption #5">
-                                                <img src="http://placehold.it/350x300?text=5" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=6" data-fancybox="group" data-caption="Caption #6">
-                                                <img src="http://placehold.it/350x300?text=6" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="gallery animate" data-animate="slidInRight" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premiere-rencontre", array(
+                                        array(
+                                            "image" => "story/premiere-rencontre/chez-guillaume.JPG",
+                                            "caption" => "Soirée jeux-video chez Guillaume"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-rencontre/le-regard.JPG",
+                                            "caption" => "L'un des premiers regards"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-rencontre/chez-morgane.JPG",
+                                            "caption" => "Soirée chez Morgane"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-rencontre/parking-auchan.JPG",
+                                            "caption" => "Le passage aux courses"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-rencontre/iut.JPG",
+                                            "caption" => "L'IUT d'Arles"
+                                        )
+                                    ));
+                                    ?>
                                 </div>
                             </div>
                             <div class="clear"></div>
                         </div>
 
                         <div class="even post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier bisou</h2>
                                     <p>L’intérêt de l’un pour l’autre commence à se voir. David, un ami de Guillaume,
@@ -83,26 +96,31 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>Entre le 13 et le 14 décembre</span></div>
                                 <div class="clear"></div>
-                                <div class="gallery">
-                                    <div class="album">
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=1" data-fancybox="group" data-caption="Caption #1">
-                                                <img src="http://placehold.it/350x300?text=1" alt="" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="http://placehold.it/350x300?text=2" data-fancybox="group" data-caption="Caption #2">
-                                                <img src="http://placehold.it/350x300?text=2" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premiere-bisou", array(
+                                        array(
+                                            "image" => "story/premier-bisou/david-nous.gif",
+                                            "miniature" => "story/premier-bisou/david-nous-min.png",
+                                            "caption" => "Images rescapées de la soirée"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-bisou/voiture-retour.JPG",
+                                            "caption" => "Retour en voiture, direction Arles"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-bisou/bisou-neige.JPG",
+                                            "caption" => "Bisou sous la neige Arlesienne"
+                                        )
+                                    ));
+                                    ?>
                                 </div>
                             </div>
                             <div class="clear"></div>
                         </div>
 
                         <div class="odd post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier album</h2>
                                     <p>De l’époque de l’IUT d’Arles et de leur rencontre, Stéphanie et Guillaume gardent
@@ -112,8 +130,9 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date empty"></div>
                                 <div class="clear"></div>
-                                <div class="spotify-wrapper">
-                                    <iframe src='https://embed.spotify.com/?uri=spotify:album:6ASu7ufzcJkzZ9lLfiTyMN'
+                                <div class="iframe-wrapper">
+                                    <iframe class="animate" data-animate="slideInRight" data-duration="0.5s"
+                                            src='https://embed.spotify.com/?uri=spotify:album:6ASu7ufzcJkzZ9lLfiTyMN'
                                             frameborder='0' allowtransparency='true'></iframe>
                                 </div>
                             </div>
@@ -123,24 +142,47 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2009</span>
 
                         <div class="even post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier appartement</h2>
                                     <p>Habitant dans la même résidence, logeant déjà quasiment ensemble depuis un petit
                                         moment, Stéphanie quitta officiellement son appartement pour habiter dans celui
-                                        de Guillaume, un studio de 23 m2 dans la résidence Les Cyclades, à côté de l’IUT
+                                        de Guillaume, un studio de 23 m<sup>2</sup> dans la résidence Les Cyclades, à
+                                        côté de l’IUT
                                         d’Arles.</p>
                                 </div>
                             </div>
                             <div class="data">
                                 <div class="date"><span>Juin</span></div>
                                 <div class="clear"></div>
+                                <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premier-appartement", array(
+                                        array(
+                                            "image" => "story/premier-appartement/cyclades.JPG",
+                                            "caption" => "Le jardin des Cyclades vu de notre balcon"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-appartement/nous-balcon.JPG",
+                                            "caption" => "Nous sur notre balcon"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-appartement/atelier-lecture.JPG",
+                                            "caption" => "L'un de nos ateliers lecture"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-appartement/nous-interieur.JPG",
+                                            "caption" => "Nous dans notre studio"
+                                        )
+                                    ));
+                                    ?>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
 
                         <div class="odd post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première série</h2>
                                     <p>Fan de la série Friends depuis son enfance, Guillaume la regardait très souvent.
@@ -151,6 +193,11 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date empty"></div>
                                 <div class="clear"></div>
+                                <div class="iframe-wrapper">
+                                    <iframe class="animate" data-animate="slideInRight" data-duration="0.5s"
+                                            width="560" height="315" src="https://www.youtube.com/embed/HcOXgibVxSM"
+                                            frameborder="0" allowfullscreen></iframe>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -158,7 +205,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2011</span>
 
                         <div class="even post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première séparation</h2>
                                     <p>Stéphanie décide de monter à Paris pour continuer ses études. Guillaume resta
@@ -170,6 +217,28 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>Septembre</span></div>
                                 <div class="clear"></div>
+                                <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premiere-separation", array(
+                                        array(
+                                            "image" => "story/premiere-separation/stef-emmenage.JPG",
+                                            "caption" => "Stéphanie emménage"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-separation/paris-2012.JPG",
+                                            "caption" => "à Paris"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-separation/guillaume-emmenage.JPG",
+                                            "caption" => "Guillaume emménage"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-separation/calanques-luminy.JPG",
+                                            "caption" => "à Marseille"
+                                        )
+                                    ));
+                                    ?>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -177,7 +246,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2014</span>
 
                         <div class="odd post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier grand voyage</h2>
                                     <p>Premier voyage aussi loin pour tous les deux. Guillaume et Stéphanie s’envolèrent
@@ -190,6 +259,60 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date">Octobre</div>
                                 <div class="clear"></div>
+                                <div class="gallery animate" data-animate="slideInRight" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premier-grand-voyage", array(
+                                        array(
+                                            "image" => "story/premier-grand-voyage/new-york.JPG",
+                                            "caption" => "A nous New York !"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/las-vegas.JPG",
+                                            "caption" => "Arrivés à Las Vegas"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/grand-canyon.JPG",
+                                            "caption" => "Petit vol en hélicoptère au dessus du Grand Canyon<br/> (Coup de coeur de Guillaume)"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/grand-canyon-helico.JPG",
+                                            "caption" => "Et la vue depuis l'hélicoptère"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/route-66.JPG",
+                                            "caption" => "Road trip via la route 66"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/plage-los-angeles.JPG",
+                                            "caption" => "Coucher de soleil à Los Angeles"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/hollywood.JPG",
+                                            "caption" => "Petite photo de couple<br/>avec le panneau Hollywood"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/warner-bros.JPG",
+                                            "caption" => "Petit arrêt au studio de la Warner Bros"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/death-valley.JPG",
+                                            "caption" => "Traversée de la Death Valley"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/sequoia-park.JPG",
+                                            "caption" => "Un peu de fraîcheur au Sequoia National Park"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/yosemite.JPG",
+                                            "caption" => "Suivi d'un côté un peu mystique à Yosemite"
+                                        ),
+                                        array(
+                                            "image" => "story/premier-grand-voyage/san-francisco.JPG",
+                                            "caption" => "Pour finir notre petit voyage reposant<br/>à San Francisco"
+                                        )
+                                    ));
+                                    ?>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -197,7 +320,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2015</span>
 
                         <div class="even post">
-                            <div class="post-content bounce-in">
+                            <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première demande en mariage
                                         <span class="subtitle">(et dernière  <span
@@ -212,6 +335,32 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="data">
                                 <div class="date"><span>14 décembre</span></div>
                                 <div class="clear"></div>
+                                <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
+                                    <?php
+                                    echo addAlbum("premiere-demande-mariage", array(
+                                        array(
+                                            "image" => "story/premiere-demande-mariage/restaurant.JPG",
+                                            "caption" => "Restaurant de la fameuse soirée"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-demande-mariage/restaurant-suite.JPG",
+                                            "caption" => "Allez, on vous montre le dessert !"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-demande-mariage/guillaume.JPG",
+                                            "caption" => "Guillaume qui se demande comment faire cette demande en mariage !"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-demande-mariage/appartement.JPG",
+                                            "caption" => "Finalement la demande aura lieu dans notre appartement"
+                                        ),
+                                        array(
+                                            "image" => "story/premiere-demande-mariage/camargue.JPG",
+                                            "caption" => "Et le mariage dans le Parc Naturel Régional de Camargue"
+                                        )
+                                    ));
+                                    ?>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
