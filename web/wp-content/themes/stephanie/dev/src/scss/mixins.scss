@@ -1,9 +1,52 @@
 /*--------------------------------------------------------------
+# Browser vendor prefixes
+--------------------------------------------------------------*/
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+@mixin font-feature-settings($feature-list-one: false, $feature-list-zero: false) {
+  // Create an empty list for the standard syntax
+  $standard: ();
+
+  // Create an empty list for the old Mozilla syntax
+  $old-moz: ();
+
+  // Only proceed if a list of arguments was passed
+  @if $feature-list-one {
+    // Add each listed feature to the standard and old Mozilla values
+    @each $feature in $feature-list-one {
+      $standard: append($standard, '#{$feature}' 1, comma);
+      $old-moz: append($old-moz, '#{$feature}=1', comma);
+    }
+  }
+
+  // Only proceed if a list of arguments was passed
+  @if $feature-list-zero {
+    // Add each listed feature to the standard and old Mozilla values
+    @each $feature in $feature-list-zero {
+      $standard: append($standard, '#{$feature}' 0, comma);
+      $old-moz: append($old-moz, '#{$feature}=0', comma);
+    }
+  }
+
+  // Finally, print out the prefixed and non-prefixed code for all of the listed features
+  -moz-font-feature-settings: $old-moz;
+  -moz-font-feature-settings: $standard;
+  -ms-font-feature-settings: $standard;
+  -o-font-feature-settings: $standard;
+  -webkit-font-feature-settings: $standard;
+  font-feature-settings: $standard;
+}
+
+/*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
 @mixin simple-font($font-family...) {
   font-family: $font-family;
-  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+  @include font-feature-settings(liga kern, calt dlig salt swsh titl);
 }
 
 /*--------------------------------------------------------------

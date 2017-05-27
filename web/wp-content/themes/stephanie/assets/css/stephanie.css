@@ -15,6 +15,9 @@
 # Navbar variables
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# Browser vendor prefixes
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -104,7 +107,12 @@ body {
   margin: 0;
   text-align: center;
   font-family: "slabo-font";
-  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+  -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+  -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
   color: #8964C2;
   background-color: #F8F8F8; }
 
@@ -187,7 +195,12 @@ textarea {
 .title-parts {
   font-size: 12vmin;
   font-family: "slabo-font";
-  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+  -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+  -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
   color: #454545;
   position: relative;
   padding-bottom: 4.5vmin;
@@ -196,7 +209,12 @@ textarea {
   .title-parts .part-2 {
     font-size: 0.5em;
     font-family: "lavanderia-font", sans-serif;
-    font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+    -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+    -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
     color: #8964C2;
     position: absolute;
     bottom: 0;
@@ -277,7 +295,12 @@ textarea {
         margin-top: 1.5em; }
     .grid .grid-item .more-title {
       font-family: "lavanderia-font", sans-serif;
-      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+      -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
       background: #FFFFFF;
       position: absolute;
       top: 0;
@@ -298,7 +321,12 @@ textarea {
         max-width: 100%; }
     .grid .grid-item .title {
       font-family: "lavanderia-font", sans-serif;
-      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+      -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
       color: #454545;
       font-size: 1.5em; }
       .grid .grid-item .title:hover {
@@ -386,7 +414,12 @@ textarea {
     #stephanie-header .content .logo {
       height: 60%;
       font-family: "lavanderia-font", sans-serif;
-      font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1;
+      -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+      -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+      font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
       color: #FFFFFF;
       justify-content: center; }
       #stephanie-header .content .logo .title {
@@ -633,7 +666,12 @@ nav#navbar {
 --------------------------------------------------------------*/
 .entry-content-page .rsvp-content {
   font-family: "slabo-font";
-  font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+  -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+  -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0; }
   .entry-content-page .rsvp-content #rsvpArea + #rsvpPlugin > .rsvpParagraph {
     font-size: 2vmin;
     color: #8964C2; }
@@ -908,7 +946,12 @@ nav#navbar {
           transform: rotate(-45deg); }
         .our-timeline-story .timeline-content .post .post-content .box h2 {
           font-family: "lavanderia-font", sans-serif;
-          font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+          -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+          -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+          -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+          -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+          -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+          font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0; }
           .our-timeline-story .timeline-content .post .post-content .box h2 .subtitle {
             display: block;
             font-weight: normal;
@@ -1024,7 +1067,12 @@ nav#navbar {
   .entry-content-page .cd-timeline-content .cd-timeline-item-title {
     font-size: 2em;
     font-family: "lavanderia-font", sans-serif;
-    font-feature-settings: 'calt' 0, 'dlig' 0, 'liga' 1, 'salt' 0, 'swsh' 0, 'titl' 0, 'kern' 1; }
+    -moz-font-feature-settings: "liga=1", "kern=1", "calt=0", "dlig=0", "salt=0", "swsh=0", "titl=0";
+    -moz-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -ms-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0; }
   .entry-content-page .cd-timeline-content .the-excerpt {
     position: initial; }
     .entry-content-page .cd-timeline-content .the-excerpt .wpgmp_map_container {
