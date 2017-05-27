@@ -2,7 +2,7 @@
     "use strict";
 
     // Init viewport-units-buggyfill
-    window.viewportUnitsBuggyfill.init({force: true});
+    window.viewportUnitsBuggyfill.init();
 
     $(window).load(function () {
         window.viewportUnitsBuggyfill.refresh();
