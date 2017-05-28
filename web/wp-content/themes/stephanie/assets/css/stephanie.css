@@ -753,8 +753,10 @@ nav#navbar {
   .entry-content-page .rsvp-content form#rsvpForm .rsvpFormField.rsvpCheckboxCustomQ {
     margin: 0 4vmin;
     text-align: center; }
-  .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendeeQuestions {
-    text-align: center; }
+  .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee {
+    margin-bottom: 10px; }
+    .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee .rsvpAdditionalAttendeeQuestions {
+      text-align: center; }
   .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] {
     cursor: pointer; }
     .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label {

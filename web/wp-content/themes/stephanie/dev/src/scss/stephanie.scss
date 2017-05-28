@@ -700,8 +700,12 @@ nav#navbar {
         text-align: center;
       }
 
-      .rsvpAdditionalAttendeeQuestions {
-        text-align: center;
+      .rsvpAdditionalAttendee {
+        margin-bottom: 10px;
+
+        .rsvpAdditionalAttendeeQuestions {
+          text-align: center;
+        }
       }
 
       input[type=checkbox] {
