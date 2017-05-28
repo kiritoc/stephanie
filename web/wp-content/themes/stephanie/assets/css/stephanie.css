@@ -225,6 +225,8 @@ textarea {
     margin-right: auto; }
 
 @media screen and (min-width: 1024px) {
+  nav#navbar .logo {
+    margin: auto 0; }
   .entry-content-page {
     width: 940px; } }
 
