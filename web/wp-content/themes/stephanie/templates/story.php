@@ -122,7 +122,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier album</h2>
-                                    <p>De l’époque de l’IUT d’Arles et de leur rencontre, Stéphanie et Guillaume gardent
+                                    <p>De l’époque de l’IUT d’Arles et de leur rencontre Stéphanie et Guillaume gardent
                                         des musiques en tête, celles de l’album de Louise Attaque</p>
                                 </div>
                             </div>
