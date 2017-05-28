@@ -292,11 +292,7 @@ textarea {
     padding: 0 5%;
     position: relative;
     top: 50%;
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    @include vendor-prefix('transform', translateY(-50%));
   }
 }
 
@@ -402,10 +398,10 @@ textarea {
 
 @keyframes jumping {
   0% {
-    transform: translate(0, 0)
+    @include vendor-prefix('transform', translate(0, 0));
   }
   50% {
-    transform: translate(0, -2vmin)
+    @include vendor-prefix('transform', translate(0, -2vmin));
   }
 }
 
@@ -847,7 +843,7 @@ nav#navbar {
     left: 50%;
     margin: 0 -2px;
     top: 0;
-    bottom: 75px;
+    bottom: 0;
   }
 
   .timeline-content {
@@ -897,29 +893,84 @@ nav#navbar {
 
         .data {
           float: left;
-          text-align: right;
           padding: 12px 35px 0 0;
+        }
 
-          .date {
-            float: right;
+        .date {
+          float: right;
+          right: 50%;
+          left: auto;
+          transform: translateX(-35px);
 
-            &:before {
-              left: auto;
-              right: -3px;
-            }
+          &:before {
+            left: auto;
+            right: -3px;
+          }
 
-            &:after {
-              left: auto;
-              right: -45px;
+          &:after {
+            left: auto;
+            right: -45px;
 
-              visibility: visible;
-              animation: cd-reveal-image .6s;
-            }
+            visibility: visible;
+            animation: cd-reveal-image .6s;
           }
         }
       }
 
+      .date {
+        float: left;
+        left: 50%;
+        transform: translateX(35px);
+        height: 28px;
+        @include vendor-prefix('border-radius', 5px);
+        background-color: #c7c5c3;
+        text-align: center;
+        font-weight: bold;
+        line-height: 28px;
+        color: #fff;
+        padding: 0 10px;
+        position: relative;
+        margin: 0;
+
+        &.empty {
+          padding: 0;
+
+          &:before {
+            content: none;
+          }
+        }
+
+        &:before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          @include vendor-prefix('transform', rotate(-45deg));
+          position: absolute;
+          display: block;
+          left: -3px;
+          top: 10px;
+          background-color: #c7c5c3;
+        }
+
+        &:after {
+          width: 12px;
+          height: 12px;
+          border: 4px solid $primary-color;
+          @include vendor-prefix('border-radius', 10px);
+          @include vendor-prefix('background-clip', padding);
+          background-color: $third-color;
+          @include vendor-prefix('box-shadow', 0 0 0 5px $third-color);
+          content: '';
+          left: -45px;
+          top: 4px;
+          display: block;
+          position: absolute;
+        }
+      }
+
       .post-content {
+        clear: both;
+        top: -37px;
         width: 50%;
         position: relative;
         @include vendor-prefix('box-sizing', border-box);
@@ -958,67 +1009,19 @@ nav#navbar {
       }
 
       .data {
+        margin-top: 20px;
         width: 50%;
         position: relative;
         @include vendor-prefix('box-sizing', border-box);
-
-        .date {
-          float: left;
-          height: 28px;
-          @include vendor-prefix('border-radius', 5px);
-          background-color: #c7c5c3;
-          text-align: center;
-          font-weight: bold;
-          line-height: 28px;
-          color: #fff;
-          padding: 0 10px;
-          position: relative;
-          margin: 0 0 1.52em 0;
-
-          &.empty {
-            padding: 0;
-
-            &:before {
-              content: none;
-            }
-          }
-
-          &:before {
-            content: '';
-            width: 10px;
-            height: 10px;
-            @include vendor-prefix('transform', rotate(-45deg));
-            position: absolute;
-            display: block;
-            left: -3px;
-            top: 10px;
-            background-color: #c7c5c3;
-          }
-
-          &:after {
-            width: 12px;
-            height: 12px;
-            border: 4px solid $primary-color;
-            @include vendor-prefix('border-radius', 10px);
-            @include vendor-prefix('background-clip', padding);
-            background-color: $third-color;
-            @include vendor-prefix('box-shadow', 0 0 0 5px $third-color);
-            content: '';
-            left: -45px;
-            top: 4px;
-            display: block;
-            position: absolute;
-          }
-        }
 
         .iframe-wrapper {
           position: relative;
           overflow: hidden;
           max-width: 100%;
+          padding-bottom: 56.25%;
 
           &.spotify-wrapper {
-            padding-bottom: 56.25%;
-            height: 60px;
+            height: 110px;
           }
 
           iframe, object, embed {
@@ -1062,7 +1065,7 @@ nav#navbar {
               &, &:before {
                 top: 50%;
                 left: 50%;
-                transform: translate3d(-50%, -50%, 0);
+                @include vendor-prefix('transform', translate3d(-50%, -50%, 0));
               }
             }
 
@@ -1077,6 +1080,7 @@ nav#navbar {
         }
 
         .gallery {
+          margin: auto;
           max-width: 230px;
           padding: 10px 37px;
           background: #f8f8f8;
@@ -1108,6 +1112,65 @@ nav#navbar {
     overflow: hidden;
     visibility: hidden;
     height: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .our-timeline-story {
+    .line {
+      left: 40px;
+    }
+
+    .timeline-content {
+      span.year {
+        margin: 0 auto 3em 0;
+      }
+
+      .post.odd, .post.even {
+        .date {
+          float: left;
+          left: 75px;
+          transform: none;
+
+          &.empty {
+            display: none;
+          }
+
+          &:before {
+            left: -3px;
+          }
+
+          &:after {
+            left: -45px;
+          }
+
+        }
+
+        .post-content {
+          float: right;
+          padding: 0 35px 0 0;
+          width: 85%;
+          top: 0;
+          margin-top: 30px;
+
+          .box:before {
+            content: none;
+          }
+        }
+
+        .data {
+          float: right;
+          width: 85%;
+          padding: 0;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .spotify-wrapper {
+            padding-bottom: 0px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1250,13 +1313,13 @@ nav#navbar {
 
 @keyframes heartbeat {
   0% {
-    transform: scale(0.75);
+    @include vendor-prefix('transform', scale(0.75));
   }
   50% {
-    transform: scale(1);
+    @include vendor-prefix('transform', scale(1));
   }
   100% {
-    transform: scale(0.75);
+    @include vendor-prefix('transform', scale(0.75));
   }
 }
 

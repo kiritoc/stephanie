@@ -39,6 +39,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2008</span>
 
                         <div class="odd post">
+                            <div class="date"><span>Septembre</span></div>
                             <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première rencontre</h2>
@@ -50,8 +51,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date"><span>Septembre</span></div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slidInRight" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premiere-rencontre", array(
@@ -83,6 +82,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         </div>
 
                         <div class="even post">
+                            <div class="date"><span>Entre le 13 et le 14 décembre</span></div>
                             <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier bisou</h2>
@@ -94,8 +94,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date"><span>Entre le 13 et le 14 décembre</span></div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premiere-bisou", array(
@@ -120,6 +118,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         </div>
 
                         <div class="odd post">
+                            <div class="date empty"></div>
                             <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier album</h2>
@@ -128,8 +127,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date empty"></div>
-                                <div class="clear"></div>
                                 <div class="iframe-wrapper spotify-wrapper">
                                     <iframe class="animate" data-animate="slideInRight" data-duration="0.5s"
                                             src='https://embed.spotify.com/?uri=spotify:album:6ASu7ufzcJkzZ9lLfiTyMN'
@@ -142,6 +139,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2009</span>
 
                         <div class="even post">
+                            <div class="date"><span>Juin</span></div>
                             <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier appartement</h2>
@@ -153,8 +151,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date"><span>Juin</span></div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premier-appartement", array(
@@ -182,6 +178,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         </div>
 
                         <div class="odd post">
+                            <div class="date empty"></div>
                             <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première série</h2>
@@ -191,12 +188,10 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date empty"></div>
-                                <div class="clear"></div>
                                 <div class="iframe-wrapper">
-                                    <div class="youtube animate" data-embed="HcOXgibVxSM" data-animate="slideInRight" data-duration="0.5s">
-                                        <div class="play-button"></div>
-                                    </div>
+                                    <iframe class="animate" data-animate="slideInRight" data-duration="0.5s"
+                                            width="560" height="315" src="https://www.youtube.com/embed/HcOXgibVxSM"
+                                            frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="clear"></div>
@@ -205,6 +200,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2011</span>
 
                         <div class="even post">
+                            <div class="date"><span>Septembre</span></div>
                             <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première séparation</h2>
@@ -215,8 +211,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date"><span>Septembre</span></div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premiere-separation", array(
@@ -246,6 +240,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2014</span>
 
                         <div class="odd post">
+                            <div class="date">Octobre</div>
                             <div class="post-content animate" data-animate="slideInLeft" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Premier grand voyage</h2>
@@ -257,8 +252,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date">Octobre</div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slideInRight" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premier-grand-voyage", array(
@@ -320,6 +313,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                         <span class="year">2015</span>
 
                         <div class="even post">
+                            <div class="date"><span>14 décembre</span></div>
                             <div class="post-content animate" data-animate="slideInRight" data-duration="0.25s">
                                 <div class="box">
                                     <h2>Première demande en mariage
@@ -333,8 +327,6 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                 </div>
                             </div>
                             <div class="data">
-                                <div class="date"><span>14 décembre</span></div>
-                                <div class="clear"></div>
                                 <div class="gallery animate" data-animate="slideInLeft" data-duration="0.25s">
                                     <?php
                                     echo addAlbum("premiere-demande-mariage", array(
