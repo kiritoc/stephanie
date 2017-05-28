@@ -1186,15 +1186,24 @@ nav#navbar {
   // Single column issue fix
   .cd-container.timeline-express.single-column {
     & {
-      margin-top: 1em !important;
-    }
-
-    &::before {
-      left: 2.5vmin !important;
+      margin-left: 30px !important;
+      width: 95%;
+      left: 0;
     }
 
     .cd-timeline-img {
-      left: -0.5vw !important;
+      height: 60px;
+      width: 60px;
+      left: -30px;
+
+      .fa {
+        line-height: 60px !important;
+      }
+    }
+
+    .cd-timeline-content {
+      margin: auto;
+      margin-left: 60px;
     }
   }
 
@@ -1275,7 +1284,6 @@ nav#navbar {
     span::before {
       @include simple-font("icomoon");
       color: $third-color;
-      line-height: 1.5;
     }
 
     span[title="Mairie"]::before {

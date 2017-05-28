@@ -1139,13 +1139,20 @@ nav#navbar {
 # Location - Timeline
 --------------------------------------------------------------*/
 .entry-content-page .cd-container.timeline-express.single-column {
-  margin-top: 1em !important; }
-
-.entry-content-page .cd-container.timeline-express.single-column::before {
-  left: 2.5vmin !important; }
+  margin-left: 30px !important;
+  width: 95%;
+  left: 0; }
 
 .entry-content-page .cd-container.timeline-express.single-column .cd-timeline-img {
-  left: -0.5vw !important; }
+  height: 60px;
+  width: 60px;
+  left: -30px; }
+  .entry-content-page .cd-container.timeline-express.single-column .cd-timeline-img .fa {
+    line-height: 60px !important; }
+
+.entry-content-page .cd-container.timeline-express.single-column .cd-timeline-content {
+  margin: auto;
+  margin-left: 60px; }
 
 .entry-content-page .cd-timeline-content {
   position: relative;
@@ -1204,8 +1211,7 @@ nav#navbar {
   -o-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
   -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
   font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
-  color: #FFFFFF;
-  line-height: 1.5; }
+  color: #FFFFFF; }
 
 .entry-content-page .cd-timeline-img span[title="Mairie"]::before {
   font-size: 40px;
