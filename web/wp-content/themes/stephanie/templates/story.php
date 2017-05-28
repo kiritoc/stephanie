@@ -321,7 +321,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                                     class="icon-happy-face"></span>)</span>
                                     </h2>
                                     <p>Guillaume fit sa demande en mariage à Stéphanie. Comme vous le savez maintenant,
-                                        le mariage aura lieu le 16 septembre 2017 en Arles, là où tout à commencer.
+                                        le mariage aura lieu le 16 septembre 2017 en Arles, là où tout a commencé.
                                         C’est avec grand plaisir que l’on espère vous compter parmi nos invités lors de
                                         cette journée si particulière.</p>
                                 </div>
