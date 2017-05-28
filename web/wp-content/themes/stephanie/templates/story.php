@@ -189,9 +189,9 @@ if (!get_theme_mod('show_only_main_header')): ?>
                             </div>
                             <div class="data">
                                 <div class="iframe-wrapper">
-                                    <iframe class="animate" data-animate="slideInRight" data-duration="0.5s"
-                                            width="560" height="315" src="https://www.youtube.com/embed/HcOXgibVxSM"
-                                            frameborder="0" allowfullscreen></iframe>
+                                    <div class="youtube animate" data-embed="HcOXgibVxSM" data-animate="slideInRight" data-duration="0.5s">
+                                        <div class="play-button"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="clear"></div>

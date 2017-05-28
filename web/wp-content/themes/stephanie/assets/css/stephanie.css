@@ -1030,9 +1030,9 @@ nav#navbar {
       .our-timeline-story .timeline-content .post .data .iframe-wrapper {
         position: relative;
         overflow: hidden;
-        max-width: 100%;
-        padding-bottom: 56.25%; }
+        max-width: 100%; }
         .our-timeline-story .timeline-content .post .data .iframe-wrapper.spotify-wrapper {
+          padding-bottom: 56.25%;
           height: 110px; }
         .our-timeline-story .timeline-content .post .data .iframe-wrapper iframe, .our-timeline-story .timeline-content .post .data .iframe-wrapper object, .our-timeline-story .timeline-content .post .data .iframe-wrapper embed {
           position: absolute;
