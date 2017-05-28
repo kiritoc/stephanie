@@ -504,14 +504,18 @@ nav#navbar {
       li {
         position: relative;
         display: inline-block;
-        line-height: 5em;
+        margin: 2vh 0;
 
         &.highlighted > a {
           color: $primary-color;
         }
 
         a {
-          padding: 2.5em 0;
+
+          padding: 3.5vh 0;
+          line-height: 5vh;
+
+          position: relative;
           color: $nav-text-color;
           text-decoration: none;
 

@@ -577,11 +577,13 @@ nav#navbar {
       nav#navbar .menu-menu-container ul li {
         position: relative;
         display: inline-block;
-        line-height: 5em; }
+        margin: 2vh 0; }
         nav#navbar .menu-menu-container ul li.highlighted > a {
           color: #8964C2; }
         nav#navbar .menu-menu-container ul li a {
-          padding: 2.5em 0;
+          padding: 3.5vh 0;
+          line-height: 5vh;
+          position: relative;
           color: #454545;
           text-decoration: none; }
           nav#navbar .menu-menu-container ul li a:after {
