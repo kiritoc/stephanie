@@ -104,7 +104,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
                                         ),
                                         array(
                                             "image" => "story/premier-bisou/voiture-retour.jpg",
-                                            "caption" => "Retour en voiture, direction Arles"
+                                            "caption" => "Un de nos retours en voiture, direction Arles"
                                         ),
                                         array(
                                             "image" => "story/premier-bisou/bisou-neige.JPG",
