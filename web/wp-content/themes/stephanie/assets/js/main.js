@@ -4,6 +4,37 @@
     // Init viewport-units-buggyfill
     window.viewportUnitsBuggyfill.init();
 
+    function removeAnchor() {
+        if ("pushState" in history) {
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+    }
+
+    function loadYoutubeThumbnail() {
+        var youtube = document.querySelectorAll(".youtube");
+
+        for (var i = 0; i < youtube.length; i++) {
+            var source = "http://img.youtube.com/vi/" + youtube[i].dataset.embed + "/0.jpg";
+
+            var image = new Image();
+            image.src = source;
+            image.addEventListener("load", function () {
+                youtube[i].appendChild(image);
+            }(i));
+
+            youtube[i].addEventListener("click", function () {
+                var iframe = document.createElement("iframe");
+
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        }
+    }
+
     $(window).load(function () {
         window.viewportUnitsBuggyfill.refresh();
 
@@ -41,19 +72,23 @@
                     var $target = $($.attr(this, 'href'));
                     if ($target.length === 1) {
                         event.preventDefault();
-                        console.log($target.offset().top);
 
                         $('html, body').animate({
                             scrollTop: $target.offset().top
                         }, 500);
+                        removeAnchor();
                     }
                 });
             });
         }
+
+        removeAnchor();
     });
 
     $(document).ready(function () {
         window.viewportUnitsBuggyfill.refresh();
+
+        loadYoutubeThumbnail();
 
         $('.animate').scrolla({
             mobile: false,
