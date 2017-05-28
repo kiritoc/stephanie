@@ -182,6 +182,7 @@ textarea {
   flex-direction: row; }
 
 .entry-content-page {
+  overflow: hidden;
   width: 75%;
   margin: 0 auto;
   background: #FFFFFF;
