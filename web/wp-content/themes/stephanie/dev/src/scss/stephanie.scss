@@ -301,7 +301,7 @@ textarea {
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .grid .grid-item {
     width: 98%;
     margin-bottom: 2%;
@@ -1135,7 +1135,7 @@ nav#navbar {
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .our-timeline-story {
     .line {
       left: 40px;
