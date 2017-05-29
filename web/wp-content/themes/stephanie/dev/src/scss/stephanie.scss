@@ -406,7 +406,7 @@ textarea {
     @include vendor-prefix('transform', translate(0, 0));
   }
   50% {
-    @include vendor-prefix('transform', translate(0, -2vmin));
+    @include vendor-prefix('transform', translate(0, -50%));
   }
 }
 
