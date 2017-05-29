@@ -40,6 +40,13 @@
   font-feature-settings: $standard;
 }
 
+@mixin opacity($opacity) {
+  filter: alpha(opacity=$opacity * 100);
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+
 @mixin flexbox {
   display: -webkit-box;
   display: -webkit-flex;
@@ -65,6 +72,18 @@
   -webkit-flex-direction: $value;
   -ms-flex-direction: $value;
   flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
 }
 
 @mixin order($int: 0) {

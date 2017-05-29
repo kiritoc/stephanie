@@ -146,6 +146,34 @@
             $(this).val("Valider ma réponse !");
         });
 
+        // Disable / Enable locations
+        if (!$('#mainRsvpY').is(':checked')) {
+            $('#mainRsvpY').parent().next().next('.rsvpCustomQuestions').addClass('disabled');
+        }
+        $('#mainRsvpY').click(function () {
+            $(this).parent().next().next('.rsvpCustomQuestions').removeClass('disabled');
+        });
+        $('#mainRsvpN').click(function () {
+            $(this).parent().next('.rsvpCustomQuestions').addClass('disabled');
+        });
+        $('.rsvpAdditionalAttendeeQuestions').each(function () {
+            var $locations = $(this).find('.rsvpCustomQuestions');
+
+            $(this).find('input').each(function () {
+                if (this.value === "Y" && !$(this).is(':checked')) {
+                    $locations.addClass('disabled');
+                }
+
+                $(this).click(function () {
+                    if (this.value === "Y") {
+                        $locations.removeClass('disabled');
+                    } else if (this.value === "N") {
+                        $locations.addClass('disabled');
+                    }
+                });
+            });
+        });
+
         /* // BUG AVEC LE BOUTON "Valider ma réponse !" (peut être d'autres)
          $('#rsvpPlugin p.rsvpParagraph').each(function () {
          $(this).text(function (index, value) {

@@ -683,13 +683,20 @@ nav#navbar {
 
     form#rsvpForm {
       .rsvpCustomQuestions {
+
+        &.disabled {
+          @include opacity(0.5);
+          pointer-events: none;
+        }
+
         & > .rsvpFormField {
           @include flexbox;
           @include align-items(center);
           @include justify-content(space-around);
           @include flex-direction(row);
+          @include flex-wrap(wrap);
 
-          & > .rsvpParagraph, & > .rsvpClear {
+          & > .rsvpClear {
             display: none;
           }
         }
@@ -709,11 +716,13 @@ nav#navbar {
 
         .rsvpAdditionalAttendeeQuestions {
           text-align: center;
+          margin-bottom: 2.5em;
         }
       }
 
       input[type=checkbox] {
         cursor: pointer;
+        display: none;
 
         & + label {
           display: table-caption;
