@@ -453,6 +453,11 @@ textarea {
       #stephanie-header .index-button a .icon {
         font-size: 3vmin; }
 
+@media screen and (max-width: 1024px) {
+  #stephanie-header {
+    background: no-repeat center;
+    background-size: cover; } }
+
 @keyframes jumping {
   0% {
     -webkit-transform: translate(0, 0);

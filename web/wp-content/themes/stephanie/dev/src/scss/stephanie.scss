@@ -401,6 +401,13 @@ textarea {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  #stephanie-header {
+    background: no-repeat center;
+    background-size: cover;
+  }
+}
+
 @keyframes jumping {
   0% {
     @include vendor-prefix('transform', translate(0, 0));
