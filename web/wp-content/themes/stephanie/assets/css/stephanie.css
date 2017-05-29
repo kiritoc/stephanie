@@ -774,20 +774,22 @@ nav#navbar {
         -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
         font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
         color: #454545;
-        font-size: 3.25em;
         display: inline-block;
         width: 100%;
         height: 75%;
         margin: 5px 0; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question11"]:before {
+        font-size: 3.25em;
         content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question12"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question25"]:before {
+        font-size: 3.25em;
         content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question13"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question26"]:before {
+        font-size: 3.25em;
         content: ""; }
       .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question14"]:before, .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] + label[for$="question27"]:before {
         font-size: 1.25em;
-        line-height: 2.5;
+        line-height: 3.5;
         content: ""; }
     .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox]:checked + label:before {
       color: #8964C2; }
