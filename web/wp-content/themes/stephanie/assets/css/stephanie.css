@@ -130,7 +130,7 @@ body {
     min-height: 100%; }
 
 #content {
-  margin: 2em 0; }
+  margin: 2em 0 0 0; }
   #content .highlighted {
     color: #8964C2; }
 
