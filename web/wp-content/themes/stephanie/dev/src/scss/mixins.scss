@@ -1,9 +1,9 @@
 /*--------------------------------------------------------------
 # Browser vendor prefixes
 --------------------------------------------------------------*/
-@mixin vendor-prefix($name, $value) {
+@mixin vendor-prefix($name, $values...) {
   @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
-    #{$vendor}#{$name}: #{$value};
+    #{$vendor}#{$name}: #{$values};
   }
 }
 

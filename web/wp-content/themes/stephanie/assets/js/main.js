@@ -146,6 +146,8 @@
             $(this).val("Valider ma réponse !");
         });
 
+        $('form#rsvpForm').find('h3').append('<p class="warning"><span class="icon-warning"></span>Ne cochez pas si vous ne savez pas.</p>');
+
         // Disable / Enable locations
         if (!$('#mainRsvpY').is(':checked')) {
             $('#mainRsvpY').parent().next().next('.rsvpCustomQuestions').addClass('disabled');

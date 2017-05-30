@@ -620,8 +620,15 @@ nav#navbar {
     @include simple-font("slabo-font");
 
     #rsvpArea + #rsvpPlugin > .rsvpParagraph {
-      font-size: 2vmin;
-      color: #8964C2;
+      color: $primary-color;
+      margin-top: 50px;
+      display: block;
+      font-size: 1.17em;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      font-weight: bold;
     }
 
     #rsvpPlugin {
@@ -634,6 +641,23 @@ nav#navbar {
 
         &#rsvp, &[name="rsvpForm"] {
           @include flex-direction(column);
+        }
+
+        h3 {
+          margin-top: 50px;
+          color: $primary-color;
+
+          .warning {
+            font-style: italic;
+            font-size: 0.9em;
+            color: $fourth-color;
+
+            .icon-warning {
+              display: block;
+              margin-bottom: 0.25em;
+              color: $heart-color;
+            }
+          }
         }
 
         .rsvpParagraph {
@@ -660,6 +684,7 @@ nav#navbar {
             height: 5vmin;
             width: 100%;
             display: block;
+            box-sizing: border-box;
 
             &.error {
               border-color: $error-color;
@@ -692,7 +717,8 @@ nav#navbar {
       .rsvpCustomQuestions {
 
         &.disabled {
-          @include opacity(0.5);
+          //@include opacity(0.5);
+          display: none;
           pointer-events: none;
         }
 
@@ -709,7 +735,7 @@ nav#navbar {
         }
 
         & + .rsvpParagraph {
-          margin-top: 7vmin;
+          margin-top: 98px;
         }
       }
 
@@ -720,10 +746,24 @@ nav#navbar {
 
       .rsvpAdditionalAttendee {
         margin-bottom: 10px;
+        border-top: none;
 
         .rsvpAdditionalAttendeeQuestions {
           text-align: center;
           margin-bottom: 2.5em;
+
+          & > .rsvpFormField {
+            position: relative;
+            display: inline-block;
+            &:before {
+              content: '';
+              position: absolute;
+              background: #ccc center;
+              height: 1px;
+              width: 100%;
+              overflow-x: hidden;
+            }
+          }
         }
       }
 
@@ -792,23 +832,11 @@ nav#navbar {
     color: $primary-color;
     letter-spacing: 1px;
     background: rgba(0, 0, 0, 0);
-    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
-    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
-    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
-    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    @include vendor-prefix('transition', background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0));
 
-    &:hover, &.is-checked {
+    &:hover, &.is-checked, &:active {
       color: $third-color;
       background: $primary-color;
-    }
-
-    &:active {
-      border: 2px solid $primary-color;
-      background: $primary-color;
-      -webkit-transition: none;
-      -moz-transition: none;
-      -o-transition: none;
-      transition: none;
     }
   }
 }

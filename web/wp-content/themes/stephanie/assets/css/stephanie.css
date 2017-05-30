@@ -679,8 +679,15 @@ nav#navbar {
   -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0;
   font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "dlig" 0, "salt" 0, "swsh" 0, "titl" 0; }
   .entry-content-page .rsvp-content #rsvpArea + #rsvpPlugin > .rsvpParagraph {
-    font-size: 2vmin;
-    color: #8964C2; }
+    color: #8964C2;
+    margin-top: 50px;
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold; }
   .entry-content-page .rsvp-content #rsvpPlugin form {
     display: -webkit-box;
     display: -webkit-flex;
@@ -705,6 +712,17 @@ nav#navbar {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
+    .entry-content-page .rsvp-content #rsvpPlugin form h3 {
+      margin-top: 50px;
+      color: #8964C2; }
+      .entry-content-page .rsvp-content #rsvpPlugin form h3 .warning {
+        font-style: italic;
+        font-size: 0.9em;
+        color: #707070; }
+        .entry-content-page .rsvp-content #rsvpPlugin form h3 .warning .icon-warning {
+          display: block;
+          margin-bottom: 0.25em;
+          color: #E7536F; }
     .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph {
       width: 100%; }
       .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph label {
@@ -723,7 +741,8 @@ nav#navbar {
         color: #787878;
         height: 5vmin;
         width: 100%;
-        display: block; }
+        display: block;
+        box-sizing: border-box; }
         .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"].error {
           border-color: #E80000; }
   .entry-content-page .rsvp-content .rsvpParagraph {
@@ -736,10 +755,7 @@ nav#navbar {
   .entry-content-page .rsvp-content .rsvpFormField, .entry-content-page .rsvp-content .rsvpFormField textarea {
     max-width: 100%; }
   .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions.disabled {
-    filter: alpha(opacity=50);
-    -moz-opacity: 0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;
+    display: none;
     pointer-events: none; }
   .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions > .rsvpFormField {
     display: -webkit-box;
@@ -766,15 +782,26 @@ nav#navbar {
     .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions > .rsvpFormField > .rsvpClear {
       display: none; }
   .entry-content-page .rsvp-content form#rsvpForm .rsvpCustomQuestions + .rsvpParagraph {
-    margin-top: 7vmin; }
+    margin-top: 98px; }
   .entry-content-page .rsvp-content form#rsvpForm .rsvpFormField.rsvpCheckboxCustomQ {
     margin: 0 4vmin;
     text-align: center; }
   .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    border-top: none; }
     .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee .rsvpAdditionalAttendeeQuestions {
       text-align: center;
       margin-bottom: 2.5em; }
+      .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee .rsvpAdditionalAttendeeQuestions > .rsvpFormField {
+        position: relative;
+        display: inline-block; }
+        .entry-content-page .rsvp-content form#rsvpForm .rsvpAdditionalAttendee .rsvpAdditionalAttendeeQuestions > .rsvpFormField:before {
+          content: '';
+          position: absolute;
+          background: #ccc center;
+          height: 1px;
+          width: 100%;
+          overflow-x: hidden; }
   .entry-content-page .rsvp-content form#rsvpForm input[type=checkbox] {
     cursor: pointer;
     display: none; }
@@ -826,18 +853,12 @@ nav#navbar {
     background: transparent;
     -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -ms-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
     transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0); }
-    .button:hover, .button.is-checked, input[type="submit"]:hover, input[type="submit"].is-checked, input[type="button"].ninja-forms-field.nf-element:hover, input[type="button"].ninja-forms-field.nf-element.is-checked {
+    .button:hover, .button.is-checked, .button:active, input[type="submit"]:hover, input[type="submit"].is-checked, input[type="submit"]:active, input[type="button"].ninja-forms-field.nf-element:hover, input[type="button"].ninja-forms-field.nf-element.is-checked, input[type="button"].ninja-forms-field.nf-element:active {
       color: #FFFFFF;
       background: #8964C2; }
-    .button:active, input[type="submit"]:active, input[type="button"].ninja-forms-field.nf-element:active {
-      border: 2px solid #8964C2;
-      background: #8964C2;
-      -webkit-transition: none;
-      -moz-transition: none;
-      -o-transition: none;
-      transition: none; }
 
 /*--------------------------------------------------------------
 # Wedding list
