@@ -42,7 +42,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.hotel-julescesar.fr/fr/index.php",
-                        "cover" => "http://www.hotel-julescesar.fr/maj/images_resized/1317-so-accueil-2014-photo-anim-02-fr.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/jules-cesar.jpg",
                         "name" => "Hôtel Jules César",
                         "stars" => 5,
                         "car_distance_minutes" => "16",
@@ -53,7 +53,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.accorhotels.com/fr/hotel-0692-ibis-arles/index.shtml",
-                        "cover" => "http://www.ahstatic.com/photos/0692_ro_00_p_2048x1536.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/ibis.jpg",
                         "name" => "Hôtel ibis - Arles",
                         "stars" => 0,
                         "car_distance_minutes" => "14",
@@ -64,7 +64,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.accorhotels.com/fr/hotel-5036-ibis-budget-arles-sud-fourchon/index.shtml",
-                        "cover" => "https://s-ec.bstatic.com/images/hotel/max1024x768/801/80156072.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/ibis-budget.jpg",
                         "name" => "Hôtel ibis budget - Arles Sud Fourchon",
                         "stars" => 0,
                         "car_distance_minutes" => "14",
@@ -75,7 +75,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.campanile-arles.fr/fr",
-                        "cover" => "https://hotelarles.net/system/images/000/017/190/12489601-big.jpg?1469542267",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/campanile.jpg",
                         "name" => "Hôtel Campanile",
                         "stars" => 3,
                         "car_distance_minutes" => "13",
@@ -86,7 +86,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.maspetitprince.com/index.php",
-                        "cover" => "http://www.vacationkey.com/photos/2/9/2946-1.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/mas-petit-prince.jpg",
                         "name" => "Mas Petit Prince",
                         "stars" => 0,
                         "car_distance_minutes" => "5",
@@ -97,7 +97,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.accorhotels.com/fr/hotel-3580-ibis-budget-arles-palais-des-congres/index.shtml",
-                        "cover" => "http://www.ahstatic.com/photos/3580_ro_01_p_2048x1536.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/ibis-budget-congres.jpg",
                         "name" => "Hôtel ibis budget - Arles Palais des Congrès",
                         "stars" => 2,
                         "car_distance_minutes" => "14",
@@ -108,7 +108,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.accorhotels.com/fr/hotel-2738-ibis-styles-arles-palais-des-congres/index.shtml",
-                        "cover" => "http://www.ahstatic.com/photos/2738_ho_01_p_2048x1536.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/ibis-styles.jpg",
                         "name" => "Hôtel ibis Styles - Arles Palais des Congrès",
                         "stars" => 3,
                         "car_distance_minutes" => "14",
@@ -119,7 +119,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.mas-eymard.com/",
-                        "cover" => "http://static.wixstatic.com/media/983f2d_973651c133ad4eb3be5ec1baba8880e5~mv2_d_2048_1365_s_2.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/mas-eymard.jpg",
                         "name" => "Mas d'Eymard",
                         "stars" => 0,
                         "car_distance_minutes" => "17",
@@ -130,7 +130,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.hoteldespontsdarles.com/",
-                        "cover" => "http://www.samm-honfleur.com/gallery/20160811202255(1).jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/hotel-mas-des-ponts.jpg",
                         "name" => "Hôtel le Mas des ponts d'Arles",
                         "stars" => 3,
                         "car_distance_minutes" => "12",
@@ -141,7 +141,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.masdulion.fr/",
-                        "cover" => "http://www.masdulion.fr/images/roulotte/photo-2.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/mas-du-lion.jpg",
                         "name" => "Mas du Lion",
                         "stars" => 0,
                         "car_distance_minutes" => "20",
@@ -152,7 +152,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.mas-galegiere.com/fr/",
-                        "cover" => "http://www.mas-galegiere.com/fr/assets/images/photos/2014/ch2_2014.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/mas-galegiere.jpg",
                         "name" => "Mas de la Galégière",
                         "stars" => 4,
                         "car_distance_minutes" => "23",
@@ -163,7 +163,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "https://www.book-secure.com/index.php?s=results&property=frarl12150&arrival=2017-09-16&departure=2017-09-17&adults1=2&children1=0&rooms=1&locale=fr_FR&currency=EUR&stid=awh6sq25u&showPromotions=1&langue=france&Clusternames=NEWHOTELARLCamargue&cluster=NEWHOTELARLCamargue&Hotelnames=NEWHOTELARLCamargue&hname=NEWHOTELARLCamargue&arrivalDateValue=2017-09-16&frommonth=9&fromday=16&fromyear=2017&nbdays=1&nbNightsValue=1&adulteresa=2&nbAdultsValue=2&redir=BIZ-so5523q0o4&rt=1494756219",
-                        "cover" => "https://d3ehecxdotm942.cloudfront.net/61ccb696986954abbe14bce266a373a7/70/af/70af5e14b6cdaae251ab701b339c1a77-w704-scale.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/arles-plaza.jpg",
                         "name" => "Hôtel Arles Plaza",
                         "stars" => 3,
                         "car_distance_minutes" => "14",
@@ -174,7 +174,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "https://www.aubergedesplaines.com/",
-                        "cover" => "https://static.wixstatic.com/media/de0cfd_7b446a8efbff43359f0752afb07270fc.jpg/v1/fill/w_1110,h_738,al_c,q_85,usm_0.66_1.00_0.01/de0cfd_7b446a8efbff43359f0752afb07270fc.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/auberge-plaines.jpg",
                         "name" => "Auberge des Plaines",
                         "stars" => 0,
                         "car_distance_minutes" => "7",
@@ -185,7 +185,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.mas-des-rizieres.com/",
-                        "cover" => "http://www.mas-des-rizieres.com/photos/Chambre1-01.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/mas-rizieres.jpg",
                         "name" => "Mas des Rizières",
                         "stars" => 0,
                         "car_distance_minutes" => "12",
@@ -196,7 +196,7 @@ if (!get_theme_mod('show_only_main_header')): ?>
 
                     echo addGridItem(array(
                         "url" => "http://www.arlestourisme.com/fr/hotels-a-arles.html",
-                        "cover" => "http://www.arlestourisme.com/assets/components/phpthumbof/cache/acceuil12.2cf8d9651517e68f92de41b487f898791.jpg",
+                        "cover" => STEPHANIE_IMAGES_PATH . "lodging/arles-ville.jpg",
                         "name" => "Hôtels listés par l'office de tourisme d'Arles",
                         "more" => "Pour plus d'hébergements"
                     ));
