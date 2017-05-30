@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'icomoon';
+@import 'hamburger';
 
 /*--------------------------------------------------------------
 # Fonts
@@ -116,7 +117,7 @@ textarea {
 
 @media screen and (min-width: 1024px) {
   nav#navbar .logo {
-    margin: auto 0;
+    margin: 0;
   }
 
   .entry-content-page {
@@ -502,7 +503,7 @@ nav#navbar {
 
   .menu-menu-container {
     width: 85%;
-    margin: 0 2vmin;
+    margin: 0 auto;
 
     ul {
       @include flexbox;
@@ -549,10 +550,6 @@ nav#navbar {
     }
   }
 
-  #menu-toggle {
-    display: none;
-  }
-
   .logo {
     @include order(1);
   }
@@ -561,7 +558,8 @@ nav#navbar {
     @include order(2);
   }
 
-  .label-toggle {
+  #menu-toggle {
+    display: none;
     @include order(3);
   }
 
@@ -573,6 +571,11 @@ nav#navbar {
       height: auto;
     }
 
+    #menu-toggle {
+      display: block;
+      margin: 15px 35px 15px;
+    }
+
     .menu-menu-container ul {
       @include justify-content(space-between);
       @include flex-direction(column);
@@ -580,19 +583,19 @@ nav#navbar {
       max-height: 0;
 
       &:first-child {
-        padding-top: 60px;
+        margin-top: 60px;
       }
 
-      li {
-        padding: 3vh 0;
+      :not(:first-child) {
+        margin-top: 5vh;
+      }
 
-        a {
-          line-height: 5vh;
-        }
+      li a {
+        line-height: 5vh;
       }
     }
 
-    #menu-toggle:checked ~ .menu-menu-container ul {
+    #menu-toggle.is-active ~ .menu-menu-container ul {
       max-height: 100vh;
     }
 
@@ -600,14 +603,6 @@ nav#navbar {
       width: 40px;
       height: 40px;
       padding: 10px 30px 10px;
-    }
-
-    .label-toggle {
-      background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 20%, transparent 20%, transparent 40%, $secondary-color 40%, $secondary-color 60%, transparent 60%, transparent 80%, $secondary-color 80%, $secondary-color 100%); //Gradient Hamburger
-      cursor: pointer;
-      height: 30px;
-      width: 30px;
-      margin: 15px 35px 15px;
     }
   }
 }

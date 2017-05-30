@@ -94,6 +94,105 @@
 .icon-gift:before {
   content: ""; }
 
+/* -----------------------------------------------------------------------------
+
+  HAMBURGER ICONS COMPONENT
+
+----------------------------------------------------------------------------- */
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `c-hamburger` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s; }
+
+.c-hamburger:focus {
+  outline: none; }
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  right: 0px;
+  height: 6px;
+  background: #454545; }
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: #454545;
+  content: ""; }
+
+.c-hamburger span::before {
+  top: -12px; }
+
+.c-hamburger span::after {
+  bottom: -12px; }
+
+/**
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+.c-hamburger--htx {
+  background-color: transparent; }
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s; }
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s; }
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform; }
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform; }
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+  background-color: transparent; }
+
+.c-hamburger--htx.is-active span {
+  background: none; }
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg); }
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s; }
+
 /*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
@@ -231,7 +330,7 @@ textarea {
 
 @media screen and (min-width: 1024px) {
   nav#navbar .logo {
-    margin: auto 0; }
+    margin: 0; }
   .entry-content-page {
     width: 940px; } }
 
@@ -595,7 +694,7 @@ nav#navbar {
         fill: #8964C2; }
   nav#navbar .menu-menu-container {
     width: 85%;
-    margin: 0 2vmin; }
+    margin: 0 auto; }
     nav#navbar .menu-menu-container ul {
       display: -webkit-box;
       display: -webkit-flex;
@@ -632,8 +731,6 @@ nav#navbar {
             background-color: #8964C2; }
         nav#navbar .menu-menu-container ul li.current_page_item a:after {
           background-color: #8964C2; }
-  nav#navbar #menu-toggle {
-    display: none; }
   nav#navbar .logo {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -642,7 +739,8 @@ nav#navbar {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2; }
-  nav#navbar .label-toggle {
+  nav#navbar #menu-toggle {
+    display: none;
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
     order: 3; }
@@ -652,6 +750,9 @@ nav#navbar {
       z-index: 10;
       overflow: hidden;
       height: auto; }
+    nav#navbar #menu-toggle {
+      display: block;
+      margin: 15px 35px 15px; }
     nav#navbar .menu-menu-container ul {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -665,23 +766,17 @@ nav#navbar {
       transition: all 1s ease;
       max-height: 0; }
       nav#navbar .menu-menu-container ul:first-child {
-        padding-top: 60px; }
-      nav#navbar .menu-menu-container ul li {
-        padding: 3vh 0; }
-        nav#navbar .menu-menu-container ul li a {
-          line-height: 5vh; }
-    nav#navbar #menu-toggle:checked ~ .menu-menu-container ul {
+        margin-top: 60px; }
+      nav#navbar .menu-menu-container ul :not(:first-child) {
+        margin-top: 5vh; }
+      nav#navbar .menu-menu-container ul li a {
+        line-height: 5vh; }
+    nav#navbar #menu-toggle.is-active ~ .menu-menu-container ul {
       max-height: 100vh; }
     nav#navbar .logo {
       width: 40px;
       height: 40px;
-      padding: 10px 30px 10px; }
-    nav#navbar .label-toggle {
-      background: linear-gradient(to bottom, #454545 0%, #454545 20%, transparent 20%, transparent 40%, #454545 40%, #454545 60%, transparent 60%, transparent 80%, #454545 80%, #454545 100%);
-      cursor: pointer;
-      height: 30px;
-      width: 30px;
-      margin: 15px 35px 15px; } }
+      padding: 10px 30px 10px; } }
 
 /*--------------------------------------------------------------
 # Home page

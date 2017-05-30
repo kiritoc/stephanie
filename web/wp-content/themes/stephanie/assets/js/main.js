@@ -121,6 +121,12 @@
             minSize: 5 // Minimum petal size
         });
 
+        // Hamburger button
+        $(".c-hamburger").click(function(e){
+            e.preventDefault();
+            $(this).hasClass("is-active") ? $(this).removeClass("is-active") :$(this).addClass("is-active");
+        });
+
         // RSVP
         var $firstNameLabel = $('label[for="firstName"]'),
             $lastNameLabel = $('label[for="lastName"]');

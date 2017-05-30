@@ -77,9 +77,9 @@
                     </a>
                 </div>
 
-                <input type="checkbox" id="menu-toggle">
-                    <label for="menu-toggle" class="label-toggle"></label>
-                </input>
+                <button id="menu-toggle" class="c-hamburger c-hamburger--htx">
+                    <span>toggle menu</span>
+                </button>
 
                 <?php wp_nav_menu(); ?>
             </nav>
