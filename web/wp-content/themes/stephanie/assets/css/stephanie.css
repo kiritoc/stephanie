@@ -130,7 +130,8 @@ body {
     min-height: 100%; }
 
 #content {
-  margin: 2em 0 0 0; }
+  margin: 2em 0 0 0;
+  overflow-y: auto; }
   #content .highlighted {
     color: #8964C2; }
 
@@ -186,7 +187,11 @@ textarea {
   width: 75%;
   margin: 0 auto;
   background: #FFFFFF;
-  box-shadow: 0 0 1px 0 #454545;
+  -webkit-border: solid 1px #bdbdbd;
+  -moz-border: solid 1px #bdbdbd;
+  -ms-border: solid 1px #bdbdbd;
+  -o-border: solid 1px #bdbdbd;
+  border: solid 1px #bdbdbd;
   padding: 2vmin; }
   .entry-content-page::after {
     content: '';
@@ -277,6 +282,10 @@ textarea {
     padding: 1.5em;
     box-sizing: border-box;
     background: #f8f8f8;
+    -webkit-box-shadow: 0 3px 0 #dedede;
+    -moz-box-shadow: 0 3px 0 #dedede;
+    -ms-box-shadow: 0 3px 0 #dedede;
+    -o-box-shadow: 0 3px 0 #dedede;
     box-shadow: 0 3px 0 #dedede; }
     .grid .grid-item.large {
       width: 100%; }
@@ -519,6 +528,10 @@ textarea {
         justify-content: space-around;
         box-sizing: border-box;
         background: rgba(69, 69, 69, 0.4);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.4);
         width: 7vmin;
@@ -558,14 +571,19 @@ nav#navbar {
   -webkit-justify-content: space-around;
   justify-content: space-around;
   width: 100%;
+  height: 80px;
   background: #FFFFFF;
   font-weight: bold;
   letter-spacing: 0.025em;
-  box-shadow: 0 0 1px 0 #454545; }
+  -webkit-border: solid 1px #bdbdbd;
+  -moz-border: solid 1px #bdbdbd;
+  -ms-border: solid 1px #bdbdbd;
+  -o-border: solid 1px #bdbdbd;
+  border: solid 1px #bdbdbd; }
   nav#navbar .logo {
-    width: 3.5em;
-    height: 3.5em;
-    padding: 0.75em; }
+    width: 56px;
+    height: 56px;
+    padding: 12px; }
     nav#navbar .logo:after {
       content: "";
       height: 100%;
@@ -576,7 +594,7 @@ nav#navbar {
       nav#navbar .logo svg:hover {
         fill: #8964C2; }
   nav#navbar .menu-menu-container {
-    width: 80%;
+    width: 85%;
     margin: 0 2vmin; }
     nav#navbar .menu-menu-container ul {
       display: -webkit-box;
@@ -593,13 +611,11 @@ nav#navbar {
       nav#navbar .menu-menu-container ul li {
         position: relative;
         display: inline-block;
-        margin: 2vh 0; }
+        margin: auto; }
         nav#navbar .menu-menu-container ul li.highlighted > a {
           color: #8964C2; }
         nav#navbar .menu-menu-container ul li a {
-          padding: 3.5vh 0;
-          line-height: 5vh;
-          position: relative;
+          line-height: 80px;
           color: #454545;
           text-decoration: none; }
           nav#navbar .menu-menu-container ul li a:after {
@@ -634,7 +650,8 @@ nav#navbar {
     nav#navbar {
       position: absolute;
       z-index: 10;
-      overflow: hidden; }
+      overflow: hidden;
+      height: auto; }
     nav#navbar .menu-menu-container ul {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -648,15 +665,23 @@ nav#navbar {
       transition: all 1s ease;
       max-height: 0; }
       nav#navbar .menu-menu-container ul:first-child {
-        padding-top: 5em; }
+        padding-top: 60px; }
+      nav#navbar .menu-menu-container ul li {
+        padding: 3vh 0; }
+        nav#navbar .menu-menu-container ul li a {
+          line-height: 5vh; }
     nav#navbar #menu-toggle:checked ~ .menu-menu-container ul {
       max-height: 100vh; }
+    nav#navbar .logo {
+      width: 40px;
+      height: 40px;
+      padding: 10px 30px 10px; }
     nav#navbar .label-toggle {
       background: linear-gradient(to bottom, #454545 0%, #454545 20%, transparent 20%, transparent 40%, #454545 40%, #454545 60%, transparent 60%, transparent 80%, #454545 80%, #454545 100%);
       cursor: pointer;
-      height: 2em;
-      width: 2em;
-      margin: 1.5em; } }
+      height: 30px;
+      width: 30px;
+      margin: 15px 35px 15px; } }
 
 /*--------------------------------------------------------------
 # Home page
@@ -665,6 +690,10 @@ nav#navbar {
   color: #454545; }
   #content .description-image {
     width: 35vmin;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     border-radius: 50%;
     margin-bottom: 2em; }
 
@@ -736,7 +765,15 @@ nav#navbar {
       .entry-content-page .rsvp-content #rsvpPlugin form .rsvpParagraph input[type="text"] {
         background: #f7f7f7;
         border: 1px solid #c4c4c4;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
         border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
         box-shadow: none;
         color: #787878;
         height: 5vmin;
@@ -908,7 +945,6 @@ nav#navbar {
     -moz-border-radius: 11px;
     -ms-border-radius: 11px;
     -o-border-radius: 11px;
-    border-radius: 11px;
     border-radius: 11px;
     text-align: center;
     font-weight: bold;
@@ -1099,9 +1135,17 @@ nav#navbar {
             width: 90px;
             height: 60px;
             background-color: #6e45ae;
+            -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            -ms-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
             z-index: 1;
             opacity: 0.8;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
             border-radius: 6px; }
             .our-timeline-story .timeline-content .post .data .iframe-wrapper .youtube .play-button:before {
               content: "";
@@ -1244,6 +1288,10 @@ nav#navbar {
         width: 30%; }
         .entry-content-page .cd-timeline-content .the-excerpt .description .img-location img {
           max-width: 100%;
+          -webkit-box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+          -moz-box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+          -ms-box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+          -o-box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05); }
 
 .entry-content-page .cd-timeline-img span::before {
@@ -1326,7 +1374,10 @@ nav#navbar {
   width: 50px;
   height: 80px;
   background: #E7536F;
+  -webkit-border-radius: 50px 50px 0 0;
   -moz-border-radius: 50px 50px 0 0;
+  -ms-border-radius: 50px 50px 0 0;
+  -o-border-radius: 50px 50px 0 0;
   border-radius: 50px 50px 0 0;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
