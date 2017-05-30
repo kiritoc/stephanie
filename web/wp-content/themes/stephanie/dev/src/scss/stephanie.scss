@@ -478,7 +478,7 @@ nav#navbar {
   background: $nav-background;
   font-weight: bold;
   letter-spacing: 0.025em;
-  @include vendor-prefix('border', solid 1px lighten($fourth-color, 30%));
+  @include vendor-prefix('border-bottom', solid 1px lighten($fourth-color, 30%));
 
   .logo {
     width: 56px;

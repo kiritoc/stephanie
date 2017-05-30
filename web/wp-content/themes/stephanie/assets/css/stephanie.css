@@ -674,11 +674,11 @@ nav#navbar {
   background: #FFFFFF;
   font-weight: bold;
   letter-spacing: 0.025em;
-  -webkit-border: solid 1px #bdbdbd;
-  -moz-border: solid 1px #bdbdbd;
-  -ms-border: solid 1px #bdbdbd;
-  -o-border: solid 1px #bdbdbd;
-  border: solid 1px #bdbdbd; }
+  -webkit-border-bottom: solid 1px #bdbdbd;
+  -moz-border-bottom: solid 1px #bdbdbd;
+  -ms-border-bottom: solid 1px #bdbdbd;
+  -o-border-bottom: solid 1px #bdbdbd;
+  border-bottom: solid 1px #bdbdbd; }
   nav#navbar .logo {
     width: 56px;
     height: 56px;
