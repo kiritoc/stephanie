@@ -160,47 +160,15 @@ endif;
  * Enqueue scripts and styles.
  */
 function stephanie_scripts_styles() {
-    // Animate
-    wp_enqueue_style('animate-style', STEPHANIE_CSS_PATH . 'animate.min.css');
-
-    // Scrolla
-    wp_enqueue_script('scrolla-scripts', STEPHANIE_JS_PATH . 'scrolla.jquery.min.js', array('jquery'), '', '');
-
-    // Enqueue viewport-units-buggyfill
-    wp_enqueue_script('viewport-units-buggyfill.hacks-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.hacks.js', array('jquery'), '', '');
-    wp_enqueue_script('viewport-units-buggyfill-scripts', STEPHANIE_JS_PATH . 'viewport-units-buggyfill.js', array('jquery'), '', '');
-
-    // Enqueue Sakura animation
-    wp_enqueue_style('jquery-sakura-style', STEPHANIE_CSS_PATH . 'jquery-sakura.min.css');
-    wp_enqueue_script('jquery-sakura-scripts', STEPHANIE_JS_PATH . 'jquery-sakura.min.js', array('jquery'), '', '');
-
-    // Enqueue fancybox
-    wp_enqueue_style('fancybox-style', STEPHANIE_CSS_PATH . 'jquery.fancybox.min.css');
-    wp_enqueue_script('fancybox-scripts', STEPHANIE_JS_PATH . 'jquery.fancybox.min.js', array('jquery'), '', '');
-
-    // Enqueue slick
-    wp_enqueue_style('slick-style', STEPHANIE_CSS_PATH . 'slick.css');
-    wp_enqueue_style('slick-theme-style', STEPHANIE_CSS_PATH . 'slick-theme.css');
-    wp_enqueue_script('slick-scripts', STEPHANIE_JS_PATH . 'slick.min.js', array('jquery'), '', '');
-
-    // Enqueue imagesloaded
-    wp_enqueue_script('imagesloaded', STEPHANIE_JS_PATH . 'imagesloaded.pkgd.js', array('jquery'), '', '');
-
-    // Enqueue isotope
-    wp_enqueue_script('isotope', STEPHANIE_JS_PATH . 'isotope.pkgd.min.js', array('jquery'), '', '');
-
-    // Enqueue Direction-Aware Hover Effect
-    wp_enqueue_script('hoverdir', STEPHANIE_JS_PATH . 'jquery.hoverdir.js', array('jquery'), '', '');
-    wp_enqueue_script('modernizr', STEPHANIE_JS_PATH . 'modernizr.custom.97074.js', array('jquery'), '', '');
-
-    // Enqueue Countdown
-    wp_enqueue_script('simplyCountdown', STEPHANIE_JS_PATH . 'simplyCountdown.min.js', array('jquery'), '', '');
+    // Enqueue vendors stylesheets
+    wp_enqueue_style('vendors-style', STEPHANIE_CSS_PATH . 'vendors.min.css');
+    // Enqueue vendors scripts
+    wp_enqueue_script('vendors-scripts', STEPHANIE_JS_PATH . 'vendors.min.js', array('jquery'), '', '');
 
     // Enqueue custom stylesheets
-    wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.css');
-
+    wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.min.css');
     // Enqueue custom javascript
-    wp_enqueue_script('stephanie-scripts', STEPHANIE_JS_PATH . 'main.js', array('jquery'), '', true);
+    wp_enqueue_script('stephanie-scripts', STEPHANIE_JS_PATH . 'main.min.js', array('jquery'), '', true);
 
     // Init Countdown values
     $wedding_date = strtotime(esc_attr(get_theme_mod('wedding_date')));
