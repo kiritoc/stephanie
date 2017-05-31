@@ -163,7 +163,7 @@ function stephanie_scripts_styles() {
     // Enqueue vendors stylesheets
     wp_enqueue_style('vendors-style', STEPHANIE_CSS_PATH . 'vendors.min.css');
     // Enqueue vendors scripts
-    wp_enqueue_script('vendors-scripts', STEPHANIE_JS_PATH . 'vendors.min.js', array('jquery'), '', '');
+    wp_enqueue_script('vendors-scripts', STEPHANIE_JS_PATH . 'vendors.min.js', array('jquery'), '', true);
 
     // Enqueue custom stylesheets
     wp_enqueue_style('stephanie-style', STEPHANIE_CSS_PATH . 'stephanie.min.css');
