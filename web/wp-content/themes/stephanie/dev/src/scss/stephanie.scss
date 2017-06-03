@@ -1240,9 +1240,17 @@ nav#navbar {
 # Location - Timeline
 --------------------------------------------------------------*/
 .entry-content-page {
+  .cd-timeline-title {
+    font-size: 2em;
+    @include simple-font("lavanderia-font", sans-serif);
+    color: $primary-color;
+    margin-top: 3.5em;
+  }
+
   // Single column issue fix
   .cd-container.timeline-express.single-column {
     & {
+      margin-top: 1em !important;
       margin-left: 30px !important;
       width: 95%;
       left: 0;
