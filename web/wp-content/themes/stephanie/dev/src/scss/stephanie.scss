@@ -799,17 +799,17 @@ nav#navbar {
             content: $icon-town-hall;
           }
 
-          &[for$="question12"]:before, &[for$="question25"]:before {
+          &[for$="question12"]:before, &[for$="question18"]:before, &[for$="question25"]:before {
             font-size: 3.25em;
             content: $icon-church;
           }
 
-          &[for$="question13"]:before, &[for$="question26"]:before {
+          &[for$="question13"]:before, &[for$="question19"]:before, &[for$="question26"]:before {
             font-size: 3.25em;
             content: $icon-reception;
           }
 
-          &[for$="question14"]:before, &[for$="question27"]:before {
+          &[for$="question14"]:before, &[for$="question110"]:before, &[for$="question27"]:before {
             font-size: 1.25em;
             line-height: 3.5;
             content: $icon-diner;
